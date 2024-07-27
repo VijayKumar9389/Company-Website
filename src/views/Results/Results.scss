@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+// Container for skills section
+.skills-container {
+  width: 100%;
+  max-width: $breakpoint-lg; // Use the large breakpoint variable for max-width
+  margin: 0 auto;
+  background-image: linear-gradient(to bottom, #121212, #141414, #171717, #191919, #1b1b1b, #1b1b1b, #1b1b1b, #1b1b1b, #191919, #171717, #141414, #121212);
+}
+
+// Wrapper for skill cards
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); // Adjusted min-width for better responsiveness
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  padding: $spacing-md; // Increased padding for better content spacing
+
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: $spacing-lg 0; // Increased padding for better content spacing
+    text-align: center;
+    transition: transform $transition-duration ease, box-shadow $transition-duration ease, background-color $transition-duration ease;
+    border-top: 2px solid $border-color; // Subtle border for card separation
+
+    .skill-icon {
+      font-size: 3.5rem; // Slightly larger icon for emphasis
+      color: #fff;
+      margin-bottom: $spacing-md;
+      transition: color $transition-duration ease; // Smooth color transition
+    }
+
+    .skill-content {
+      .skill-title {
+        font-size: $font-size-large;
+        color: $text-primary;
+        margin-bottom: $spacing-sm;
+        font-weight: 600; // Slightly bolder font for better readability
+      }
+
+      .skill-description {
+        font-size: $font-size-base;
+        color: $text-secondary;
+        line-height: $line-height-base;
+        margin: 0; // Remove margin to ensure consistent spacing
+      }
+    }
+  }
+}

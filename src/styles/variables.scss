@@ -1,0 +1,59 @@
+// _variables.scss
+
+// Colors
+$primary-color: #7A1F8B;       // Bright cyan for primary elements
+$secondary-color: #ff4081;     // Vivid pink for highlights
+$background-color: #121212;   // Deep black background
+$card-background: #1e1e1e;    // Slightly lighter dark gray for cards
+$text-primary: #e0e0e0;       // Light gray text for readability
+$text-secondary: #b0b0b0;     // Medium gray for secondary text
+$border-color: #333333;       // Dark gray border color
+$link-color: $primary-color;  // Bright cyan for links
+$success-color: #4caf50;      // Green for success messages
+$warning-color: #ff9800;      // Orange for warnings
+$error-color: #f44336;        // Red for errors
+
+// Typography
+$font-family-primary: 'Poppins', sans-serif;
+$font-family-secondary: 'Arial', sans-serif;
+
+$font-size-base: 18px;   // Slightly larger base font size
+$font-size-small: 16px;  // Larger small font size
+$font-size-large: 24px;  // Larger large font size
+$font-size-heading: 40px; // Larger heading font size
+
+$line-height-base: 1.6;
+$line-height-heading: 1.4;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 20px;
+$spacing-lg: 28px;
+$spacing-xl: 40px;
+
+// Borders
+$border-radius-sm: 6px;
+$border-radius-md: 12px;
+$border-radius-lg: 24px;
+$border-width: 1.5px;
+
+// Shadows
+$shadow-small: 0 2px 6px rgba(0, 0, 0, 0.4);
+$shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.5);
+$shadow-large: 0 15px 30px rgba(0, 0, 0, 0.6);
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1440px;
+
+// Misc
+$transition-duration: 0.3s;
+$transition-easing: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-modal: 1050;
+$z-index-tooltip: 1100;

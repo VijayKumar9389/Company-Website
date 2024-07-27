@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.header-container {
+  margin-bottom: $spacing-lg; // Margin at the bottom
+  text-align: center; // Center text by default
+
+  @media (max-width: $breakpoint-sm) {
+    text-align: left; // Align text to the left on smaller screens
+  }
+
+  h1 {
+    color: $text-primary; // Primary text color
+    font-size: $font-size-heading; // Font size for headings
+    font-weight: normal; // Normal font weight for a clean look
+  }
+
+  p {
+    font-size: $font-size-base; // Font size for paragraphs
+    color: $text-secondary; // Secondary text color
+    margin: 0; // Reset margin by default
+
+    @media (max-width: $breakpoint-sm) {
+      margin: $spacing-sm; // Add margin on smaller screens for better spacing
+    }
+  }
+}

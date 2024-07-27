@@ -1,0 +1,92 @@
+@import '../../styles/variables';
+
+// Wrapper for content
+.content-wrapper {
+  display: grid;
+  grid-template-areas: 'image content';
+  grid-template-columns: 6fr 4fr;
+  gap: $spacing-md; // Use the medium spacing variable for gaps
+  align-items: flex-start;
+
+  .section-image {
+    width: 100%;
+    height: auto; // Ensures image maintains aspect ratio
+    object-fit: cover;
+    border-radius: $border-radius-lg; // Use the medium border radius variable
+    box-shadow: $shadow-medium; // Use the medium shadow variable
+    grid-area: image;
+    animation: fade-in-left $transition-duration ease-in-out both;
+    z-index: 5;
+  }
+
+  .section-content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: $spacing-lg; // Use the large spacing variable for padding
+    width: 100%;
+
+    @media (max-width: $breakpoint-lg) {
+      padding-left: 0;
+      padding-top: $spacing-lg; // Use the large spacing variable for padding
+    }
+
+    .service-card {
+      padding: $spacing-md;
+      border-radius: $border-radius-md;
+      background-color: $card-background;
+      margin-bottom: $spacing-md; // Increased margin for separation
+      transition: background-color $transition-duration ease, transform $transition-duration ease;
+      cursor: pointer;
+      box-shadow: $shadow-small;
+      color: $text-secondary;
+
+      &:hover {
+        background-color: lighten($card-background, 7%); // Slightly more contrast on hover
+        transform: scale(1.03); // Slightly more zoom effect
+      }
+
+      &.selected {
+        background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
+        color: $text-primary !important;
+        box-shadow: $shadow-medium; // Enhanced shadow for selected state
+      }
+
+      p {
+        margin: 0;
+        font-size: $font-size-base;
+        line-height: $line-height-base; // Improved line height for readability
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-areas:
+      'image'
+      'content';
+    grid-template-columns: 1fr;
+    gap: $spacing-sm; // Use the small spacing variable for gaps
+  }
+}
+
+// Keyframes for animations
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes progress-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -1,0 +1,166 @@
+@import '../../styles/variables';
+
+// Navigation Container
+.nav-container {
+  width: 100%;
+  backdrop-filter: blur(8px); // Slightly reduced blur for a cleaner look
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  background: rgba($background-color, 0.85); // Slightly more opaque background
+  box-shadow: $shadow-medium;
+
+  // Button
+  button {
+    background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%)); // Gradient background
+    color: $text-secondary;
+    border: none;
+    border-radius: $border-radius-md; // Medium rounded corners for consistency
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; // Smooth transitions
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+
+    // Enhanced shadow for depth
+    box-shadow: $shadow-small;
+
+    .icon {
+      font-size: $font-size-large;
+      background-color: lighten($primary-color, 15%); // Slightly lighter shade for the icon
+      padding: $spacing-xs;
+      border-radius: 50%;
+      transition: background-color $transition-duration $transition-easing;
+      margin-left: $spacing-xs;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      display: none;
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, darken($primary-color, 10%), darken($primary-color, 20%));
+      box-shadow: $shadow-medium;
+      color: $text-primary;
+
+      .icon {
+        background-color: lighten($primary-color, 10%); // Lighter shade on hover
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba($primary-color, 0.5); // Subtle focus ring
+    }
+  }
+}
+
+// Navigation Wrapper
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $spacing-lg;
+  height: 70px; // Adjusted height for improved vertical spacing
+  max-width: $breakpoint-lg;
+  margin: 0 auto;
+
+
+  .menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+
+    svg {
+      margin: 0;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      display: block;
+      color: $primary-color;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+
+}
+
+
+@keyframes pulse {
+  0% {
+    filter: brightness(1.5); // Brighten initially
+  }
+  50% {
+    filter: brightness(1); // Return to original brightness
+  }
+  100% {
+    filter: brightness(1.5); // Brighten again
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $text-primary;
+
+  h1 {
+    font-size: $font-size-large;
+    font-weight: 700;
+    margin: 0; // Remove default margin to align with the logo
+  }
+
+  // Navigation Logo
+  .nav-logo {
+    max-width: 50px; // Set a maximum width to contain the logo
+    height: 50px; // Maintain aspect ratio
+    display: block; // Ensure the image behaves as a block element
+    transition: transform $transition-duration $transition-easing;
+
+    // Apply the pulsing animation
+    animation: pulse 2s infinite; // 2-second pulse duration, infinite loop
+
+    // Responsive adjustments
+    @media (max-width: $breakpoint-sm) {
+      max-width: 40px; // Further reduce max-width for very small screens
+    }
+  }
+}
+
+
+// Navigation Menu
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba($background-color, 0.8); // Slightly darker background
+  border-radius: $border-radius-md; // Consistent rounded corners
+  border: 1px solid rgba(255, 255, 255, 0.1); // Subtle light border for separation
+
+  .modal-link {
+    font-size: $font-size-base;
+    color: $text-secondary;
+    cursor: pointer;
+    transition: background-color $transition-duration $transition-easing, color $transition-duration $transition-easing, box-shadow $transition-duration $transition-easing;
+    padding: $spacing-sm $spacing-md; // Adjusted padding for better spacing
+    border-radius: $border-radius-md; // Smaller border radius for a modern feel
+
+    &:hover {
+      color: $text-primary;
+      background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
+      box-shadow: $shadow-small;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); // White text shadow
+    }
+  }
+  @media screen and (max-width: $breakpoint-sm) {
+    display: none;
+  }
+
+}

@@ -1,0 +1,160 @@
+// Import variables
+@import '../../styles/variables';
+
+// Popup Overlay
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($background-color, 0.5); // Semi-transparent background for overlay
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn $transition-duration;
+  z-index: 5000;
+}
+
+// Popup Box
+.popup-box {
+  background-color: $card-background;
+  box-shadow: $shadow-medium;
+  width: 90%;
+  height: 80%;
+  animation: fadeUp $transition-duration;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+
+    @media (max-width: $breakpoint-sm) {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Popup Header
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-lg;
+  position: relative;
+  z-index: $z-index-tooltip;
+  background-color: $background-color;
+  box-shadow: $shadow-medium;
+
+  .panel-label {
+    font-size: $font-size-heading;
+    font-weight: 700;
+    margin: 0;
+    color: $text-primary;
+  }
+
+  .close-button {
+    background-color: darken($card-background, 10%); // Use card background color for contrast
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-primary; // Use primary text color for contrast
+    font-size: $font-size-large; // Larger font size for better visibility
+    cursor: pointer;
+    transition: background-color $transition-duration ease, box-shadow $transition-duration ease, transform $transition-duration ease;
+    width: 40px; // Use consistent size for material design buttons
+    height: 40px;
+    text-align: center;
+    border-radius: 50%; // Fully rounded button
+    box-shadow: $shadow-small; // Subtle shadow for material effect
+
+    &:hover {
+      background-color: $primary-color; // Change background to primary color on hover
+      color: $text-primary; // Ensure text color is readable on hover
+      box-shadow: $shadow-medium; // Stronger shadow on hover
+      transform: scale(1.1); // Slight scale-up effect on hover
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $primary-color; // Focus ring with primary color
+    }
+
+    &::before {
+      content: '×'; // Close icon
+      display: block;
+      font-size: inherit; // Inherit font size from parent
+    }
+  }
+}
+
+// Popup Content
+.popup-content {
+  height: 100%;
+  overflow-y: auto;
+  padding: $spacing-lg;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: $border-radius-sm;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Keyframes
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Media Queries for Mobile Responsiveness
+@media (max-width: $breakpoint-sm) {
+  .popup-box {
+    width: 95%;
+    height: 85%;
+    max-width: none;
+    max-height: none;
+  }
+
+  .popup-header {
+    padding: $spacing-md;
+
+    .panel-label {
+      font-size: $font-size-large;
+    }
+
+    .close-button {
+      font-size: $font-size-large;
+    }
+  }
+
+  .popup-content {
+    padding: $spacing-md;
+  }
+}

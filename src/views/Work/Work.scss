@@ -1,0 +1,266 @@
+@import '../../styles/variables';
+
+// Basic Layout
+.work-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: $breakpoint-lg;
+  gap: $spacing-md;
+  margin: 0 auto;
+  margin-bottom: $spacing-lg;
+  z-index: $z-index-modal;
+  padding: $spacing-md;
+}
+
+.project-section {
+  position: sticky;
+  top: 100px; // Offset from top
+  width: 100%;
+  padding: $spacing-md; // Medium padding
+  border-radius: $border-radius-md; // Medium border radius
+  box-shadow: $shadow-medium; // Medium shadow
+  background-color: $background-color; // Light grey background
+  margin-bottom: $spacing-md; // Space between sections
+  z-index: $z-index-tooltip; // Tooltip z-index
+  transition: transform $transition-duration ease-in-out, box-shadow $transition-duration ease-in-out, background 0.3s ease-in-out; // Smooth transitions
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Two-column layout
+  grid-template-areas: 'image content'; // Default layout
+  cursor: pointer;
+  overflow: hidden; // Prevent content overflow
+
+  // Reversing the layout for odd sections
+  &:nth-child(odd) {
+    grid-template-areas: 'content image'; // Reverse column order
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr; // Single column on smaller screens
+      grid-template-areas: 'image' 'content'; // Single column layout
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr; // Single column on smaller screens
+    grid-template-areas: 'image' 'content'; // Single column layout
+  }
+
+  .project-image {
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    border-radius: $border-radius-sm; // Small border radius for images
+    object-fit: cover; // Ensure images cover their area
+    box-shadow: $shadow-small; // Small shadow for images to add depth
+    transition: opacity $transition-duration ease-in-out; // Smooth fade-in
+  }
+
+  .project-content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Center content vertically
+    align-items: center;
+    padding: $spacing-md; // Medium padding
+
+
+    .project-title {
+      font-size: $font-size-heading; // Heading font size
+      color: $text-primary; // Dark text color
+      font-weight: 600; // Slightly bolder title for emphasis
+      line-height: 1.2; // Improve title readability
+    }
+
+    .project-desc {
+      font-size: $font-size-base; // Base font size
+      color: $text-secondary; // Light grey text color
+      line-height: $line-height-base; // Improved readability
+
+      // Tooltip styling
+      &:before {
+        content: 'View Module'; // Tooltip text
+        padding: 8px 12px;
+        background: rgba(0, 0, 0, 0.75); // Dark background for tooltip
+        color: #fff; // White text color
+        border-radius: 4px; // Slightly rounded corners
+        font-size: 14px;
+        white-space: nowrap; // Prevent text from wrapping
+        opacity: 0; // Hidden by default
+        transition: opacity $transition-duration ease-in-out;
+      }
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px); // Move up slightly on hover
+    box-shadow: $shadow-large; // Larger shadow on hover
+
+    .project-content {
+      .project-desc:before {
+        opacity: 1; // Show tooltip on hover
+      }
+    }
+
+    .project-desc {
+      display: block; // Show description on hover
+    }
+
+    // Gradient hover backgrounds
+    &:nth-child(1) {
+      background: linear-gradient(135deg, $background-color, lighten(#2c3e50, 10%), $background-color); // Gradient for section 1
+    }
+
+    &:nth-child(2) {
+      background: linear-gradient(135deg, $background-color, lighten(#3498db, 10%), $background-color); // Gradient for section 2
+    }
+
+    &:nth-child(3) {
+      background: linear-gradient(135deg, $background-color, lighten(#16a085, 10%), $background-color); // Gradient for section 3
+    }
+
+    &:nth-child(4) {
+      background: linear-gradient(135deg, $background-color, lighten(#e67e22, 10%), $background-color); // Gradient for section 4
+    }
+
+    &:nth-child(5) {
+      background: linear-gradient(135deg, $background-color, lighten(#e74c3c, 10%), $background-color); // Gradient for section 5
+    }
+  }
+
+  // Unique background colors for each section with improved gradients
+  &:nth-child(1) {
+    background: linear-gradient(135deg, #2c3e50, $background-color); // Darker blue-gray gradient
+  }
+
+  &:nth-child(2) {
+    background: linear-gradient(135deg, $background-color, #3498db); // Light blue gradient
+    top: calc(100px + $spacing-md); // Offset for stacking effect
+    z-index: $z-index-tooltip + 1; // Higher z-index for layering
+  }
+
+  &:nth-child(3) {
+    background: linear-gradient(135deg, #16a085, $background-color); // Dark teal gradient
+    top: calc(100px + ($spacing-md * 2)); // Further offset
+    z-index: $z-index-tooltip + 2; // Higher z-index for layering
+  }
+
+  &:nth-child(4) {
+    background: linear-gradient(135deg, $background-color, #e67e22); // Dark orange gradient
+    top: calc(100px + ($spacing-md * 3)); // Further offset
+    z-index: $z-index-tooltip + 3; // Higher z-index for layering
+  }
+
+  &:nth-child(5) {
+    background: linear-gradient(135deg, #e74c3c, $background-color); // Dark red gradient
+    top: calc(100px + ($spacing-md * 4)); // Further offset
+    z-index: $z-index-tooltip + 4; // Higher z-index for layering
+  }
+}
+
+// Wrapper and Content Styles
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg; // Large spacing between elements
+  padding: $spacing-lg; // Add padding to the wrapper for breathing space
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg; // Large spacing between elements
+
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row; // Row layout on larger screens
+    align-items: flex-start; // Align items to the start of the flex container
+  }
+}
+
+.project-info {
+  flex: 1;
+  border-radius: $border-radius-md; // Medium border radius
+  position: sticky;
+  top: $spacing-lg; // Stick to the top with offset
+
+  p {
+    color: $text-secondary; // Light grey text color
+    font-size: $font-size-large; // Base font size
+    margin-bottom: $spacing-md; // Medium spacing below the paragraph
+    line-height: $line-height-base; // Improved readability
+  }
+
+  @media (max-width: $breakpoint-md) {
+    position: static; // Remove sticky position on smaller screens
+    margin-bottom: $spacing-md; // Space below the info section
+  }
+}
+
+.project-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg; // Large spacing between sections
+
+  .project-description {
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius-lg; // Medium border radius for modern look
+    padding: $spacing-sm; // Medium padding
+    box-shadow: $shadow-medium; // Medium shadow for depth
+    background-color: $background-color; // Light background for info section
+    transition: transform $transition-duration ease-in-out, box-shadow $transition-duration ease-in-out;
+    text-align: center;
+
+    .project-img {
+      width: 100%;
+      height: auto;
+      border-radius: $border-radius-md; // Medium border radius for images
+      object-fit: cover; // Ensure image covers the container
+      position: relative;
+    }
+
+    h3 {
+      font-size: $font-size-large; // Large font size for headings
+      font-weight: normal;
+      color: $text-primary; // Dark text color
+      margin: 0 0 $spacing-md; // Medium spacing below the title
+      text-transform: capitalize; // Capitalize headings
+    }
+  }
+}
+
+// Media Queries for Mobile Responsiveness
+@media (max-width: $breakpoint-md) {
+  .project-wrapper {
+    padding: $spacing-sm; // Reduced padding on smaller screens
+  }
+
+  .project-content {
+    flex-direction: column; // Stack content vertically on small screens
+  }
+
+  .project-description {
+    padding: $spacing-xs; // Reduced padding inside each description
+    font-size: $font-size-small; // Smaller text size on smaller screens
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
