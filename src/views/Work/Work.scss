@@ -205,9 +205,6 @@
     display: flex;
     flex-direction: column;
     border-radius: $border-radius-lg; // Medium border radius for modern look
-    padding: $spacing-sm; // Medium padding
-    box-shadow: $shadow-medium; // Medium shadow for depth
-    background-color: $background-color; // Light background for info section
     transition: transform $transition-duration ease-in-out, box-shadow $transition-duration ease-in-out;
     text-align: center;
 
