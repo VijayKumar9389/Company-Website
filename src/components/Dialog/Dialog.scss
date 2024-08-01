@@ -94,6 +94,10 @@
   overflow-y: auto;
   padding: $spacing-lg;
 
+  @media (max-width: $breakpoint-sm) {
+    padding: $spacing-md;
+  }
+
   &::-webkit-scrollbar {
     width: 8px;
   }
