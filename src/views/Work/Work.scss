@@ -22,7 +22,6 @@
   border-radius: $border-radius-md; // Medium border radius
   box-shadow: $shadow-medium; // Medium shadow
   background-color: $background-color; // Light grey background
-  margin-bottom: $spacing-md; // Space between sections
   z-index: $z-index-tooltip; // Tooltip z-index
   transition: transform $transition-duration ease-in-out, box-shadow $transition-duration ease-in-out, background 0.3s ease-in-out; // Smooth transitions
   display: grid;
@@ -43,6 +42,7 @@
   @media (max-width: $breakpoint-sm) {
     grid-template-columns: 1fr; // Single column on smaller screens
     grid-template-areas: 'image' 'content'; // Single column layout
+    text-align: center;
   }
 
   .project-image {

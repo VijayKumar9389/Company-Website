@@ -38,12 +38,12 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ project }) => {
                 element={
                     <div className="project-wrapper">
                         <div className="project-content" >
-                            <div className="project-info" data-aos="fade-up-left">
+                            <div className="project-info">
                                 <p>{project.desc}</p>
                             </div>
                             <div className="project-details">
                                 {project.sections.map((section: WorkSectionData, sectionIndex: number) => (
-                                    <div key={sectionIndex} className="project-description"  data-aos="fade-down" data-aos-delay={sectionIndex * 200}>
+                                    <div key={sectionIndex} className="project-description" data-aos-delay={sectionIndex * 200}>
                                         <h3>{section.description}</h3>
                                         <img
                                             src={section.imageUrl}

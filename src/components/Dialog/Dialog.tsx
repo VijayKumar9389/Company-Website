@@ -34,12 +34,10 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, toggle, element, heading }) => 
         };
     }, [isOpen]);
 
-
-
     if (isOpen) {
         return (
             <div className="popup-overlay" onClick={toggle}>
-                <div className="popup-box" onClick={handleContentClick}>
+                <div className="popup-box" onClick={handleContentClick} data-aos="fade-up">
                     <div className="popup-header">
                         <h2 className="panel-label">{heading}</h2>
                         <button onClick={toggle} className="close-button"></button>
