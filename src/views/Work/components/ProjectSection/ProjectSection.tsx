@@ -26,9 +26,8 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ project }) => {
                     src={firstImage}
                     alt={project.title}
                     className="project-image"
-                    data-aos="fade-right"
                 />
-                <div className="project-content" data-aos="fade-left">
+                <div className="project-content">
                     <h2 className="project-title">{project.title}</h2>
                     <p className="project-desc"></p>
                 </div>

@@ -2,6 +2,7 @@
 
 .hero-container {
   display: flex;
+  flex-direction: column; // Adjusted for mobile view
   justify-content: center;
   align-items: center;
   padding: $spacing-lg;
@@ -20,6 +21,7 @@
   box-shadow: $shadow-medium;
 
   @media (min-width: $breakpoint-md) {
+    flex-direction: row; // Horizontal layout for larger screens
     padding: $spacing-xl; // Increased padding for larger screens
   }
 
@@ -32,10 +34,9 @@
     gap: $spacing-md; // Space between elements
 
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 2rem; // Adjusted font size for mobile
       font-weight: normal; // Adjusted for emphasis
       color: $text-primary; // Dark gray for contrast
-      flex: 1;
       width: 100%;
       line-height: $line-height-heading; // Improved line height for readability
     }
@@ -45,8 +46,18 @@
       height: auto;
       border-radius: $border-radius-md; // Rounded corners for modern look
       object-fit: cover; // Ensure the image covers the container
-      flex: 1;
       transition: transform $transition-duration $transition-easing; // Smooth transition for hover effects
+    }
+  }
+
+  // Mobile-specific adjustments
+  @media (max-width: $breakpoint-sm) {
+    .hero-title {
+      font-size: 1.5rem; // Smaller font size for mobile
+    }
+
+    .hero-content {
+      gap: $spacing-sm; // Reduced gap for mobile
     }
   }
 }

@@ -31,7 +31,7 @@
   cursor: pointer;
   overflow: hidden; // Prevent content overflow
 
-  // Reversing the layout for odd sections
+  // Reversing the layout forya odd sections
   &:nth-child(odd) {
     grid-template-areas: 'content image'; // Reverse column order
     @media (max-width: $breakpoint-sm) {
