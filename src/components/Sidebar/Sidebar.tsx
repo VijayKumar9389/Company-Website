@@ -10,7 +10,7 @@ interface ModalProps {
 }
 
 const Sidebar: React.FC<ModalProps> = ({ isOpen, toggleModal }) => {
-    if (!isOpen) return null;
+    if (!isOpen) return <p>test</p>;
 
     return (
         <div className="modal">
