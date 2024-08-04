@@ -17,7 +17,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  padding: $spacing-md;
+  padding:  $spacing-sm $spacing-md;
   border-top-left-radius: $border-radius-lg;
   border-bottom-left-radius: $border-radius-lg;
   box-shadow: $shadow-medium;
@@ -55,6 +55,7 @@
 .btn-container {
   display: flex;
   justify-content: flex-end;
+  background-color: red;
 
   button {
     display: none;
