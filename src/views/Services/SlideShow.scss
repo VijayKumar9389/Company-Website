@@ -20,8 +20,10 @@
                       rgba(0, 0, 0, 0.5) 0%,    // Darker at the top
                       rgba(0, 0, 0, 0.7) 100%   // Lighter at the bottom
       );
+      border-bottom-left-radius: $border-radius-md;
+      border-bottom-right-radius: $border-radius-md;
       padding: $spacing-md; // Increased padding for better spacing
-      box-shadow: $shadow-large; // Enhanced shadow for depth
+      overflow: hidden;
 
       p {
         font-size: $font-size-small; // Adjusted font size for mobile
@@ -46,6 +48,8 @@
       transform $transition-duration $transition-easing; // Smooth transitions
       overflow: hidden;
       position: relative; // Ensure proper positioning for child elements
+      border-top-left-radius: $border-radius-md;
+      border-top-right-radius: $border-radius-md;
 
       &.active {
         display: flex; // Ensure active slide is shown with flex
@@ -86,7 +90,7 @@
       line-height: 1;
 
       &:hover {
-        background-color: darken($primary-color, 10%);
+        background-color: $primary-color;
         transform: scale(1.1); // Slight scaling on hover
       }
 
