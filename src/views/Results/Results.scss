@@ -5,7 +5,6 @@
   width: 100%;
   max-width: $breakpoint-lg; // Use the large breakpoint variable for max-width
   margin: 0 auto;
-  background-image: linear-gradient(to bottom, #121212, #141414, #171717, #191919, #1b1b1b, #1b1b1b, #1b1b1b, #1b1b1b, #191919, #171717, #141414, #121212);
 }
 
 // Wrapper for skill cards
@@ -14,7 +13,6 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); // Adjusted min-width for better responsiveness
   gap: $spacing-lg;
   margin-bottom: $spacing-xl;
-  padding: $spacing-md; // Increased padding for better content spacing
 
   .skill-card {
     display: flex;

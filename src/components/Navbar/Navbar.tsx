@@ -14,7 +14,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="nav-container" data-aos="slide-down">
+        <div className="nav-container">
             <div className="nav-wrapper">
                 <div className="logo-wrapper">
                     <img src={Logo} alt="Digital Matter" className="nav-logo"/>

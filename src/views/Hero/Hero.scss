@@ -11,14 +11,33 @@
   background-repeat: repeat; // Repeat the texture
   background-position: center; // Center the background
   background-attachment: fixed; // Fixed background (optional)
-  min-height: 50vh; // Minimum height
-  border-radius: $border-radius-md; // Rounded corners
+  height: fit-content; // Minimum height
+  max-height: 100vh;
   width: 100%; // Ensure full-width within constraints
   margin: 0 auto; // Center the container
   overflow: hidden;
+  position: relative;
 
-  // Optional: Add a subtle shadow for depth
-  box-shadow: $shadow-medium;
+  .custom-shape-divider-bottom-1722726483 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+
+  .custom-shape-divider-bottom-1722726483 svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 150px;
+  }
+
+  .custom-shape-divider-bottom-1722726483 .shape-fill {
+    fill: #121212;
+  }
 
   @media (min-width: $breakpoint-md) {
     flex-direction: row; // Horizontal layout for larger screens
@@ -44,9 +63,11 @@
     .hero-image {
       max-width: 100%;
       height: auto;
+      max-height: 750px;
       border-radius: $border-radius-md; // Rounded corners for modern look
       object-fit: cover; // Ensure the image covers the container
       transition: transform $transition-duration $transition-easing; // Smooth transition for hover effects
+      z-index: 1;
     }
   }
 

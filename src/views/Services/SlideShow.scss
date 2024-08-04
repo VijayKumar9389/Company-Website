@@ -1,0 +1,121 @@
+@import '../../styles/variables';
+
+/* Slideshow Styles */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background-color: $background-color;
+  color: $text-primary;
+  overflow: hidden; // Ensures no overflow from slides
+
+  .slideshow {
+    position: relative;
+    overflow: hidden; // Hides any overflow from slides
+
+    .slide-content {
+      backdrop-filter: blur(5px);
+      background: linear-gradient(
+                      to bottom,
+                      rgba(0, 0, 0, 0.5) 0%,    // Darker at the top
+                      rgba(0, 0, 0, 0.7) 100%   // Lighter at the bottom
+      );
+      padding: $spacing-md; // Increased padding for better spacing
+      box-shadow: $shadow-large; // Enhanced shadow for depth
+
+      p {
+        font-size: $font-size-small; // Adjusted font size for mobile
+        font-family: $font-family-secondary;
+        color: $text-primary; // Primary text color
+        text-align: center; // Center align text
+        margin: 0; // Remove default margin for better spacing control
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        bottom: -1rem;
+      }
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: auto; // Adjust height based on content
+      background-color: $card-background;
+      color: $text-primary;
+      transition: opacity $transition-duration $transition-easing,
+      transform $transition-duration $transition-easing; // Smooth transitions
+      overflow: hidden;
+      position: relative; // Ensure proper positioning for child elements
+
+      &.active {
+        display: flex; // Ensure active slide is shown with flex
+        opacity: 1;
+        transform: scale(1); // Smooth scaling effect for active slide
+      }
+
+      .slide-image {
+        width: 100%;
+        height: auto;
+        transition: opacity $transition-duration $transition-easing; // Smooth opacity transition
+      }
+
+
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      background: linear-gradient(
+                      to bottom,
+                      rgba(0, 0, 0, 0.5) 0%,    // Darker at the top
+                      rgba(0, 0, 0, 0.7) 100%   // Lighter at the bottom
+      );
+      color: $text-primary;
+      border: none;
+      border-radius: 50%; // Circular buttons
+      padding: $spacing-xs;
+      font-size: $font-size-large;
+      cursor: pointer;
+      transition: background-color $transition-duration $transition-easing,
+      transform $transition-duration $transition-easing; // Smooth transitions
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: scale(1.1); // Slight scaling on hover
+      }
+
+      &.prev {
+        left: 10px; // Adjusted for better spacing from the edge
+      }
+
+      &.next {
+        right: 10px; // Adjusted for better spacing from the edge
+      }
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: $breakpoint-sm) {
+  .slide-content {
+    font-size: $font-size-small; // Smaller font size for mobile
+    padding: $spacing-sm; // Reduced padding for mobile screens
+    bottom: 15%; // Increased spacing from the bottom
+    left: 10%; // Increased spacing from the left
+    right: 10%; // Increased spacing from the right
+    border-radius: $border-radius-sm; // Smaller border-radius for mobile
+  }
+
+  .nav-button {
+    width: $spacing-md;
+    height: $spacing-md;
+    font-size: $font-size-small; // Smaller font size for mobile
+    top: 45%; // Adjusted top position to better fit mobile screens
+  }
+}

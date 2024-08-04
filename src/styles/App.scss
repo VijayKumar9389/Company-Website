@@ -6,12 +6,11 @@
   align-items: center;
   margin: 0 auto;
   background-color: $background-color;
+  padding: 10px;
 
   .main-content {
     width: 100%;
-    max-width: 1440px;
     margin: 0 auto;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 4rem;

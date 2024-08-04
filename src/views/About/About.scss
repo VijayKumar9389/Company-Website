@@ -34,10 +34,11 @@
   align-items: center;
   max-width: $breakpoint-lg;
   margin: 0 auto;
+  overflow: hidden;
 
   .core-competencies {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // More compact grid layout
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // More compact grid layout
     gap: $spacing-md;
     width: 100%;
   }
@@ -54,6 +55,7 @@
   transition: box-shadow $transition-duration $transition-easing, transform $transition-duration $transition-easing;
   text-align: center;
   box-shadow: $shadow-medium; // Medium shadow for depth
+  border-top: 3px solid $primary-color;
 
   h1 {
     color: $primary-color;
