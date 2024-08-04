@@ -10,7 +10,6 @@
   gap: $spacing-md;
   margin: 0 auto;
   margin-bottom: $spacing-lg;
-  z-index: $z-index-modal;
   padding: $spacing-md;
 }
 
@@ -135,25 +134,25 @@
   &:nth-child(2) {
     background: linear-gradient(135deg, $background-color, #3498db); // Light blue gradient
     top: calc(100px + $spacing-md); // Offset for stacking effect
-    z-index: $z-index-tooltip + 1; // Higher z-index for layering
+    z-index: 50 + 1; // Higher z-index for layering
   }
 
   &:nth-child(3) {
     background: linear-gradient(135deg, #16a085, $background-color); // Dark teal gradient
     top: calc(100px + ($spacing-md * 2)); // Further offset
-    z-index: $z-index-tooltip + 2; // Higher z-index for layering
+    z-index: 50 + 2; // Higher z-index for layering
   }
 
   &:nth-child(4) {
     background: linear-gradient(135deg, $background-color, #e67e22); // Dark orange gradient
     top: calc(100px + ($spacing-md * 3)); // Further offset
-    z-index: $z-index-tooltip + 3; // Higher z-index for layering
+    z-index: 50 + 3; // Higher z-index for layering
   }
 
   &:nth-child(5) {
     background: linear-gradient(135deg, #e74c3c, $background-color); // Dark red gradient
     top: calc(100px + ($spacing-md * 4)); // Further offset
-    z-index: $z-index-tooltip + 4; // Higher z-index for layering
+    z-index: 50 + 4; // Higher z-index for layering
   }
 }
 
@@ -183,15 +182,13 @@
   top: $spacing-lg; // Stick to the top with offset
 
   p {
-    color: $text-secondary; // Light grey text color
+    color: $text-primary; // Light grey text color
     font-size: $font-size-large; // Base font size
-    margin-bottom: $spacing-md; // Medium spacing below the paragraph
     line-height: $line-height-base; // Improved readability
   }
 
   @media (max-width: $breakpoint-md) {
     position: static; // Remove sticky position on smaller screens
-    margin-bottom: $spacing-md; // Space below the info section
   }
 }
 
@@ -206,7 +203,6 @@
     flex-direction: column;
     border-radius: $border-radius-lg; // Medium border radius for modern look
     transition: transform $transition-duration ease-in-out, box-shadow $transition-duration ease-in-out;
-    text-align: center;
 
     .project-img {
       width: 100%;
@@ -216,12 +212,11 @@
       position: relative;
     }
 
-    h3 {
-      font-size: $font-size-large; // Large font size for headings
-      font-weight: normal;
-      color: $text-primary; // Dark text color
-      margin: 0 0 $spacing-md; // Medium spacing below the title
-      text-transform: capitalize; // Capitalize headings
+    p {
+      font-size: $font-size-base; // Slightly larger base font size
+      line-height: $line-height-base;
+      color: $text-primary; // Light gray text for readability
+      margin-bottom: $spacing-sm;
     }
   }
 }

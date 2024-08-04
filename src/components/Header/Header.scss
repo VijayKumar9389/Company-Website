@@ -3,6 +3,7 @@
 .header-container {
   margin-bottom: $spacing-lg; // Margin at the bottom
   text-align: center; // Center text by default
+  z-index: 500;
 
   @media (max-width: $breakpoint-sm) {
     text-align: left; // Align text to the left on smaller screens

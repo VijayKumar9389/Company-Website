@@ -44,7 +44,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ project }) => {
                             <div className="project-details">
                                 {project.sections.map((section: WorkSectionData, sectionIndex: number) => (
                                     <div key={sectionIndex} className="project-description" data-aos-delay={sectionIndex * 200}>
-                                        <h3>{section.description}</h3>
+                                        <p>{section.description}</p>
                                         <img
                                             src={section.imageUrl}
                                             alt={section.description}
