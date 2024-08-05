@@ -1,7 +1,6 @@
 import './SlideShow.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { workData, WorkSectionData } from './data.ts';
-import Header from '../../components/Header/Header.tsx';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 // A separate component to handle individual slides
@@ -15,16 +14,6 @@ const Slideshow: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const project = workData[0]; // Example: Using the first project, you can change this as needed
 
-    useEffect(() => {
-        // Set up the timer to change slides every 5 seconds (5000 ms)
-        const intervalId = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % project.sections.length);
-        }, 5000);
-
-        // Clean up the timer when the component unmounts
-        return () => clearInterval(intervalId);
-    }, [project.sections.length]);
-
     const handleNextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % project.sections.length);
     };
@@ -35,10 +24,15 @@ const Slideshow: React.FC = () => {
 
     return (
         <div className="slideshow-container">
-            <Header heading={project.title} desc={project.desc || ''} />
             <div className="slideshow">
                 {project.sections.map((section: WorkSectionData, index: number) => (
                     <React.Fragment key={index}>
+                        {currentIndex === index && (
+                            <div className="slide-controls">
+                                <button className="nav-button prev" onClick={handlePrevSlide}><BsArrowLeft/></button>
+                                <button className="nav-button next" onClick={handleNextSlide}><BsArrowRight/></button>
+                            </div>
+                        )}
                         {currentIndex === index && (
                             <Slide
                                 section={section}
@@ -52,8 +46,6 @@ const Slideshow: React.FC = () => {
                         )}
                     </React.Fragment>
                 ))}
-                <button className="nav-button prev" onClick={handlePrevSlide}><BsArrowLeft /></button>
-                <button className="nav-button next" onClick={handleNextSlide}><BsArrowRight /></button>
             </div>
         </div>
     );

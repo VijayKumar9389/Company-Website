@@ -1,62 +1,84 @@
-import React, { useState } from 'react';
 import './ProjectSection.scss';
-import { WorkData, WorkSectionData} from "../../data.ts";
+
 import Dialog from "../../../../components/Dialog/Dialog.tsx";
-import './ProjectSection.scss'; // Use CSS Modules for scoped styles
+import {BsArrowRight} from "react-icons/bs";
+import {WorkData} from "../../data.ts";
+import {useState} from "react";
 
-interface ProjectSectionProps {
-    project: WorkData;
-}
-
-const ProjectSection: React.FC<ProjectSectionProps> = ({ project }) => {
+const ProjectSection: React.FC<{ project: WorkData }> = ({project}) => {
     const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
-    const firstImage = project.sections[0].imageUrl;
+    const [selectedSectionIndex, setSelectedSectionIndex] = useState<number | null>(null);
 
-    const handleToggle = (): void => {
-        setIsDialogOpen(prevState => !prevState);
+    const handleToggle = (index: number): void => {
+        setSelectedSectionIndex(index);
+        setIsDialogOpen(true);
     };
+
+    const handleClose = (): void => {
+        setIsDialogOpen(false);
+        setSelectedSectionIndex(null);
+    };
+
+    const selectedSection = selectedSectionIndex !== null ? project.sections[selectedSectionIndex] : null;
 
     return (
         <>
-            <div
-                className="project-section"
-                onClick={handleToggle}
-            >
-                <img
-                    src={firstImage}
-                    alt={project.title}
-                    className="project-image"
-                />
-                <div className="project-content">
-                    <h2 className="project-title">{project.title}</h2>
-                    <p className="project-desc"></p>
+            <div className="work-section">
+                <div className="work-wrapper">
+                    {project.imageUrl && (
+                        <div className="work-image-container">
+                            <img
+                                src={project.imageUrl}
+                                alt={project.title}
+                                className="work-image"
+                                data-aos="fade-right"
+                            />
+                        </div>
+                    )}
+                    <div className="work-content" data-aos="fade-left">
+                        <h2>{project.title}</h2>
+                        {project.desc && <p className="work-info">{project.desc}</p>}
+                        {project.sections.map((section, sectionIndex) => (
+                            <div
+                                key={sectionIndex}
+                                onClick={() => handleToggle(sectionIndex)}
+                                className={`work-description ${selectedSectionIndex === sectionIndex ? 'selected' : ''}`}
+                            >
+                                <h3>{section.title} <BsArrowRight /></h3>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
             <Dialog
                 isOpen={isDialogOpen}
-                toggle={handleToggle}
+                toggle={handleClose}
                 element={
-                    <div className="project-wrapper">
-                        <div className="project-content" >
-                            <div className="project-info">
-                                <p>{project.desc}</p>
-                            </div>
-                            <div className="project-details">
-                                {project.sections.map((section: WorkSectionData, sectionIndex: number) => (
-                                    <div key={sectionIndex} className="project-description" data-aos-delay={sectionIndex * 200}>
-                                        <p>{section.description}</p>
-                                        <img
-                                            src={section.imageUrl}
-                                            alt={section.description}
-                                            className="project-img"
-                                        />
-                                    </div>
-                                ))}
+                    selectedSection ? (
+                        <div className="project-wrapper">
+                            <div className="project-content">
+                                <div className="project-info">
+                                    <p>{selectedSection.desc}</p>
+                                </div>
+                                <div className="project-details">
+                                    {selectedSection.sections.map((item, itemIndex) => (
+                                        <div key={itemIndex} className="project-description" data-aos-delay={itemIndex * 200}>
+                                            <p>{item.description}</p>
+                                            {item.imageUrl && (
+                                                <img
+                                                    src={item.imageUrl}
+                                                    alt={item.description}
+                                                    className="project-img"
+                                                />
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    ) : null
                 }
-                heading={project.title}
+                heading={selectedSection ? selectedSection.title : ''}
             />
         </>
     );

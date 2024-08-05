@@ -5,7 +5,7 @@ import React, {useEffect} from "react";
 interface DialogProps {
     isOpen: boolean;
     toggle: () => void;
-    element: JSX.Element;
+    element: JSX.Element | null;
     heading: string;
 }
 
@@ -33,6 +33,8 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, toggle, element, heading }) => 
             document.body.removeEventListener("wheel", handleBodyScroll);
         };
     }, [isOpen]);
+
+    if (!element) return null
 
     if (isOpen) {
         return (

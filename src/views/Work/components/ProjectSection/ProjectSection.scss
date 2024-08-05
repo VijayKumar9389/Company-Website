@@ -1,0 +1,100 @@
+// Dark Theme Colors
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; // Large spacing between elements
+  padding: 24px; // Add padding to the wrapper for breathing space
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; // Large spacing between elements
+
+  @media (min-width: 1024px) { // Tablet breakpoint
+    flex-direction: row; // Row layout on larger screens
+    align-items: flex-start; // Align items to the start of the flex container
+  }
+}
+
+.project-info {
+  flex: 1;
+  border-radius: 8px; // Large border radius
+  position: sticky;
+  top: 24px; // Stick to the top with offset
+
+  p {
+    color: #E0E0E0; // Light gray text color
+    font-size: 18px; // Base font size
+    line-height: 1.5; // Improved readability
+  }
+
+  @media (max-width: 1024px) { // Tablet breakpoint
+    position: static; // Remove sticky position on smaller screens
+  }
+}
+
+.project-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; // Large spacing between sections
+
+  .project-description {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px; // Large border radius for modern look
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    .project-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px; // Large border radius for images
+      object-fit: cover; // Ensure image covers the container
+      position: relative;
+    }
+
+    p {
+      font-size: 16px; // Slightly larger base font size
+      line-height: 1.5;
+      color: #E0E0E0; // Light gray text for readability
+      margin-bottom: 8px; // Small spacing below paragraph
+    }
+  }
+}
+
+// Media Queries for Mobile Responsiveness
+@media (max-width: 768px) { // Mobile breakpoint
+  .project-wrapper {
+    padding: 8px; // Reduced padding on smaller screens
+  }
+
+  .project-content {
+    flex-direction: column; // Stack content vertically on small screens
+  }
+
+  .project-description {
+    padding: 4px; // Reduced padding inside each description
+    font-size: 14px; // Smaller text size on smaller screens
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

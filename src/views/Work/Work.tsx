@@ -1,20 +1,17 @@
-import React from 'react';
+import './Work.scss';
+import Header from '../../components/Header/Header.tsx';
 import {WorkData, workData} from "./data.ts";
 import ProjectSection from "./components/ProjectSection/ProjectSection.tsx";
-import Header from '../../components/Header/Header';
-import './Work.scss'; // Use CSS Modules for scoped styles
 
-const Work: React.FC = () => {
-    const headerData = {
-        heading: "Explore Our Innovative Digital Solutions",
-        desc: "Discover innovative digital solutions crafted to streamline operations, minimize errors, and enhance efficiency."
-    };
-
+const Work = () => {
     return (
         <div className="work-container">
-            <Header heading={headerData.heading} desc={headerData.desc} />
+            <Header
+                heading="Explore My Digital Solutions Powering Real-World Businesses"
+                desc=""
+            />
             {workData.map((project: WorkData, index: number) => (
-                <ProjectSection key={index} project={project} />
+                <ProjectSection key={index} project={project}/>
             ))}
         </div>
     );

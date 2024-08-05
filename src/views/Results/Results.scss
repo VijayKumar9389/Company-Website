@@ -22,7 +22,7 @@
     padding: $spacing-lg 0; // Increased padding for better content spacing
     text-align: center;
     transition: transform $transition-duration ease, box-shadow $transition-duration ease, background-color $transition-duration ease;
-    border-top: 2px solid $border-color; // Subtle border for card separation
+    border-top: 1px solid #ccc; // Subtle border for card separation
 
     .skill-icon {
       font-size: 3.5rem; // Slightly larger icon for emphasis
@@ -41,6 +41,7 @@
 
       .skill-description {
         font-size: $font-size-base;
+        font-style: italic;
         color: $text-secondary;
         line-height: $line-height-base;
         margin: 0; // Remove margin to ensure consistent spacing

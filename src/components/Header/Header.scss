@@ -5,10 +5,6 @@
   text-align: center; // Center text by default
   z-index: 500;
 
-  @media (max-width: $breakpoint-sm) {
-    text-align: left; // Align text to the left on smaller screens
-  }
-
   h1 {
     color: $text-primary; // Primary text color
     font-size: $font-size-heading; // Font size for headings

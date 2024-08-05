@@ -54,7 +54,7 @@
 
       &:hover {
         background-color: lighten($card-background, 7%); // Slightly more contrast on hover
-        transform: scale(1.03); // Slightly more zoom effect
+        transform: scale(1.01); // Slightly more zoom effect
       }
 
       &.selected {

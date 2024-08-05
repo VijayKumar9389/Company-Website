@@ -1,6 +1,6 @@
 import {  AiOutlineCode, AiOutlineCloudServer } from 'react-icons/ai';
-import { FaShieldAlt, FaDatabase, FaCodeBranch, FaChartLine } from 'react-icons/fa';
-import { SiTypescript, SiGithub } from 'react-icons/si';
+import { FaShieldAlt, FaDatabase, FaChartLine } from 'react-icons/fa';
+import { SiTypescript} from 'react-icons/si';
 
 export const skillsData = [
     {
@@ -38,19 +38,4 @@ export const skillsData = [
         description: 'Develop secure login systems and manage user credentials to protect sensitive information and control access.',
         icon: FaShieldAlt,
     },
-    {
-        title: 'Efficient Database Architecture',
-        description: 'Design relational databases that accurately map and reflect your business data for optimal performance.',
-        icon: FaDatabase,
-    },
-    {
-        title: 'Accelerated Development',
-        description: 'Use the latest technologies to speed up development and deliver high-quality applications on time.',
-        icon: SiGithub, // GitHub icon for development and version control
-    },
-    {
-        title: 'Scalable Solutions',
-        description: 'Build systems that scale with your business, allowing for future feature expansions and growth.',
-        icon: FaCodeBranch, // Code branch icon for scalability and growth
-    }
 ];
