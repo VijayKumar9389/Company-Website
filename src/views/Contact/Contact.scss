@@ -75,6 +75,7 @@
     align-items: center;
     justify-content: center;
     gap: $spacing-xs;
+    width: fit-content;
 
     // Enhanced shadow for depth
     box-shadow: $shadow-small;

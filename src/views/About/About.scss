@@ -71,11 +71,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: $spacing-sm;
     margin-bottom: $spacing-md;
     width: 100%;
 
     h1 {
-      color: $primary-color;
+      color: $text-white;
       width: 4rem;
       height: 4rem;
       border-radius: 50%;
@@ -83,10 +84,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: $font-size-large;
+      font-size: $font-size-heading;
       text-align: center;
+    }
 
+    h2 {
+      font-size: $font-size-heading;
+      font-weight: normal;
+      color: $text-primary;
+    }
 
+    @media screen and (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
   }
 
@@ -110,15 +121,11 @@
         margin-bottom: $spacing-md;
       }
 
-      h2 {
-        font-size: $font-size-large;
-        color: $text-primary;
-        margin-bottom: $spacing-xs;
-      }
+
 
       p {
         font-size: $font-size-base;
-        color: $text-secondary;
+        color: $text-primary;
         line-height: $line-height-base;
       }
     }

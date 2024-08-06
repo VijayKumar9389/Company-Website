@@ -187,10 +187,10 @@ const About = () => {
                     <div className="competency-card" data-aos="fade-up" data-aos-delay={competency.delay} key={index}>
                         <div className="card-header">
                             <h1>{index + 1}</h1>
+                            <h2>{competency.title}</h2>
                         </div>
                         <div className="card-body">
-                            <div className="card-info">
-                                <h2>{competency.title}</h2>
+                        <div className="card-info">
                                 <img src={competency.img} alt={competency.alt} className="competency-icon" />
                                 <p>{competency.description}</p>
                             </div>

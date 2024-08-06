@@ -5,13 +5,12 @@
   width: 100%;
   max-width: $breakpoint-lg; // Use the large breakpoint variable for max-width
   margin: 0 auto;
-  padding: $spacing-lg; // Add padding for better spacing around the section
 }
 
 // Wrapper for skill cards
 .skills-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Adjusted min-width for better responsiveness
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); // Adjusted min-width for better responsiveness
   gap: $spacing-lg;
   margin-bottom: $spacing-xl;
 
@@ -24,10 +23,15 @@
     text-align: center;
     border-top: 1px solid $border-color;
 
+    @media (min-width: $breakpoint-lg) {
+      &:first-child {
+        border-top: none;
+      }
+    }
+
     .skill-icon {
       font-size: 4rem; // Larger icon for emphasis
       color: $primary-color;
-      margin-bottom: $spacing-md;
       transition: color $transition-duration ease; // Smooth color transition
     }
 
