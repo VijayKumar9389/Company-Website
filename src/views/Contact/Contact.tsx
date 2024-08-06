@@ -40,7 +40,7 @@ const Contact = () => {
                     Please contact me at
                     <input type="email" id="email" name="email" placeholder="Your Email" required/>
                 </label>
-                <button type="submit">Submit<BsArrowRight className="icon"/></button>
+                <button type="submit" className="site-btn">Submit<BsArrowRight className="icon"/></button>
             </form>
         </div>
     );

@@ -62,20 +62,19 @@
 
 
   // Button
-  button {
-    background-color: $primary-color;
-    color: $text-secondary;
+  .site-btn {
+    background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%)); // Gradient background
+    color: $text-white;
     border: none;
     border-radius: $border-radius-md; // Medium rounded corners for consistency
     padding: $spacing-sm $spacing-md;
     font-size: $font-size-base;
     cursor: pointer;
-    transition: background-color $transition-duration $transition-easing, box-shadow $transition-duration $transition-easing;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; // Smooth transitions
     display: flex;
     align-items: center;
     justify-content: center;
     gap: $spacing-xs;
-    width: fit-content;
 
     // Enhanced shadow for depth
     box-shadow: $shadow-small;
@@ -89,10 +88,15 @@
       margin-left: $spacing-xs;
     }
 
+    @media screen and (max-width: $breakpoint-sm) {
+      display: none;
+    }
+
     &:hover {
-      background-color: darken($primary-color, 8%);
+      background: linear-gradient(135deg, darken($primary-color, 10%), darken($primary-color, 20%));
       box-shadow: $shadow-medium;
-      color: $text-primary;
+      color: $text-white;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); // White text shadow
 
       .icon {
         background-color: lighten($primary-color, 10%); // Lighter shade on hover
