@@ -3,12 +3,13 @@
 // Navigation Container
 .nav-container {
   width: 100%;
+  background: rgba($background-color, 0.85); // Slightly more opaque background
   backdrop-filter: blur(8px); // Slightly reduced blur for a cleaner look
   position: sticky;
   top: 0;
   left: 0;
   z-index: 1000;
-  background: rgba($background-color, 0.85); // Slightly more opaque background
+
   box-shadow: $shadow-medium;
 
   // Button

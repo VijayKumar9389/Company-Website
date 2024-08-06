@@ -23,7 +23,7 @@
     text-align: center;
     border-top: 1px solid $border-color;
 
-    @media (min-width: $breakpoint-lg) {
+    @media (max-width: $breakpoint-xs) {
       &:first-child {
         border-top: none;
       }

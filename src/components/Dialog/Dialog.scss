@@ -57,7 +57,7 @@
   }
 
   .close-button {
-    background-color: darken($card-background, 10%); // Slightly darker for contrast
+    background-color: $background-color; // Slightly darker for contrast
     border: none;
     display: flex;
     justify-content: center;

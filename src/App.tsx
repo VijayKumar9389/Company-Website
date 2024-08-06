@@ -12,8 +12,6 @@ import 'aos/dist/aos.css';
 import Services from "./views/Services/Services.tsx";
 
 function App() {
-
-
     useEffect(() => {
         AOS.init({
             once: true,
@@ -24,16 +22,28 @@ function App() {
     return (
         <div className="app-container">
             <Navbar />
-            <div className="hero-content">
-                <Hero />
+            <div className="app-body">
+                <section id="hero">
+                    <Hero/>
+                </section>
+                <main className="main-content">
+                    <section id="about">
+                        <About/>
+                    </section>
+                    <section id="services">
+                        <Services/>
+                    </section>
+                    <section id="results">
+                        <Results/>
+                    </section>
+                    <section id="work">
+                        <Work/>
+                    </section>
+                    <section id="contact">
+                        <Contact/>
+                    </section>
+                </main>
             </div>
-            <main className="main-content">
-                <About />
-                <Services />
-                <Results />
-                <Work />
-                <Contact />
-            </main>
         </div>
     );
 }
