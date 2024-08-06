@@ -8,12 +8,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba($background-color, 0.5); // Semi-transparent background for overlay
-  backdrop-filter: blur(5px);
+  background: rgba($background-color, 0.6); // Slightly darker overlay for better contrast
+  backdrop-filter: blur(8px); // Increased blur for a more pronounced effect
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn $transition-duration;
+  animation: fadeIn $transition-duration ease-in;
   z-index: 5000;
 }
 
@@ -21,21 +21,21 @@
 .popup-box {
   background-color: $card-background;
   box-shadow: $shadow-medium;
-  width: 90%;
+  width: 80%;
   height: 80%;
-  animation: fadeUp $transition-duration;
+  animation: fadeUp $transition-duration ease-in-out;
   display: grid;
   grid-template-rows: auto 1fr;
-  border-radius: $border-radius-md;
+  border-radius: $border-radius-lg; // Larger border radius for a more modern look
   overflow: hidden;
   z-index: 5000;
 
-
-    @media (max-width: $breakpoint-md) {
-        width: 100%;
-        height: 100%;
-      position: absolute;
-    }
+  @media (max-width: $breakpoint-md) {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    border-radius: $border-radius-md; // Medium border radius for smaller screens
+  }
 }
 
 // Popup Header
@@ -43,60 +43,60 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-lg;
+  padding: $spacing-md;
+  background-color: $card-background; // Consistent background color with popup box
+  box-shadow: 0 2px 4px rgba($text-primary, 0.2); // Subtle shadow for depth
+  border-bottom: 1px solid $border-color; // Border for separation
   position: relative;
   z-index: $z-index-tooltip;
-  background-color: $background-color;
-  box-shadow: $shadow-medium;
 
   .panel-label {
     font-size: $font-size-heading;
-    font-weight: normal;
-    margin: 0;
+    font-weight: 500; // Slightly bolder for better visibility
     color: $text-primary;
   }
 
   .close-button {
-    background-color: darken($card-background, 10%); // Use card background color for contrast
+    background-color: darken($card-background, 10%); // Slightly darker for contrast
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $text-primary; // Use primary text color for contrast
-    font-size: $font-size-large; // Larger font size for better visibility
+    color: $text-primary;
+    font-size: $font-size-heading; // Larger font size for better visibility
     cursor: pointer;
     transition: background-color $transition-duration ease, box-shadow $transition-duration ease, transform $transition-duration ease;
-    width: 40px; // Use consistent size for material design buttons
-    height: 40px;
+    width: 44px; // Slightly larger button for better accessibility
+    height: 44px;
     text-align: center;
-    border-radius: 50%; // Fully rounded button
-    box-shadow: $shadow-small; // Subtle shadow for material effect
+    border-radius: 50%;
+    box-shadow: $shadow-small;
 
     &:hover {
-      background-color: $primary-color; // Change background to primary color on hover
-      color: $text-primary; // Ensure text color is readable on hover
-      box-shadow: $shadow-medium; // Stronger shadow on hover
-      transform: scale(1.1); // Slight scale-up effect on hover
+      background-color: $primary-color;
+      color: $card-background; // Ensure text color contrasts well on hover
+      box-shadow: $shadow-medium;
+      transform: scale(1.1);
     }
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 2px $primary-color; // Focus ring with primary color
+      box-shadow: 0 0 0 2px $primary-color;
     }
 
     &::before {
       content: '×'; // Close icon
       display: block;
-      font-size: inherit; // Inherit font size from parent
+      font-size: inherit;
     }
   }
 }
 
 // Popup Content
 .popup-content {
-  height: 100%;
+  padding: $spacing-md;
+  height: calc(100% - $spacing-md * 2); // Adjust height to account for padding and header
   overflow-y: auto;
-  padding: $spacing-lg;
 
   @media (max-width: $breakpoint-sm) {
     padding: $spacing-sm;
@@ -107,7 +107,7 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: none;
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -146,12 +146,10 @@
   .popup-box {
     width: 95%;
     height: 85%;
-    max-width: none;
-    max-height: none;
   }
 
   .popup-header {
-    padding: $spacing-md;
+    padding: $spacing-sm;
 
     .panel-label {
       font-size: $font-size-large;

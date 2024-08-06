@@ -1,36 +1,40 @@
-// Dark Theme Colors
+@import '../../../../styles/variables';
+
 .project-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 24px; // Large spacing between elements
-  padding: 24px; // Add padding to the wrapper for breathing space
+  gap: $spacing-lg; // Increased spacing for modern look
+  padding: $spacing-lg; // Consistent padding around the wrapper
+  border-radius: $border-radius-lg; // Larger border radius for a modern feel
 }
 
 .project-content {
   display: flex;
   flex-direction: column;
-  gap: 24px; // Large spacing between elements
+  gap: $spacing-lg; // Consistent spacing between elements
 
-  @media (min-width: 1024px) { // Tablet breakpoint
+  @media (min-width: $breakpoint-lg) { // Tablet and larger screens
     flex-direction: row; // Row layout on larger screens
     align-items: flex-start; // Align items to the start of the flex container
+    gap: $spacing-xl; // Larger gap for row layout
   }
 }
 
 .project-info {
   flex: 1;
-  border-radius: 8px; // Large border radius
+  border-radius: $border-radius-md; // Medium border radius for subtle effect
   position: sticky;
-  top: 24px; // Stick to the top with offset
+  top: $spacing-lg; // Sticky position with offset
 
   p {
-    color: #E0E0E0; // Light gray text color
-    font-size: 18px; // Base font size
-    line-height: 1.5; // Improved readability
+    color: $text-primary; // Light gray text color
+    font-size: $font-size-large; // Consistent base font size
+    line-height: $line-height-base; // Improved readability
+    margin-bottom: $spacing-sm; // Adjusted spacing below paragraphs
   }
 
-  @media (max-width: 1024px) { // Tablet breakpoint
-    position: static; // Remove sticky position on smaller screens
+  @media (max-width: $breakpoint-lg) { // Smaller screens
+    position: static; // Remove sticky position
   }
 }
 
@@ -38,44 +42,49 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 24px; // Large spacing between sections
+  gap: $spacing-lg; // Consistent spacing between sections
 
   .project-description {
     display: flex;
     flex-direction: column;
-    border-radius: 8px; // Large border radius for modern look
+    border-radius: $border-radius-md; // Medium border radius for a modern look
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: $background-color; // Slightly lighter dark background for contrast
+    padding: $spacing-sm;
+    border: 1px solid $border-color;
 
     .project-img {
       width: 100%;
       height: auto;
-      border-radius: 8px; // Large border radius for images
+      border-radius: $border-radius-md; // Medium border radius for images
       object-fit: cover; // Ensure image covers the container
       position: relative;
+      box-shadow: $shadow-small; // Subtle shadow for depth
     }
 
     p {
-      font-size: 16px; // Slightly larger base font size
-      line-height: 1.5;
-      color: #E0E0E0; // Light gray text for readability
-      margin-bottom: 8px; // Small spacing below paragraph
+      font-size: $font-size-large; // Consistent font size
+      line-height: $line-height-base;
+      color: $text-primary; // Light gray text for readability
+      margin-bottom: $spacing-md; // Adjusted spacing below paragraphs
     }
   }
 }
 
 // Media Queries for Mobile Responsiveness
-@media (max-width: 768px) { // Mobile breakpoint
+@media (max-width: $breakpoint-sm) { // Mobile screens
   .project-wrapper {
-    padding: 8px; // Reduced padding on smaller screens
+    padding: $spacing-sm; // Reduced padding on smaller screens
   }
 
   .project-content {
     flex-direction: column; // Stack content vertically on small screens
+    gap: $spacing-md; // Adjusted gap for vertical layout
   }
 
   .project-description {
-    padding: 4px; // Reduced padding inside each description
-    font-size: 14px; // Smaller text size on smaller screens
+    padding: $spacing-xs; // Reduced padding inside descriptions
+    font-size: $font-size-small; // Smaller text size on smaller screens
   }
 }
 

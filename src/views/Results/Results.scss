@@ -5,12 +5,13 @@
   width: 100%;
   max-width: $breakpoint-lg; // Use the large breakpoint variable for max-width
   margin: 0 auto;
+  padding: $spacing-lg; // Add padding for better spacing around the section
 }
 
 // Wrapper for skill cards
 .skills-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); // Adjusted min-width for better responsiveness
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Adjusted min-width for better responsiveness
   gap: $spacing-lg;
   margin-bottom: $spacing-xl;
 
@@ -18,14 +19,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: $spacing-lg 0; // Increased padding for better content spacing
+    justify-content: center;
+    padding: $spacing-md; // Adjusted padding for a balanced look
     text-align: center;
-    transition: transform $transition-duration ease, box-shadow $transition-duration ease, background-color $transition-duration ease;
-    border-top: 1px solid #ccc; // Subtle border for card separation
+    border-top: 1px solid $border-color;
 
     .skill-icon {
-      font-size: 3.5rem; // Slightly larger icon for emphasis
+      font-size: 4rem; // Larger icon for emphasis
       color: $primary-color;
       margin-bottom: $spacing-md;
       transition: color $transition-duration ease; // Smooth color transition
@@ -34,14 +34,15 @@
     .skill-content {
       .skill-title {
         color: $text-primary;
-        margin-bottom: $spacing-sm;
-        font-weight: 600; // Slightly bolder font for better readability
+        margin-bottom: $spacing-xs;
+        font-weight: 700; // Bolder font for better prominence
+        font-size: $font-size-large; // Larger font size for titles
       }
 
       .skill-description {
-        font-style: italic;
+        font-style: normal; // Remove italic style for better readability
         color: $text-secondary;
-        line-height: $line-height-base;
+        line-height: 1.5; // Improved line height for readability
         margin: 0; // Remove margin to ensure consistent spacing
       }
     }

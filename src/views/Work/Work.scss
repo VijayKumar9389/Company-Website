@@ -16,15 +16,12 @@
       align-items: center;
       position: relative;
       border-radius: $border-radius-md;
-      transition: box-shadow $transition-duration $transition-easing;
+      transition: transform $transition-duration ease, box-shadow $transition-duration ease;
 
       @media screen and (max-width: $breakpoint-sm) {
         flex-direction: column;
       }
 
-      &:hover {
-        box-shadow: $shadow-large; // Enhance shadow on hover
-      }
 
       .work-image-container {
         flex: 1;
@@ -32,30 +29,33 @@
         align-items: center;
         justify-content: center;
         margin-right: $spacing-lg; // Space between image and content
+        border-radius: $border-radius-md;
 
         .work-image {
           width: 100%;
           height: auto;
-          object-fit: contain;
-          border-radius: $border-radius-md;
+          object-fit: cover; // Use cover to ensure the image fills the container
+          border-radius: $border-radius-md; // Consistent rounding for the image
         }
       }
 
       .work-content {
         flex: 1;
         color: $text-primary; // Default text color
-        transition: color $transition-duration $transition-easing;
+        transition: color $transition-duration ease;
 
         h2 {
           color: $primary-color;
-          font-size: $font-size-large;
+          font-size: $font-size-heading; // Larger font size for titles
+          margin-bottom: $spacing-sm; // Space below the title
         }
 
         .work-info {
           font-size: $font-size-base;
           color: $text-secondary;
           margin-bottom: $spacing-md;
-          line-height: $line-height-base;
+          line-height: 1.6; // Improved line height for readability
+
         }
 
         .work-description {
@@ -66,16 +66,18 @@
             margin-bottom: $spacing-sm;
             display: flex;
             align-items: center;
-            transition: color $transition-duration $transition-easing;
-            width: fit-content;
+            transition: ease-in-out $transition-duration;
             cursor: pointer;
+            font-size: $font-size-base;
 
             &:hover {
-              color: $primary-color;
+              color: $link-color;
+              transform: translateY(-5px); // Slight lift effect on hover
             }
 
             svg {
               margin-left: $spacing-sm;
+              font-size: $font-size-heading; // Increase icon size for better visibility
             }
           }
 
@@ -88,10 +90,10 @@
             .section-image {
               width: 100%;
               height: auto;
-              object-fit: contain;
-              max-height: 200px; // Ensure image doesn't overflow
+              object-fit: cover; // Use cover to ensure the image fills the container
+              max-height: 250px; // Ensure image doesn't overflow
               margin-top: $spacing-sm;
-              border-radius: $border-radius-sm;
+              border-radius: $border-radius-md;
               border: $border-width solid $border-color; // Border around the section image
             }
           }

@@ -14,7 +14,7 @@
   // Button
   button {
     background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%)); // Gradient background
-    color: $text-secondary;
+    color: $text-white;
     border: none;
     border-radius: $border-radius-md; // Medium rounded corners for consistency
     padding: $spacing-sm $spacing-md;
@@ -46,6 +46,7 @@
       background: linear-gradient(135deg, darken($primary-color, 10%), darken($primary-color, 20%));
       box-shadow: $shadow-medium;
       color: $text-white;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); // White text shadow
 
       .icon {
         background-color: lighten($primary-color, 10%); // Lighter shade on hover
@@ -155,7 +156,6 @@
     &:hover {
       color: #fff;
       background: $primary-color;
-      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); // White text shadow
     }
   }
   @media screen and (max-width: $breakpoint-sm) {
