@@ -16,13 +16,15 @@
     overflow: hidden; // Hides any overflow from slides
 
     .slide-controls {
-      position: absolute;
-      bottom: 2rem;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
       z-index: 2;
       width: 100%;
-      display: flex;
-      justify-content: center; // Centered controls for better alignment
+      background-color: $card-background;
       padding: $spacing-sm; // Reduced padding for a cleaner look
+      bottom: 0;
+      height: fit-content;
     }
 
     /* Keyframes for fade-down animation */
@@ -43,14 +45,13 @@
       justify-content: center;
       padding: $spacing-md;
       text-align: center;
-      min-height: 150px; // Increased height for better content visibility
+      min-height: 130px; // Increased height for better content visibility
       background: rgba($card-background, 0.8); // Slightly transparent background for contrast
       border-radius: $border-radius-md; // Rounded corners for content
 
       p {
         animation: fadeDown 0.5s ease-out; // Apply fade-down animation
         font-size: $font-size-base;
-        margin: 0 40px;
       }
     }
 
@@ -102,17 +103,11 @@
       }
 
       &.prev {
-        position: absolute;
         left: 10px; // Positioned to the left of the container
-        top: 50%;
-        transform: translateY(-50%); // Center vertically
       }
 
       &.next {
-        position: absolute;
         right: 10px; // Positioned to the right of the container
-        top: 50%;
-        transform: translateY(-50%); // Center vertically
       }
     }
   }

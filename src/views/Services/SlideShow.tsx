@@ -28,16 +28,16 @@ const Slideshow: React.FC = () => {
                 {project.sections.map((section: WorkSectionData, index: number) => (
                     <React.Fragment key={index}>
                         {currentIndex === index && (
-                            <div className="slide-controls">
-                                <button className="nav-button prev" onClick={handlePrevSlide}><BsArrowLeft/></button>
-                                <button className="nav-button next" onClick={handleNextSlide}><BsArrowRight/></button>
-                            </div>
-                        )}
-                        {currentIndex === index && (
                             <Slide
                                 section={section}
                                 isActive={true}
                             />
+                        )}
+                        {currentIndex === index && (
+                            <div className="slide-controls">
+                                <button className="nav-button prev" onClick={handlePrevSlide}><BsArrowLeft/></button>
+                                <button className="nav-button next" onClick={handleNextSlide}><BsArrowRight/></button>
+                            </div>
                         )}
                         {currentIndex === index && (
                             <div className="slide-content">
