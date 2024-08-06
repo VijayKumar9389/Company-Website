@@ -24,40 +24,15 @@
   align-items: center;
   border-radius: $border-radius-lg;
   padding: $spacing-lg;
-  background-color: $card-background;
-  box-shadow: $shadow-medium;
-  border-top: 4px solid $primary-color;
+  box-shadow: $shadow-large;
+  background-color: $background-color;
   transition: transform $transition-duration $transition-easing, box-shadow $transition-duration $transition-easing;
   width: 100%;
   margin: 0 auto;
-  position: sticky;
-  top: 80px;
-  overflow: hidden;
 
-  // Unique background colors for each section with improved gradients
-  &:nth-child(1) {
-    top: calc(80px + (5px)); // Further offset
-    z-index: 80px + 3; // Higher z-index for layering
-  }
-
-  &:nth-child(2) {
-    top: calc(80px + 10px); // Offset for stacking effect
-    z-index: 80px + 1; // Higher z-index for layering
-  }
-
-  &:nth-child(3) {
-    top: calc(80px + (15px)); // Further offset
-    z-index: 80px + 2; // Higher z-index for layering
-  }
-
-  &:nth-child(4) {
-    top: calc(80px + (20px)); // Further offset
-    z-index: 80px + 3; // Higher z-index for layering
-  }
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: $shadow-large;
   }
 
   .card-header {
@@ -71,9 +46,8 @@
       color: $primary-color;
       width: 4rem;
       height: 4rem;
-      border: $border-width solid $border-color;
-      background-color: $background-color;
       border-radius: 50%;
+      box-shadow: $shadow-medium;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -128,12 +102,11 @@
         align-items: center;
         gap: $spacing-lg;
         padding: $spacing-md;
-        background-color: $card-background;
         border-radius: $border-radius-md;
 
         .detail-icon {
           font-size: 2.5rem;
-          color: #fff;
+          color: $primary-color;
         }
 
         .detail-info {

@@ -196,7 +196,7 @@ const About = () => {
                             </div>
                             <ul className="competency-items">
                                 {competency.items.map((item, itemIndex) => (
-                                    <li className="detail-item" data-aos="fade-up" data-aos-delay={item.delay} key={itemIndex}>
+                                    <li className="detail-item" data-aos="fade-down" data-aos-delay={item.delay} key={itemIndex}>
                                         <item.img className="detail-icon" />
                                         <div className="detail-info">
                                             <h4>{item.title}</h4>

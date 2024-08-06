@@ -44,7 +44,7 @@ const ProjectSection: React.FC<{ project: WorkData }> = ({project}) => {
                                 onClick={() => handleToggle(sectionIndex)}
                                 className={`work-description ${selectedSectionIndex === sectionIndex ? 'selected' : ''}`}
                             >
-                                <h3>{section.title} <BsArrowRight /></h3>
+                                <p>{section.title} <BsArrowRight /></p>
                             </div>
                         ))}
                     </div>

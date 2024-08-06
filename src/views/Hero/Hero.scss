@@ -36,7 +36,7 @@
   }
 
   .custom-shape-divider-bottom-1722726483 .shape-fill {
-    fill: #121212;
+    fill: #f8f9fa;
   }
 
   @media (min-width: $breakpoint-md) {
@@ -53,9 +53,8 @@
     gap: $spacing-md; // Space between elements
 
     .hero-title {
-      font-size: 2rem; // Adjusted font size for mobile
       font-weight: normal; // Adjusted for emphasis
-      color: $text-primary; // Dark gray for contrast
+      color: $text-white; // Dark gray for contrast
       width: 100%;
       line-height: $line-height-heading; // Improved line height for readability
     }

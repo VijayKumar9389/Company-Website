@@ -41,11 +41,7 @@
     .service-card {
       padding: $spacing-md;
       border-radius: $border-radius-md;
-      background: linear-gradient(
-                      to bottom,
-                      rgba(0, 0, 0, 0.5) 0%,    // Darker at the top
-                      rgba(0, 0, 0, 0.7) 100%   // Lighter at the bottom
-      );
+      background: $card-background;
       margin-bottom: $spacing-md; // Increased margin for separation
       transition: background-color $transition-duration ease, transform $transition-duration ease;
       cursor: pointer;
@@ -58,8 +54,8 @@
       }
 
       &.selected {
-        background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
-        color: $text-primary !important;
+        background: linear-gradient(135deg, $primary-color, lighten($primary-color, 5%));
+        color: $text-white !important;
         box-shadow: $shadow-medium; // Enhanced shadow for selected state
       }
 

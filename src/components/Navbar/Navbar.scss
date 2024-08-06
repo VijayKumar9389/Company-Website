@@ -45,7 +45,7 @@
     &:hover {
       background: linear-gradient(135deg, darken($primary-color, 10%), darken($primary-color, 20%));
       box-shadow: $shadow-medium;
-      color: $text-primary;
+      color: $text-white;
 
       .icon {
         background-color: lighten($primary-color, 10%); // Lighter shade on hover
@@ -140,7 +140,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: rgba($background-color, 0.8); // Slightly darker background
+  background-color: rgba(#e0e0e0, 0.9); // Slightly darker background
   border-radius: $border-radius-md; // Consistent rounded corners
   border: 1px solid rgba(255, 255, 255, 0.1); // Subtle light border for separation
 
@@ -153,9 +153,8 @@
     border-radius: $border-radius-md; // Smaller border radius for a modern feel
 
     &:hover {
-      color: $text-primary;
-      background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
-      box-shadow: $shadow-small;
+      color: #fff;
+      background: $primary-color;
       text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); // White text shadow
     }
   }
