@@ -36,7 +36,7 @@
   text-align: center;
 
   .modal-link {
-    color: $link-color;
+    color: $primary-color;
     font-weight: 500;
     position: relative;
     margin: $spacing-md 0;
@@ -47,7 +47,8 @@
     cursor: pointer;
 
     &:hover {
-      background-color: darken($card-background, 10%);
+      background-color: $card-background, 10%;
+      color: $link-color;
     }
   }
 }
@@ -55,24 +56,45 @@
 .btn-container {
   display: flex;
   justify-content: flex-end;
-  background-color: red;
+  padding: $spacing-sm;
 
-  button {
+  .menu-btn {
     display: none;
     border: none;
     background: transparent;
+    box-shadow: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 
     svg {
       margin: 0;
-      color: $text-primary;
-      font-size: $font-size-large;
+      color: $primary-color;
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      background-color: rgba($primary-color, 0.1); // Light background color for hover effect
+      transform: scale(1.1); // Slight scale effect on hover
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $primary-color; // Focus ring for accessibility
     }
 
     @media screen and (max-width: $breakpoint-sm) {
       display: block;
-      color: $link-color;
-      font-size: $font-size-large;
-      cursor: pointer;
+      font-size: 2rem;
+
+      svg {
+        color: $primary-color; // Ensure color remains consistent on small screens
+      }
+
+      &:hover {
+        background-color: rgba($primary-color, 0.2); // Slightly darker background on hover for better contrast
+        transform: scale(1.1); // Maintain hover effect
+      }
     }
   }
 }

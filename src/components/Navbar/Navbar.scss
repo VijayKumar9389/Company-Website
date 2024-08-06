@@ -12,7 +12,7 @@
   box-shadow: $shadow-medium;
 
   // Button
-  button {
+  .site-btn {
     background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%)); // Gradient background
     color: $text-white;
     border: none;
@@ -75,18 +75,39 @@
     display: none;
     border: none;
     background: transparent;
+    box-shadow: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 
     svg {
       margin: 0;
-      color: #fff;
+      color: $primary-color;
       font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      background-color: rgba($primary-color, 0.1); // Light background color for hover effect
+      transform: scale(1.1); // Slight scale effect on hover
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $primary-color; // Focus ring for accessibility
     }
 
     @media screen and (max-width: $breakpoint-sm) {
       display: block;
-      color: $primary-color;
-      font-size: 24px;
-      cursor: pointer;
+      font-size: 2rem;
+
+      svg {
+        color: $primary-color; // Ensure color remains consistent on small screens
+      }
+
+      &:hover {
+        background-color: rgba($primary-color, 0.2); // Slightly darker background on hover for better contrast
+        transform: scale(1.1); // Maintain hover effect
+      }
     }
   }
 

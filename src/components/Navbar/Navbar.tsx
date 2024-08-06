@@ -29,7 +29,7 @@ const Navbar = () => {
                 </nav>
                 <ScrollLink to="contact-container" className="modal-link" spy={true} smooth={true} offset={-100}
                             duration={500}>
-                    <button>Contact <BsArrowRight className="icon"/></button>
+                    <button className="site-btn">Contact <BsArrowRight className="icon"/></button>
                 </ScrollLink>
                 <button onClick={toggleModal} className="menu-btn">
                     <IoMenu/>
