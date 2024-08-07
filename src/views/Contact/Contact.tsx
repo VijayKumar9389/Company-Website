@@ -12,7 +12,7 @@ const Contact = () => {
 
     return (
         <div className="contact-container">
-            <Header heading="We'd Love to Hear From You"
+            <Header heading="I would Love to Hear From You"
                     desc="Please fill out the form below and we’ll get back to you as soon as possible."/>
             <img src={Logo} alt="Logo" className="logo" data-aos="fade-down"/>
             <form onSubmit={handleSubmit} className="contact-form">

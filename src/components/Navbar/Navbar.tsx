@@ -1,6 +1,5 @@
 import './Navbar.scss';
 import {BsArrowRight} from "react-icons/bs";
-import Logo from "../../assets/Logo.png";
 import {Link as ScrollLink} from 'react-scroll';
 import Sidebar from "../Sidebar/Sidebar.tsx";
 import {useState} from "react";
@@ -17,7 +16,8 @@ const Navbar = () => {
         <div className="nav-container">
             <div className="nav-wrapper">
                 <div className="logo-wrapper">
-                    <img src={Logo} alt="Digital Matter" className="nav-logo"/>
+                    {/*<img src={Logo} alt="Digital Matter" className="nav-logo"/>*/}
+                    <h1>Vijay Kumar</h1>
                 </div>
                 <nav className="nav-menu">
                     <ScrollLink to="hero-container" className="modal-link" spy={true} smooth={true} offset={-100}

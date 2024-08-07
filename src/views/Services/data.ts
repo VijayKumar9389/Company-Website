@@ -20,19 +20,19 @@ export const workData: WorkData[] = [
         desc: 'Our web applications are deployed to the cloud, ensuring that they are developed once and accessible from any device with an internet connection. This allows you to effortlessly visualize and manage your business data from anywhere, at any time.',
         sections: [
             {
-                description: 'Convert raw data into clear, actionable insights through dashboards, tables, and responsive lists',
+                description: 'Turn raw data into clear, actionable insights with intuitive dashboards, interactive tables, and responsive lists',
                 imageUrl: StakeholderInfo,
             },
             {
-                description: 'Streamline repetitive tasks such as data entry, calculations, and report generation to save your team’s time',
+                description: 'Streamline repetitive processes such as data entry, calculations, and report generation',
                 imageUrl: Deliveries,
             },
             {
-                description: 'Ensure your application adapts to any device and screen size for a seamless user experience',
+                description: 'Ensure your application designed to adapt seamlessly to any device and screen size',
                 imageUrl: Upload,
             },
             {
-                description: 'Ensure only authorized individuals can access your data with secure login screen',
+                description: 'Login system to ensure that only authorized personnel can access sensitive information. ',
                 imageUrl: Mobile,
             },
         ],

@@ -81,8 +81,8 @@
     z-index: 2;
 
     .nav-button {
-      background: $primary-color;
-      color: $text-white;
+      background: $card-background;
+      color: $text-secondary;
       border: none;
       border-radius: 50%;
       padding: $spacing-xs;
@@ -98,7 +98,8 @@
       box-shadow: $shadow-small;
 
       &:hover {
-        background-color: darken($primary-color, 10%);
+        background-color: $primary-color;
+        color: $text-white;
         transform: scale(1.1);
       }
 

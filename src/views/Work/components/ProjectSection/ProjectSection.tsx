@@ -31,11 +31,11 @@ const ProjectSection: React.FC<{ project: WorkData }> = ({project}) => {
                                 src={project.imageUrl}
                                 alt={project.title}
                                 className="work-image"
-                                data-aos="fade-right"
+                                data-aos="fade-left"
                             />
                         </div>
                     )}
-                    <div className="work-content" data-aos="fade-left">
+                    <div className="work-content" data-aos="fade-right">
                         <h2>{project.title}</h2>
                         {project.desc && <p className="work-info">{project.desc}</p>}
                         {project.sections.map((section, sectionIndex) => (

@@ -3,21 +3,21 @@
 // Navigation Container
 .nav-container {
   width: 100%;
-  background: rgba($background-color, 0.85); // Slightly more opaque background
+  background: rgba($card-background, 0.85); // Slightly more opaque background
   backdrop-filter: blur(8px); // Slightly reduced blur for a cleaner look
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: $z-index-dropdown; // Use theme's z-index variable for consistency
 
-  box-shadow: $shadow-medium;
+  box-shadow: $shadow-medium; // Subtle shadow for depth
 
   // Button
   .site-btn {
     background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%)); // Gradient background
     color: $text-white;
     border: none;
-    border-radius: $border-radius-md; // Medium rounded corners for consistency
+    border-radius: $border-radius-md; // Consistent rounded corners
     padding: $spacing-sm $spacing-md;
     font-size: $font-size-base;
     cursor: pointer;
@@ -40,7 +40,7 @@
     }
 
     @media screen and (max-width: $breakpoint-sm) {
-      display: none;
+      display: none; // Hide the button on small screens
     }
 
     &:hover {
@@ -70,7 +70,6 @@
   height: 70px; // Adjusted height for improved vertical spacing
   max-width: $breakpoint-lg;
   margin: 0 auto;
-
 
   .menu-btn {
     display: none;
@@ -111,10 +110,9 @@
       }
     }
   }
-
 }
 
-
+// Pulsing Animation
 @keyframes pulse {
   0% {
     filter: brightness(1.5); // Brighten initially
@@ -127,6 +125,7 @@
   }
 }
 
+// Logo Wrapper
 .logo-wrapper {
   display: flex;
   align-items: center;
@@ -135,8 +134,14 @@
 
   h1 {
     font-size: $font-size-large;
-    font-weight: 700;
-    margin: 0; // Remove default margin to align with the logo
+    color: $text-primary;
+    margin: 0;
+    line-height: 1.2;
+
+    // Responsive design
+    @media (max-width: 600px) {
+      font-size: $font-size-base;
+    }
   }
 
   // Navigation Logo
@@ -156,14 +161,13 @@
   }
 }
 
-
 // Navigation Menu
 .nav-menu {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: rgba(#e0e0e0, 0.9); // Slightly darker background
+  background-color: rgba($card-background, 0.9); // Slightly darker background
   border-radius: $border-radius-md; // Consistent rounded corners
   border: 1px solid rgba(255, 255, 255, 0.1); // Subtle light border for separation
 
@@ -176,12 +180,12 @@
     border-radius: $border-radius-md; // Smaller border radius for a modern feel
 
     &:hover {
-      color: #fff;
+      color: $text-white;
       background: $primary-color;
     }
   }
-  @media screen and (max-width: $breakpoint-sm) {
-    display: none;
-  }
 
+  @media screen and (max-width: $breakpoint-sm) {
+    display: none; // Hide the menu on small screens
+  }
 }

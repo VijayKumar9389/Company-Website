@@ -149,14 +149,20 @@
         .detail-icon {
           font-size: 2.5rem; // Ensure icons are consistent in size
           color: $primary-color;
-          width: 2rem; // Set explicit width
-          height: 2rem; // Set explicit height
+          width: 2rem; // Fixed width
+          height: 2rem; // Fixed height
           display: flex; // Ensure icon is centered
           align-items: center; // Center icon vertically
           justify-content: center; // Center icon horizontally
           border-radius: 50%; // Optional: Makes the icon circular if desired
-          overflow: hidden; // Ensures that any content does not overflow
-          flex-shrink: 0;
+          overflow: visible; // Allow overflow so that parts of the icon are not cut off
+          flex-shrink: 0; // Prevents the icon from shrinking
+
+          img {
+            width: 100%; // Scale icon to fit container width
+            height: 100%; // Scale icon to fit container height
+            object-fit: contain; // Ensures the entire icon is visible within the container
+          }
         }
 
         .detail-info {

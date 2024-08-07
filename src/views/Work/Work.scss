@@ -22,7 +22,6 @@
         flex-direction: column;
       }
 
-
       .work-image-container {
         flex: 1;
         display: flex;
@@ -42,8 +41,6 @@
       .work-content {
         flex: 1;
         color: $text-primary; // Default text color
-        transition: color $transition-duration ease;
-
 
         h2 {
           color: $primary-color;

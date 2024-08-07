@@ -1,41 +1,38 @@
-import {  AiOutlineCode, AiOutlineCloudServer } from 'react-icons/ai';
-import { FaShieldAlt, FaDatabase, FaChartLine } from 'react-icons/fa';
-import { SiTypescript} from 'react-icons/si';
+import { AiOutlineDatabase, AiOutlineSync } from 'react-icons/ai';
+import { RiBarChartLine } from 'react-icons/ri';
+import { FaUsers } from 'react-icons/fa';
+import { IoMdFiling } from 'react-icons/io';
+import { BiErrorCircle } from 'react-icons/bi';
 
 export const skillsData = [
     {
         title: 'Centralized Data Management',
-        description: 'Manage your data from a single, accessible platform, enhancing coordination and operational efficiency.',
-        icon: AiOutlineCloudServer, // Updated to a cloud server icon for data management
-    },
-    {
-        title: 'Enhanced Decision-Making',
-        description: 'Visualize and streamline information to support informed decision-making and drive improvements.',
-        icon: FaChartLine, // Using chart line icon to represent data visualization and decision-making
+        description: 'Centralize your data on a single platform to enhance team coordination and boost operational efficiency.',
+        icon: AiOutlineDatabase, // Database icon for data management
     },
     {
         title: 'Improved Efficiency',
-        description: 'Provide a superior user experience across all devices with adaptive designs that boost engagement.',
-        icon: SiTypescript, // TypeScript for modern frontend development
+        description: 'Streamline workflows and automate routine tasks to boost productivity, save time, and reduce manual errors.',
+        icon: AiOutlineSync, // Sync icon for efficiency
     },
     {
-        title: 'Robust Security',
-        description: 'Implement advanced security measures, including endpoint authentication and admin authorization, to safeguard your data.',
-        icon: FaShieldAlt,
+        title: 'Enhanced Decision-Making',
+        description: 'Convert complex data into actionable insights with intuitive dashboards and visualizations for strategic decision-making.',
+        icon: RiBarChartLine, // Bar chart icon for data visualization
     },
     {
-        title: 'Error-Free Data Processing',
-        description: 'Utilize sophisticated data processing methods with built-in error checking to ensure data accuracy.',
-        icon: FaDatabase, // Database icon for data processing
+        title: 'Accurate Record Keeping',
+        description: 'Store events, data, images, and files securely in the cloud for reliable and easy access.',
+        icon: IoMdFiling, // Filing icon for record keeping
     },
     {
-        title: 'Optimized User Flows',
-        description: 'Design user workflows that enhance productivity, reduce errors, and streamline operations.',
-        icon: AiOutlineCode, // Code icon for development and optimization
+        title: 'Reduced Errors',
+        description: 'Minimize operational errors through advanced data processing and built-in error checking.',
+        icon: BiErrorCircle, // Error circle icon for error reduction
     },
     {
-        title: 'Advanced Security Measures',
-        description: 'Develop secure login systems and manage user credentials to protect sensitive information and control access.',
-        icon: FaShieldAlt,
+        title: 'High User Adoption',
+        description: 'Promote high user adoption with strong UX/UI design and regular updates based on user feedback.',
+        icon: FaUsers, // Users icon for user adoption
     },
 ];

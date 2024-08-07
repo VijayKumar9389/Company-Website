@@ -5,57 +5,56 @@ import svgThree from "../../assets/Media/develop.svg";
 import svgFour from "../../assets/Media/deploy.svg";
 import Header from "../../components/Header/Header.tsx";
 
-import { AiOutlineRise } from 'react-icons/ai';
 import {
     FaDatabase,
     FaCloud,
-    FaJava,
-    FaPython,
-    FaServer,
-    FaChartBar,
-    FaReact,
-    FaAngular,
-    FaShieldAlt,
-    FaCodeBranch,
-    FaCog
+    FaCog, FaTasks, FaCheckCircle
 } from 'react-icons/fa';
-import { SiTypescript, SiGithub, SiGraphql } from 'react-icons/si';
+import {
+    FaArrowRight, FaCode,
+    FaCube,
+    FaDiagramProject,
+    FaHeart, FaImage,
+    FaLightbulb, FaLock,
+    FaNetworkWired, FaRocket,
+    FaTable
+} from "react-icons/fa6";
 
 const competencies = [
     {
         img: svgOne,
         alt: "Requirements Gathering",
         title: "Requirements Gathering",
-        description: "We work closely with you to uncover and thoroughly understand your unique business needs, ensuring our solutions align perfectly with your operations, processes, and strategic objectives by conducting in-depth systems analysis, developing accurate data models, designing streamlined processes, and managing projects with clear communication and timely delivery.",
+        description: "Deeply understand your business processes to create tailored solutions that align with your goals.",
         delay: "000",
         items: [
             {
-                img: FaChartBar,
-                alt: "Systems Analysis",
-                title: "Systems Analysis",
-                description: "Conduct in-depth systems analysis to identify and map operational events.",
-                delay: "000"
+                img: FaLightbulb,
+                alt: "Technical Consultation",
+                title: "Technical Consultation",
+                description: "Expert advice on selecting and implementing technologies suited to your project's needs.",
+                delay: "900"
             },
             {
-                img: AiOutlineRise,
-                alt: "Data Modeling",
-                title: "Data Modeling",
-                description: "Develop data models that accurately represent your business operations.",
-                delay: "300"
-            },
-            {
-                img: FaReact,
+                img: FaTasks,
                 alt: "Project Management",
                 title: "Project Management",
-                description: "Oversee projects with a focus on clear communication and delivering high-quality results.",
+                description: "Manage projects with clear communication, strategic planning, and high-quality delivery.",
                 delay: "600"
             },
             {
-                img: FaAngular,
-                alt: "Consulting",
-                title: "Solutions Consulting",
-                description: "Providing design, development and strategy consulting services.",
-                delay: "900"
+                img: FaDiagramProject,
+                alt: "Systems Analysis",
+                title: "Systems Analysis",
+                description: "Analyze processes to identify business needs for effective solution design.",
+                delay: "000"
+            },
+            {
+                img: FaTable,
+                alt: "Data Modeling",
+                title: "Data Modeling",
+                description: "Create data models to represent and manage business operations accurately.",
+                delay: "300"
             }
         ]
     },
@@ -63,35 +62,35 @@ const competencies = [
         img: svgTwo,
         alt: "Design",
         title: "Design",
-        description: "We create intuitive user flows and visually engaging designs that enhance user experience and reflect your brand’s identity by developing dynamic web applications with React, crafting efficient user journeys, implementing clean navigation architecture, and designing scalable RESTful APIs with data visualization tools.",
+        description: "Craft intuitive interfaces and designs to enhance user experience and streamline operations, and increase productivity.",
         delay: "300",
         items: [
             {
                 img: FaDatabase,
                 alt: "Database Architecture",
                 title: "Database Architecture",
-                description: "Design and manage relational databases like MySQL and PostgreSQL to efficiently handle your data.",
+                description: "Design and manage databases for efficient data mapping and handling.",
                 delay: "000"
             },
             {
-                img: SiTypescript,
-                alt: "User Flow",
-                title: "User Flow",
-                description: "Craft user journeys that are both intuitive and efficient, guiding users through a coherent and satisfying experience.",
+                img: FaArrowRight,
+                alt: "Optimized User Flows",
+                title: "Optimized User Flows",
+                description: "Develop user flows to guide users seamlessly through applications.",
                 delay: "300"
             },
             {
-                img: FaCodeBranch,
-                alt: "Seamless Navigation",
-                title: "Seamless Navigation",
-                description: "Implement clean architecture principles to ensure easy navigation and maintainability of your web application.",
+                img: FaCheckCircle,
+                alt: "Data Validation",
+                title: "Data Validation",
+                description: "Implement error-checking methods to ensure data integrity.",
                 delay: "600"
             },
             {
-                img: FaServer,
-                alt: "Data Analytics and Visualization",
-                title: "Data Analytics and Visualization",
-                description: "Create components to visualize and manab.",
+                img: FaCube,
+                alt: "Custom Components",
+                title: "Custom Components",
+                description: "Design adaptable web components for effective data visualization and management.",
                 delay: "900"
             }
         ]
@@ -100,35 +99,35 @@ const competencies = [
         img: svgThree,
         alt: "Development",
         title: "Development",
-        description: "We build robust web applications with cutting-edge technologies to ensure performance, security, and scalability by employing agile development practices for continuous improvement, designing reliable database solutions, integrating advanced security measures, and developing flexible RESTful APIs for smooth data integration.",
+        description: "Create scalable, secure, and high-performance solutions for a seamless user experience across all platforms.",
         delay: "600",
         items: [
             {
                 img: FaCloud,
-                alt: "Cloud Deployment",
-                title: "Cloud Deployment",
-                description: "Configure and deploy applications on cloud platforms like AWS, ensuring seamless and reliable access.",
+                alt: "Clean Architecture",
+                title: "Clean Architecture",
+                description: "Architect and deploy applications on cloud platforms like AWS for reliability and scalability.",
                 delay: "000"
             },
             {
-                img: SiGithub,
-                alt: "Version Control",
-                title: "Version Control",
-                description: "Leverage Git for version control and code pipelines to enhance collaboration and maintain code integrity.",
+                img: FaCog,
+                alt: "Automate",
+                title: "Automate",
+                description: "Develop algorithms to automate data processing and generate insightful reports.",
                 delay: "300"
             },
             {
-                img: FaShieldAlt,
+                img: FaLock,
                 alt: "Security-First Approach",
                 title: "Security-First Approach",
-                description: "Implement advanced security measures including encryption and Web Tokens to protect your applications.",
+                description: "Integrate advanced security measures to protect applications from threats.",
                 delay: "600"
             },
             {
-                img: SiGraphql,
-                alt: "RESTful API Development",
-                title: "RESTful API Development",
-                description: "Develop flexible and efficient data-fetching solutions with GraphQL APIs and Apollo Server.",
+                img: FaCode,
+                alt: "Restful API Development",
+                title: "Restful API Development",
+                description: "Create efficient APIs to manage data and business logic, ensuring smooth communication.",
                 delay: "1200"
             }
         ]
@@ -137,45 +136,46 @@ const competencies = [
         img: svgFour,
         alt: "Deployment",
         title: "Deployment",
-        description: "We manage the entire deployment process to ensure your application is securely hosted, easily accessible, and scalable by overseeing secure and reliable hosting, implementing robust image and file storage solutions, utilizing advanced web hosting technologies, and continuously monitoring and optimizing application performance.",
+        description: "Manage the entire deployment lifecycle to ensure secure, accessible, and scalable applications.",
         delay: "900",
         items: [
             {
-                img: FaServer,
+                img: FaRocket,
                 alt: "Deployment Management",
                 title: "Deployment Management",
-                description: "Oversee the deployment process to ensure secure and scalable application hosting.",
+                description: "Oversee deployment to ensure secure hosting and scalability.",
                 delay: "000"
             },
             {
-                img: FaJava,
+                img: FaImage,
                 alt: "Image and File Storage",
                 title: "Image and File Storage",
-                description: "Implement robust storage solutions for managing and securing images and files associated with your application.",
+                description: "Implement robust storage solutions for images and files, ensuring availability and integrity.",
                 delay: "300"
             },
             {
-                img: FaPython,
+                img: FaNetworkWired,
                 alt: "Web Hosting",
                 title: "Web Hosting",
-                description: "Utilize advanced web hosting technologies to ensure high availability and performance of your application.",
+                description: "Utilize advanced web hosting technologies for high availability and performance.",
                 delay: "600"
             },
             {
-                img: FaCog,
-                alt: "Scaling",
-                title: "Scaling",
-                description: "Continuously monitor and optimize application performance to handle increased user loads and evolving business requirements.",
+                img: FaHeart,
+                alt: "Support & Monitoring",
+                title: "Support & Monitoring",
+                description: "Monitor applications continuously and provide ongoing support to meet evolving needs.",
                 delay: "900"
             }
         ]
     }
 ];
+
 const About = () => {
 
     const headerData = {
-        heading: "Transform Your Business with Custom Information Systems.",
-        desc: "Partner with us throughout your digital transformation journey, from concept to implementation, to craft tailored technology solutions."
+        heading: "I Handle All Aspects of Full Stack Development to Launch Your Digital Solutions.",
+        desc: "From initial design through development, deployment, and scaling, I expertly manage every aspect to ensure your digital solutions are successful."
     };
 
     return (

@@ -7,7 +7,7 @@ import DeliveryRoutes from "../../assets/screenshoots/DeliveryRoutes.png";
 import DeliveryStatus from "../../assets/screenshoots/DeliveryStatus.png";
 import InventoryItems from "../../assets/screenshoots/InventoryItems.png";
 import InventoryRecords from "../../assets/screenshoots/InventoryRecords.png";
-import InventoryPackage from "../../assets/screenshoots/InventoryRecords.png";
+import InventoryPackage from "../../assets/screenshoots/InventoryPackage.png";
 import Users from "../../assets/screenshoots/Users.png";
 import Inventory from "../../assets/screenshoots/Inventory.png";
 import Losses from "../../assets/screenshoots/Losses.png";
@@ -17,7 +17,7 @@ import Validation from "../../assets/screenshoots/Validation.png";
 import InventoryApp from "../../assets/Media/inventory.png"
 import OutReach from "../../assets/Media/outreach.png"
 
-import Trition from "../../assets/Triton Logo.png"
+import Triton from "../../assets/Triton Logo.png"
 import Emerald from "../../assets/Emerald Logo.jpg"
 
 
@@ -46,73 +46,73 @@ export interface WorkData {
 export const workData: WorkData[] = [
     {
         title: 'Outreach Management',
-        desc: 'Facilitates stakeholder information, delivery tracking, and inventory management to streamline the outreach program for Triton Public Awareness.',
+        desc: 'Streamline stakeholder management, delivery tracking, and inventory for Triton Public Awareness.',
         imageUrl: OutReach,
-        logo: Trition,
+        logo: Triton,
         sections: [
             {
                 title: "Stakeholder Management",
-                desc: "Empower your team with advanced tools to efficiently manage and engage stakeholders, ensuring precise information and seamless delivery planning.",
+                desc: "Manage stakeholder interactions and delivery planning with advanced tools for efficiency.",
                 sections: [
                     {
-                        description: "Monitor project progress with real-time updates on stakeholder contact status, consultation stages, and delivery planning.",
+                        description: "Monitor real-time updates on stakeholder status and project progress.",
                         imageUrl: StakeholderStats,
                     },
                     {
-                        description: "Enhance targeted engagement by filtering stakeholders based on various criteria, enabling precise monitoring and interaction.",
+                        description: "Filter stakeholders by various criteria to tailor engagement and communication.",
                         imageUrl: StakeholderFilter,
                     },
                     {
-                        description: "Gain comprehensive insights into stakeholders with visualization tools that reveal connections such as shared land titles and matching details.",
+                        description: "Visualize stakeholder connections and details to gain deeper insights.",
                         imageUrl: StakeholderInfo,
                     },
                     {
-                        description: "Streamline data management with Excel file uploads, allowing for efficient import and organization of project data.",
+                        description: "Import and organize project data using Excel file uploads for streamlined data management.",
                         imageUrl: Upload,
                     }
                 ]
             },
             {
                 title: 'Delivery Management',
-                desc: 'Optimize your delivery operations with comprehensive tools for planning, executing, and tracking deliveries, ensuring efficiency and improved stakeholder satisfaction.',
+                desc: 'Enhance delivery operations with tools for precise planning, tracking, and optimization.',
                 sections: [
                     {
-                        description: 'Assign and manage packages with precision, ensuring accurate distribution of safety packages to stakeholders.',
+                        description: 'Assign and manage safety packages with accuracy to ensure correct delivery.',
                         imageUrl: DeliveryPlanning,
                     },
                     {
-                        description: 'Set completion dates to automatically update stakeholder and delivery statuses, recording every interaction seamlessly.',
+                        description: 'Automatically update delivery and stakeholder statuses with set completion dates.',
                         imageUrl: DeliveryStatus,
                     },
                     {
-                        description: 'Enhance delivery efficiency with optimized route planning and assignment for field agents.',
+                        description: 'Plan and optimize routes for field agents to increase delivery efficiency.',
                         imageUrl: DeliveryRoutes,
                     },
                     {
-                        description: 'Adjust delivery details as needed, including package assignments and updates.',
+                        description: 'Modify delivery details, including package assignments and updates, as needed.',
                         imageUrl: DeliveryChanges,
                     },
                 ],
             },
             {
                 title: 'Inventory Management',
-                desc: 'Master your inventory management with detailed records and precise control, ensuring optimal stock levels and accuracy.',
+                desc: 'Maintain precise inventory records and control with detailed tracking and management features.',
                 sections: [
                     {
-                        description: 'Maintain accurate inventory records with features for storing item images and quantities, providing reliable references.',
-                        imageUrl: InventoryItems,
-                    },
-                    {
-                        description: 'Track sent items meticulously, including delivery details and package types, for comprehensive documentation and analysis.',
-                        imageUrl: InventoryRecords,
-                    },
-                    {
-                        description: 'Create and manage custom packages, tracking item quantities within each package to ensure proper distribution and oversight.',
+                        description: 'Create and manage custom packages, tracking item quantities for accurate oversight.',
                         imageUrl: InventoryPackage,
                     },
                     {
-                        description: 'Navigate and manage inventory, stakeholders, and delivery details with intuitive controls, facilitating seamless operations.',
-                        imageUrl: Users,
+                        description: 'Store images and quantities of items to ensure accurate inventory records.',
+                        imageUrl: InventoryItems,
+                    },
+                    {
+                        description: 'Track sent items with detailed records of deliveries and package types.',
+                        imageUrl: InventoryRecords,
+                    },
+                    {
+                        description: 'Navigate and manage inventory, stakeholder data, and delivery details with intuitive controls.',
+                        imageUrl: InventoryRecords,
                     },
                 ],
             },
@@ -120,28 +120,28 @@ export const workData: WorkData[] = [
     },
     {
         title: 'Inventory Management',
-        desc: 'Track and manage inventory for a property rental company, ensuring accurate record-keeping and receipt storage.',
+        desc: 'Efficiently manage rental property inventory with accurate record-keeping and receipt storage for Emerald Executive Housing.',
         imageUrl: InventoryApp,
         logo: Emerald,
         sections: [
             {
                 title: 'Inventory Tracker',
-                desc: 'Efficiently oversee and monitor inventory for rental properties with a focus on precise record-keeping, receipt management, and operational accuracy.',
+                desc: 'Oversee rental property inventory with a focus on detailed record-keeping and accurate management.',
                 sections: [
                     {
-                        description: 'Manage items and receipts with ease, maintaining detailed and up-to-date records for effective inventory control.',
+                        description: 'Maintain up-to-date records of items and receipts for effective inventory management.',
                         imageUrl: Inventory,
                     },
                     {
-                        description: 'Track and report missing items to identify losses and generate insights across various locations, improving operational oversight.',
+                        description: 'Identify and report missing items to improve inventory control and oversight across locations.',
                         imageUrl: Losses,
                     },
                     {
-                        description: 'Ensure accuracy with robust validation processes, preventing discrepancies and maintaining reliable inventory records.',
+                        description: 'Validate inventory data rigorously to prevent discrepancies and ensure accuracy.',
                         imageUrl: Validation,
                     },
                     {
-                        description: 'Protect sensitive information with advanced user management and administrative controls, enhancing data security and privacy.',
+                        description: 'Implement robust user management and admin accounts to protect sensitive features.',
                         imageUrl: Users,
                     },
                 ],
