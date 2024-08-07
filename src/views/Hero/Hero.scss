@@ -10,7 +10,7 @@
   background-size: cover; // Cover the entire container
   background-repeat: repeat; // Repeat the texture
   background-position: center; // Center the background
-  background-attachment: fixed; // Fixed background (optional)
+  background-attachment: fixed; // Adjusted for better mobile compatibility
   height: fit-content; // Minimum height
   max-height: 100vh;
   width: 100%; // Ensure full-width within constraints
@@ -36,7 +36,7 @@
   }
 
   .custom-shape-divider-bottom-1722726483 .shape-fill {
-    fill: #f1f1f1;
+    fill: lighten(#f1f1f1, 5%);
   }
 
   @media (min-width: $breakpoint-md) {

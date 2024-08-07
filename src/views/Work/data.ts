@@ -17,6 +17,9 @@ import Validation from "../../assets/screenshoots/Validation.png";
 import InventoryApp from "../../assets/Media/inventory.png"
 import OutReach from "../../assets/Media/outreach.png"
 
+import Trition from "../../assets/Triton Logo.png"
+import Emerald from "../../assets/Emerald Logo.jpg"
+
 
 // Define the new WorkSection interface
 export interface WorkSection {
@@ -36,6 +39,7 @@ export interface WorkData {
     title: string;
     desc?: string;
     imageUrl?: string;
+    logo?: string;
     sections: WorkSection[];
 }
 
@@ -43,7 +47,8 @@ export const workData: WorkData[] = [
     {
         title: 'Outreach Management',
         desc: 'Facilitates stakeholder information, delivery tracking, and inventory management to streamline the outreach program for Triton Public Awareness.',
-        imageUrl: InventoryApp,
+        imageUrl: OutReach,
+        logo: Trition,
         sections: [
             {
                 title: "Stakeholder Management",
@@ -116,7 +121,8 @@ export const workData: WorkData[] = [
     {
         title: 'Inventory Management',
         desc: 'Track and manage inventory for a property rental company, ensuring accurate record-keeping and receipt storage.',
-        imageUrl: OutReach,
+        imageUrl: InventoryApp,
+        logo: Emerald,
         sections: [
             {
                 title: 'Inventory Tracker',

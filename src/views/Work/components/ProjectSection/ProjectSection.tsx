@@ -58,7 +58,13 @@ const ProjectSection: React.FC<{ project: WorkData }> = ({project}) => {
                         <div className="project-wrapper">
                             <div className="project-content">
                                 <div className="project-info">
-                                    <p>{selectedSection.desc}</p>
+                                    <div className="project-description">
+                                        <p>{selectedSection.desc}</p>
+                                    </div>
+                                    <div className="project-logo">
+                                        <p className="designed-for">Designed for</p>
+                                        <img src={project.logo} alt="Company Logo" />
+                                    </div>
                                 </div>
                                 <div className="project-details">
                                     {selectedSection.sections.map((item, itemIndex) => (

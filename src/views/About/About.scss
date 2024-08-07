@@ -144,13 +144,23 @@
         gap: $spacing-lg;
         padding: $spacing-md;
         border-radius: $border-radius-md;
+        background-color: rgba($background-color, 0.1); // Optional: Add background color for better visibility
 
         .detail-icon {
-          font-size: 2.5rem;
+          font-size: 2.5rem; // Ensure icons are consistent in size
           color: $primary-color;
+          width: 2rem; // Set explicit width
+          height: 2rem; // Set explicit height
+          display: flex; // Ensure icon is centered
+          align-items: center; // Center icon vertically
+          justify-content: center; // Center icon horizontally
+          border-radius: 50%; // Optional: Makes the icon circular if desired
+          overflow: hidden; // Ensures that any content does not overflow
+          flex-shrink: 0;
         }
 
         .detail-info {
+          flex: 1;
           h4 {
             font-size: 1.2rem;
             color: $text-primary;

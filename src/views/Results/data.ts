@@ -14,7 +14,7 @@ export const skillsData = [
         icon: FaChartLine, // Using chart line icon to represent data visualization and decision-making
     },
     {
-        title: 'Responsive Design',
+        title: 'Improved Efficiency',
         description: 'Provide a superior user experience across all devices with adaptive designs that boost engagement.',
         icon: SiTypescript, // TypeScript for modern frontend development
     },
