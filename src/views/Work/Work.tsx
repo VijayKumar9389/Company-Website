@@ -7,7 +7,7 @@ const Work = () => {
     return (
         <div className="work-container">
             <Header
-                heading="Explore My Digital Solutions Powering Real-World Businesses"
+                heading="Explore My Digital Solutions Powering Businesses"
                 desc=""
             />
             {workData.map((project: WorkData, index: number) => (

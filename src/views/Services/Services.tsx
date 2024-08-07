@@ -30,8 +30,8 @@ const Services: React.FC = () => {
 
     return (
         <div className="service-container">
-            <Header heading="Sleek, Responsive Interface for Seamless Data Management"
-                    desc="Our web applications are deployed to the cloud, ensuring that they are developed once and accessible from any device with an internet connection. This allows you to effortlessly visualize and manage your business data from anywhere, at any time."
+            <Header heading="Sleek, Responsive Effortless Data Management"
+                    desc="Cloud-based web applications are designed to provide an efficient way to manage business data accessible from any device with an internet connection."
             />
             {isMobile ? (
                 <Slideshow/>
