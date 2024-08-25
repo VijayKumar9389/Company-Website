@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+/* Header Container */
+.header-container {
+  margin: 0 auto;
+  padding: 0 $spacing-lg; // Add padding around the header
+  z-index: 500;
+  position: relative;
+
+  display: flex;
+  flex-direction: row; // Align title and description side by side
+  justify-content: space-between; // Space out title and description
+  align-items: flex-start; // Vertically center title and description
+  max-width: $breakpoint-xl; // Limit the width of the header
+
+  h1 {
+    margin-bottom: 0; // Remove bottom margin for better alignment
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // Subtle text shadow for better contrast
+    text-align: left; // Align title text to the left
+    flex: 1; // Take up equal space for better balance
+    font-weight: normal;
+  }
+
+  p {
+    color: $text-secondary; // Secondary text color
+    max-width: 50%; // Limit paragraph width for better alignment
+    margin: 0; // Remove margin to align with title content
+    padding: 0 $spacing-md; // Add padding to prevent text from touching edges
+    text-align: right; // Align description text to the right
+    flex: 1; // Take up equal space for better balance
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column; // Stack title and description on mobile
+    align-items: flex-start; // Align content to the left on mobile
+
+    h1 {
+      margin-bottom: $spacing-sm; // Add space between title and description
+      text-align: left; // Ensure title is aligned to the left
+      width: 100%; // Full width for mobile
+    }
+
+    p {
+      max-width: 100%; // Full width for mobile
+      padding: 0; // Remove padding for mobile
+      text-align: left; // Align description text to the left
+    }
+  }
+}

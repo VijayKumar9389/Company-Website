@@ -1,0 +1,145 @@
+@import '../../styles/variables';
+
+/* Slideshow Wrapper */
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  height: 700px; // Adjust height as needed
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: $text-primary;
+  border-radius: $border-radius-md;
+  overflow: hidden; // Prevent overflow within the wrapper
+
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; // Ensure slides don't overflow
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-primary;
+      border-radius: $border-radius-md;
+      overflow: hidden; // Prevent image from overflowing
+
+      &.active {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 1;
+      }
+
+      .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Ensure image covers container without distortion
+        object-position: center center; // Center image to avoid overflow issues
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .slide-content {
+        position: absolute;
+        width: 100%;
+        bottom: 0; // Keep content near the bottom for a typical caption style
+        left: 50%;
+        transform: translateX(-50%); // Center content horizontally
+        background: rgba(0, 0, 0, 0.5); // Semi-transparent background for better text visibility
+        backdrop-filter: blur(10px);
+
+        color: $text-primary;
+        padding: $spacing-md;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 2;
+        box-sizing: border-box; // Ensure padding and border are included in element's total width and height
+        border-radius: 0 0 $border-radius-md $border-radius-md; // Rounded bottom corners
+
+        p {
+          margin: 0;
+          font-size: $font-size-base-md;
+          font-weight: bold; // Make text bolder for better readability
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Add text shadow for better contrast
+          animation: fadeDown 0.5s ease-out;
+        }
+      }
+    }
+  }
+
+  .slide-controls {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 2;
+    padding: $spacing-md $spacing-xl;
+    gap: $spacing-md;
+
+    .nav-button {
+      background: $card-background; // Solid primary color background
+      color: $text-primary; // Text color that contrasts well with the primary color
+      border: none; // Remove border for simplicity
+      border-radius: 50px; // Small border radius for subtle rounding
+      padding: $spacing-xs;
+      font-size: $font-size-base-sm;
+      cursor: pointer;
+      transition: background-color 0.2s ease; // Slightly reduce transition duration
+      width: 40px; // Reduced button size for a more compact look
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+
+      &:hover {
+        background-color: darken($card-background, 10%); // Slight darkening on hover for subtle feedback
+      }
+
+      &:active {
+        background-color: darken($card-background, 15%); // Slightly more darkening on active state for button press effect
+      }
+    }
+  }
+}
+
+/* Keyframes for fade-down animation */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: $breakpoint-sm) {
+  .slideshow-wrapper {
+    height: 400px; // Adjust height for smaller screens
+  }
+
+  .slide-content {
+    font-size: $font-size-base-sm;
+    padding: $spacing-sm;
+    min-height: 100px;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: $font-size-base-sm;
+  }
+}

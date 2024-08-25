@@ -1,0 +1,14 @@
+@import "./typography.scss";
+
+.app {
+  background-color: #1a1a1a;
+
+  .app-wrapper {
+    max-width: $breakpoint-xl; // Ensure container width fits large screens
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem; // Updated to use spacing variable for consistency
+    padding: $spacing-lg;
+  }
+}

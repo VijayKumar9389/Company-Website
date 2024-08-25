@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+// Container for skills section
+.skills-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+// Wrapper for skill cards
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Adjusted min-width for better responsiveness
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: start;
+
+    .skill-icon {
+      font-size: 3rem; // Larger icon for emphasis
+      color: $primary-color;
+      margin-bottom: $spacing-lg; // Add margin to separate from title
+      border-radius: $border-radius-md; // Added border-radius for softer corners
+      background: linear-gradient(145deg, $card-background, darken($card-background, 10%));
+      display: flex;
+      padding: $spacing-md;
+    }
+
+    .skill-content {
+      .skill-title {
+        color: $text-primary;
+        margin-bottom: $spacing-xs;
+      }
+
+      .skill-description {
+        color: $text-secondary;
+      }
+    }
+  }
+}

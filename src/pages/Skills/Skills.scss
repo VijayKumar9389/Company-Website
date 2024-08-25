@@ -1,0 +1,77 @@
+@import '../../styles/variables';
+
+// About Container
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-xl;
+  margin: 0 auto;
+  min-height: 800px;
+  width: 100%;
+
+
+  .core-competencies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+    width: 100%;
+  }
+}
+
+// Competency Items
+.competency-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-lg;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+// Detail Item
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  justify-content: space-between; // Center content vertically
+  gap: $spacing-md; // Consistent gap between elements
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  border: 1px solid $border-color;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Smooth transition for hover effects
+  min-height: 300px; // Ensures minimum height for item content
+  background: $card-background;
+
+  .detail-icon {
+    font-size: 2.5rem; // Ensure icons are consistent in size
+    color: $secondary-color;
+    width: 2rem; // Fixed width
+    height: 2rem; // Fixed height
+    display: flex; // Ensure icon is centered
+    align-items: center; // Center icon vertically
+    justify-content: center; // Center icon horizontally
+    border-radius: 50%; // Optional: Makes the icon circular if desired
+    overflow: visible; // Allow overflow so that parts of the icon are not cut off
+    flex-shrink: 0; // Prevents the icon from shrinking
+  }
+
+  h4 {
+    color: $text-primary;
+    margin: 0;
+    margin-top: $spacing-sm; // Space above heading
+    width: 100%;
+
+  }
+
+  p {
+    color: $text-secondary;
+    font-style: italic;
+    margin: 0;
+    width: 100%;
+  }
+}

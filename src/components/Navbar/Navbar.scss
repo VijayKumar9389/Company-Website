@@ -1,0 +1,147 @@
+@import '../../styles/variables';
+
+// Navbar.scss
+
+// Navbar container
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  color: $text-primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md $spacing-lg;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+
+  .btn-contact {
+    background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+    color: $text-secondary;
+    border: none;
+    border-radius: $border-radius-sm;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base-sm;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+
+    box-shadow: $shadow-small;
+
+    .icon {
+      font-size: $font-size-base-lg;
+      background-color: lighten($primary-color, 15%);
+      padding: $spacing-xs;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      display: none;
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, darken($primary-color, 10%), darken($primary-color, 20%));
+      box-shadow: $shadow-medium;
+      color: $text-primary;
+
+      .icon {
+        background-color: lighten($primary-color, 10%);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba($primary-color, 0.5);
+    }
+  }
+
+  &.scrolled {
+    background: rgba($background-color, 0.85);
+    backdrop-filter: blur(5px);
+    box-shadow: $shadow-small;
+
+    .nav-menu {
+      background-color: rgba($background-color, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .logo {
+    h2 {
+      margin: 0;
+      cursor: pointer;
+      font-size: $font-size-base-lg;
+      font-weight: $font-weight-bold;
+      color: inherit;
+      transition: color 0.3s;
+
+      &:hover {
+        color: lighten($primary-color, 10%);
+      }
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: $border-radius-lg;
+    transition: ease-in-out 0.3s;
+    border: 1px solid #fff;
+
+    .nav-link {
+      margin: 0 $spacing-md;
+      font-size: $font-size-base-sm;
+      color: $text-primary;
+      text-decoration: none;
+      transition: color 0.3s;
+      padding: $spacing-sm $spacing-md;
+      cursor: pointer;
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+  }
+
+  .menu-btn {
+    background: transparent;
+    border: none;
+    color: $text-primary;
+    font-size: $font-size-base-lg;
+    cursor: pointer;
+    transition: color 0.3s;
+    display: none;
+
+    @media screen and (max-width: $breakpoint-md) {
+      display: flex;
+    }
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-sm) {
+  .navbar {
+    align-items: flex-start;
+    padding: $spacing-sm $spacing-md;
+
+    .nav-menu {
+      display: none;
+    }
+
+    .menu-btn {
+      display: block;
+    }
+  }
+}
