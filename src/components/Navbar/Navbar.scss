@@ -4,24 +4,63 @@
 
 // Navbar container
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  background: transparent;
   color: $text-primary;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: $spacing-md $spacing-lg;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
 
+  // Navbar Logo
+  .logo {
+    h2 {
+      margin: 0;
+      cursor: pointer;
+      font-size: $font-size-base-lg;
+      font-weight: $font-weight-bold;
+      color: $primary-color;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: lighten($primary-color, 15%);
+      }
+    }
+  }
+
+  // Navbar Menu
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: $border-radius-lg;
+    transition: background-color 0.3s ease, border 0.3s ease;
+
+    .nav-link {
+      margin: 0 $spacing-md;
+      font-size: $font-size-base-sm;
+      color: $text-primary;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      padding: $spacing-sm $spacing-md;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+
+      &:hover {
+        color: lighten($primary-color, 10%);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // Contact Button
   .btn-contact {
     background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
     color: $text-secondary;
     border: none;
-    border-radius: $border-radius-sm;
+    border-radius: $border-radius-md;
     padding: $spacing-sm $spacing-md;
     font-size: $font-size-base-sm;
     cursor: pointer;
@@ -61,63 +100,14 @@
     }
   }
 
-  &.scrolled {
-    background: rgba($background-color, 0.85);
-    backdrop-filter: blur(5px);
-    box-shadow: $shadow-small;
-
-    .nav-menu {
-      background-color: rgba($background-color, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-  }
-
-  .logo {
-    h2 {
-      margin: 0;
-      cursor: pointer;
-      font-size: $font-size-base-lg;
-      font-weight: $font-weight-bold;
-      color: inherit;
-      transition: color 0.3s;
-
-      &:hover {
-        color: lighten($primary-color, 10%);
-      }
-    }
-  }
-
-  .nav-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-radius: $border-radius-lg;
-    transition: ease-in-out 0.3s;
-    border: 1px solid #fff;
-
-    .nav-link {
-      margin: 0 $spacing-md;
-      font-size: $font-size-base-sm;
-      color: $text-primary;
-      text-decoration: none;
-      transition: color 0.3s;
-      padding: $spacing-sm $spacing-md;
-      cursor: pointer;
-
-      &:hover {
-        color: $link-color;
-      }
-    }
-  }
-
+  // Hamburger Menu Button for Small Screens
   .menu-btn {
     background: transparent;
     border: none;
     color: $text-primary;
     font-size: $font-size-base-lg;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
     display: none;
 
     @media screen and (max-width: $breakpoint-md) {
@@ -125,12 +115,24 @@
     }
 
     &:hover {
-      color: $link-color;
+      color: lighten($primary-color, 15%);
+    }
+  }
+
+  // Scrolled Navbar State
+  &.scrolled {
+    background: rgba($background-color, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: $shadow-small;
+
+    .nav-menu {
+      background-color: rgba($background-color, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
 }
 
-// Responsive adjustments
+// Responsive Adjustments
 @media (max-width: $breakpoint-sm) {
   .navbar {
     align-items: flex-start;

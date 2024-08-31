@@ -7,16 +7,15 @@ const Hero = () => {
             <div className="hero-content">
                 <div className="hero-content-wrapper">
                     <h1 className="hero-title">
-                        Unlock the Potential of Cloud Applications
-
+                        Launch Your Custom Application to Manage Business Operations
                     </h1>
-                    <p>
-                        We analyze your business processes and gaols to design and implement solutions that precisely reflect and
-                        manage your operations.
-                    </p>
+                    {/*<p>*/}
+                    {/*    Experience seamless, responsive applications designed for secure communication and efficient*/}
+                    {/*    management of your business data.*/}
+                    {/*</p>*/}
                 </div>
                 <div className="hero-image-wrapper">
-                    <img className="hero-image" src={Image} alt="Laptops" data-aos="fade-up" />
+                    <img className="hero-image" src={Image} alt="Laptops"/>
                 </div>
             </div>
         </div>

@@ -9,13 +9,13 @@
   max-width: $breakpoint-lg; // Reduced max-width for better form alignment and readability
   border-radius: $border-radius-lg; // Rounded corners for container
   padding: 2rem 0;
+  overflow: hidden;
 
   // Logo
   .logo {
     max-width: 250px; // Adjust as needed
     height: auto;
     margin-bottom: $spacing-lg;
-    transition: transform $transition-duration $transition-easing;
     animation: pulse 2s infinite; // Reuse pulse animation for logo
   }
 }
@@ -29,16 +29,13 @@
   label {
     display: flex;
     flex-direction: column; // Stack label text and input vertically
-    font-size: $font-size-base; // Use base font size variable
     color: $text-primary; // Use primary text color variable
 
     input, textarea, select {
       padding: $spacing-sm; // Use spacing variable for padding
-      font-size: $font-size-base; // Use base font size variable
       border: none; // Remove default border
       border-bottom: 1px solid $border-color; // Underline for input and select
       margin-top: $spacing-xs; // Use spacing variable for margin
-      transition: border-bottom-color $transition-duration ease, box-shadow $transition-duration ease;
       background: none;
       color: $text-primary;
 
@@ -64,11 +61,9 @@
   // Button
   .site-btn {
     background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%)); // Gradient background
-    color: $text-white;
     border: none;
     border-radius: $border-radius-md; // Medium rounded corners for consistency
     padding: $spacing-sm $spacing-md;
-    font-size: $font-size-base;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; // Smooth transitions
     display: flex;
@@ -81,11 +76,9 @@
     box-shadow: $shadow-small;
 
     .icon {
-      font-size: $font-size-large;
       background-color: lighten($primary-color, 15%); // Slightly lighter shade for the icon
       padding: $spacing-xs;
       border-radius: 50%;
-      transition: background-color $transition-duration $transition-easing;
       margin-left: $spacing-xs;
     }
 
@@ -96,7 +89,6 @@
     &:hover {
       background: linear-gradient(135deg, darken($primary-color, 10%), darken($primary-color, 20%));
       box-shadow: $shadow-medium;
-      color: $text-white;
       text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); // White text shadow
 
       .icon {

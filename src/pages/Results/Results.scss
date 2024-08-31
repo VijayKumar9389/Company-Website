@@ -1,39 +1,67 @@
 @import '../../styles/variables';
 
-// Container for skills section
-.skills-container {
-  width: 100%;
-  margin: 0 auto;
-}
-
 // Wrapper for skill cards
 .skills-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Adjusted min-width for better responsiveness
-  gap: $spacing-lg;
-  margin-bottom: $spacing-xl;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Slightly reduced min-width for better flexibility
+  gap: $spacing-md; // Increased gap for better spacing between cards
+  max-width: $breakpoint-xl;
+  margin: $spacing-xl auto;
+
+  @media screen and (max-width: $breakpoint-lg) {
+    display: flex;
+    overflow-x: auto;
+    gap: $spacing-lg; // Increased gap for better spacing in horizontal layout
+    padding: $spacing-md 0; // Adjusted padding for smaller screens
+  }
 
   .skill-card {
+    background: $card-background;
+    border-radius: $border-radius-md; // Increased border-radius for a modern, softer look
+    box-shadow: $shadow-medium; // Enhanced shadow for more depth
+    transition: transform 0.3s ease, box-shadow 0.3s ease; // Added transitions for interactivity
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: start;
+    padding: $spacing-lg;
+    min-width: 250px;
+    min-height: 320px; // Slightly increased minimum height for better content fitting
+
+
+    @media screen and (max-width: $breakpoint-lg) {
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center; // Centered text on smaller screens
+      padding: $spacing-md;
+      min-width: 220px; // Reduced min-width for smaller screens
+      min-height: 300px;
+    }
 
     .skill-icon {
-      font-size: 3rem; // Larger icon for emphasis
+      font-size: 2.5rem; // Larger icon size for emphasis
       color: $primary-color;
-      margin-bottom: $spacing-lg; // Add margin to separate from title
-      border-radius: $border-radius-md; // Added border-radius for softer corners
-      background: linear-gradient(145deg, $card-background, darken($card-background, 10%));
+      margin-bottom: $spacing-md; // Adjusted margin for better spacing
+      border-radius: 50px; // Fully rounded corners for icons
+      background: rgba(255, 255, 255, 0.1); /* Slightly more visible background for better emphasis */
       display: flex;
+      align-items: center;
+      justify-content: center;
       padding: $spacing-md;
+      transition: background 0.3s ease, transform 0.3s ease; // Added transition for hover effect
+
+      @media screen and (max-width: $breakpoint-lg) {
+        background: none;
+        box-shadow: none; // Removed shadow on smaller screens
+      }
     }
 
     .skill-content {
       .skill-title {
         color: $text-primary;
-        margin-bottom: $spacing-xs;
+        margin-bottom: $spacing-sm; // Adjusted margin for better spacing
       }
 
       .skill-description {

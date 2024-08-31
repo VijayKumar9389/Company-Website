@@ -1,76 +1,77 @@
 @import '../../styles/variables';
 
 .hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-                  180deg,
-                  $background-color 0%,
-                  $primary-color 50%,
-                  $background-color 100%
-  );
-  text-align: left;
-  border-bottom-left-radius: $border-radius-lg;
-  border-bottom-right-radius: $border-radius-lg;
-  padding: $spacing-lg;
+  position: relative;
   overflow: hidden;
+  background-color: $card-background;
+  padding: $spacing-xl $spacing-md;
+  height: 80vh; // Increased height for more impact
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center content horizontally
+  justify-content: center; // Center content vertically
+  text-align: center;
 
   .hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr; // Adjusted column ratio for balance
+    align-items: center; // Center all items vertically
+    gap: $spacing-lg; // Add space between content sections
+    max-width: 1200px; // Limit max-width for better layout on larger screens
     width: 100%;
-    flex-direction: row; /* Horizontal layout for desktop */
-    min-height: 80vh;
+    margin: 0 auto;
 
-    @media (max-width: $breakpoint-sm) {
-      flex-direction: column; /* Stack content vertically on mobile */
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr; // Stack content on small screens
+      text-align: center;
     }
 
     .hero-content-wrapper {
-      flex: 1;
-      //backdrop-filter: blur(20px);
-      //background: rgba(0, 0, 0, 0.5);
-      padding: $spacing-lg;
-      border-radius: $border-radius-lg;
-      margin-right: $spacing-lg;
-
-      @media (max-width: $breakpoint-sm) {
-        margin-right: 0;
-        margin-bottom: $spacing-md; /* Space between text and image on mobile */
-        text-align: center; /* Center text on mobile */
-      }
+      padding: $spacing-md;
+      text-align: start;
 
       .hero-title {
-        color: $text-primary;
-
-        @media (max-width: $breakpoint-sm) {
-          font-size: $font-size-base-lg;
-        }
+        color: $primary-color;
+        margin-bottom: $spacing-md;
       }
 
       p {
         color: $text-secondary;
-
-        @media (max-width: $breakpoint-sm) {
-          font-size: $font-size-base-sm;
-        }
+        margin: 0 auto;
       }
     }
 
     .hero-image-wrapper {
-      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      max-width: 100%;
-      position: relative;
+      width: 100%;
 
       .hero-image {
         max-width: 100%;
         height: auto;
-        border-radius: $border-radius-md;
+      }
+    }
+  }
+
+  .custom-shape-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    background: $background-color; // Ensure divider blends with the background
+
+    svg {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: $spacing-lg;
+
+      .shape-fill {
+        fill: $card-background; // Match background for a seamless look
       }
     }
   }

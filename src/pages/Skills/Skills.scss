@@ -1,77 +1,135 @@
 @import '../../styles/variables';
 
-// About Container
-.about-container {
+// Main container for the skills section
+.skills {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: $spacing-xl;
-  margin: 0 auto;
-  min-height: 800px;
-  width: 100%;
+  overflow: hidden;
 
-
-  .core-competencies {
-    display: flex;
-    flex-direction: column;
+  // Competency section container
+  .competency-section {
+    display: grid;
+    grid-template-columns: 1fr 3fr; // Improved layout balance
+    padding: $spacing-md; // Consistent padding for the section
     align-items: center;
-    gap: $spacing-lg;
     width: 100%;
-  }
-}
+    max-width: $breakpoint-xl; // Use breakpoint for max width
+    min-height: 60vh;
+    border-radius: $border-radius-lg; // Rounded corners for the section
+    border-radius: $border-radius-lg; // Rounded corners for the section
+    background-color: $accent-background-color;
 
-// Competency Items
-.competency-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: $spacing-lg;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
 
-// Detail Item
-.detail-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
-  justify-content: space-between; // Center content vertically
-  gap: $spacing-md; // Consistent gap between elements
-  padding: $spacing-md;
-  border-radius: $border-radius-md;
-  border: 1px solid $border-color;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; // Smooth transition for hover effects
-  min-height: 300px; // Ensures minimum height for item content
-  background: $card-background;
+    // Responsive design adjustments
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-sm; // Adjusted spacing for smaller screens
+      align-items: flex-start;
 
-  .detail-icon {
-    font-size: 2.5rem; // Ensure icons are consistent in size
-    color: $secondary-color;
-    width: 2rem; // Fixed width
-    height: 2rem; // Fixed height
-    display: flex; // Ensure icon is centered
-    align-items: center; // Center icon vertically
-    justify-content: center; // Center icon horizontally
-    border-radius: 50%; // Optional: Makes the icon circular if desired
-    overflow: visible; // Allow overflow so that parts of the icon are not cut off
-    flex-shrink: 0; // Prevents the icon from shrinking
-  }
+    }
 
-  h4 {
-    color: $text-primary;
-    margin: 0;
-    margin-top: $spacing-sm; // Space above heading
-    width: 100%;
+    // Competency list styles
+    .competency-list {
+      display: flex;
+      flex-wrap: wrap; // Allow wrapping of items
+      flex-direction: row; // Switch to row on small screens
+      justify-content: flex-start; // Distribute items evenly
+      align-items: flex-start; // Align items to the start of the container
 
-  }
 
-  p {
-    color: $text-secondary;
-    font-style: italic;
-    margin: 0;
-    width: 100%;
+      .competency-item {
+        flex: 1 1 auto; // Allow items to grow and shrink
+        display: flex;
+        align-items: center;
+        padding: $spacing-sm;
+        margin: $spacing-xs; // Consistent margin around items
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        border-radius: $border-radius-md;
+        width: 100%;
+        max-width: 200px; // Max width for items
+
+        &:hover,
+        &.active {
+          background-color: $card-background; // Consistent background color
+          box-shadow: $shadow-small;
+        }
+
+        .icon {
+          margin-right: $spacing-sm;
+          color: $primary-color;
+        }
+
+        .title {
+          font-weight: $font-weight-medium;
+          font-size: $font-size-base-sm;
+        }
+      }
+    }
+
+    // Competency details section
+    .competency-details {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+      }
+
+      .image-container {
+        flex: 1;
+        width: 100%;
+        margin-bottom: $spacing-md; // Margin for image container
+
+        @media (min-width: $breakpoint-md) {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .description {
+        @media (min-width: $breakpoint-md) {
+          margin-left: $spacing-lg; // Margin for larger screens
+          width: 50%;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          flex: 1;
+
+          li {
+            margin-bottom: $spacing-xs; // Space between list items
+            display: flex;
+            align-items: center;
+            text-align: left;
+            gap: $spacing-xs; // Space between bullet and text
+
+            &:before {
+              content: "•";
+              color: $primary-color; // Color for bullet points
+              font-weight: $font-weight-bold;
+              display: inline-block;
+              width: 1rem;
+              margin-right: $spacing-xs; // Space between bullet and text
+            }
+          }
+        }
+      }
+    }
   }
 }

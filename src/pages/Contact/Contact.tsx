@@ -2,7 +2,6 @@ import './Contact.scss';
 import React from 'react';
 import Header from "../../components/Header/Header.tsx";
 import {BsArrowRight} from "react-icons/bs";
-import Logo from "../../assets/Logo.png";
 
 const Contact = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -14,7 +13,6 @@ const Contact = () => {
         <div className="contact-container">
             <Header heading="I would Love to Hear From You"
                     desc="Please fill out the form below and we’ll get back to you as soon as possible."/>
-            <img src={Logo} alt="Logo" className="logo" data-aos="fade-down"/>
             <form onSubmit={handleSubmit} className="contact-form">
                 <label htmlFor="name">
                     My name is

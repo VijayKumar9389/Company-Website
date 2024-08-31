@@ -3,35 +3,36 @@
 @import "./variables.scss";
 
 // Font Sizes for Headings
-$font-size-h1: 2.5rem;
+$font-size-h1: 2.5rem; // Base
 $font-size-h2: 2rem;
 $font-size-h3: 1.75rem;
 $font-size-h4: 1.5rem;
 $font-size-h5: 1.25rem;
 $font-size-h6: 1rem;
 
-$font-size-h1-xs: 1.75rem;
-$font-size-h1-xl: 3rem;
+// Responsive Sizes for Headings
+$font-size-h1-xs: 2rem; // Adjusted for smaller screens
+$font-size-h1-xl: 3rem; // Larger for extra-large screens
 
-$font-size-h2-xs: 1.5rem;
-$font-size-h2-xl: 2.5rem;
+$font-size-h2-xs: 1.75rem; // Adjusted for smaller screens
+$font-size-h2-xl: 2.5rem; // Larger for extra-large screens
 
-$font-size-h3-xs: 1.25rem;
-$font-size-h3-xl: 2rem;
+$font-size-h3-xs: 1.5rem; // Adjusted for smaller screens
+$font-size-h3-xl: 2rem; // Larger for extra-large screens
 
-$font-size-h4-xs: 1.1rem;
-$font-size-h4-xl: 1.75rem;
+$font-size-h4-xs: 1.25rem; // Adjusted for smaller screens
+$font-size-h4-xl: 1.75rem; // Larger for extra-large screens
 
-$font-size-h5-xs: 1rem;
-$font-size-h5-xl: 1.5rem;
+$font-size-h5-xs: 1.1rem; // Adjusted for smaller screens
+$font-size-h5-xl: 1.5rem; // Larger for extra-large screens
 
-$font-size-h6-xs: 0.85rem;
-$font-size-h6-xl: 1.1rem;
+$font-size-h6-xs: 1rem; // Adjusted for smaller screens
+$font-size-h6-xl: 1.25rem; // Larger for extra-large screens
 
-// Updated Font Size for Paragraphs
-$font-size-p: 1.125rem;
-$font-size-p-xs: 1rem;
-$font-size-p-xl: 1.25rem;
+// Font Size for Paragraphs
+$font-size-p: 1.125rem; // Base
+$font-size-p-xs: 1rem; // Smaller screens
+$font-size-p-xl: 1.25rem; // Larger screens
 
 // Global Styles
 body {

@@ -1,145 +1,134 @@
 @import '../../styles/variables';
 
-/* Slideshow Wrapper */
 .slideshow-wrapper {
-  position: relative;
-  width: 100%;
-  height: 700px; // Adjust height as needed
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   color: $text-primary;
-  border-radius: $border-radius-md;
-  overflow: hidden; // Prevent overflow within the wrapper
+  border-radius: $border-radius-lg; // Rounded corners for the section
+  background-color: $accent-background-color;
+  padding: $spacing-md; // Consistent padding for the section
 
   .slideshow {
     position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; // Ensure slides don't overflow
+    height: 60vh;
+    max-height: 600px;
+    min-height: 400px;
+    overflow: hidden;
 
     .slide {
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       opacity: 0;
-      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      visibility: hidden;
+      transition:
+              opacity 0.8s ease,
+              visibility 0.8s ease,
+              transform 0.8s ease;
+      transform: scale(1.05);
+      text-align: center;
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: $text-primary;
-      border-radius: $border-radius-md;
-      overflow: hidden; // Prevent image from overflowing
+      justify-content: center; // Center content vertically and horizontally
 
       &.active {
         opacity: 1;
+        visibility: visible;
         transform: scale(1);
-        z-index: 1;
       }
 
       .slide-image {
         width: 100%;
         height: 100%;
-        object-fit: cover; // Ensure image covers container without distortion
-        object-position: center center; // Center image to avoid overflow issues
-        transition: opacity 0.5s ease-in-out;
+        object-fit: cover;
+        border-radius: $border-radius-md;
+        transition:
+                transform 0.6s ease,
+                filter 0.6s ease; // Added filter transition for hover effect
       }
+    }
+  }
 
-      .slide-content {
-        position: absolute;
-        width: 100%;
-        bottom: 0; // Keep content near the bottom for a typical caption style
-        left: 50%;
-        transform: translateX(-50%); // Center content horizontally
-        background: rgba(0, 0, 0, 0.5); // Semi-transparent background for better text visibility
-        backdrop-filter: blur(10px);
+  .slide-content-wrapper {
+    text-align: center;
+    color: $text-primary;
+    margin: $spacing-lg;
 
-        color: $text-primary;
-        padding: $spacing-md;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        z-index: 2;
-        box-sizing: border-box; // Ensure padding and border are included in element's total width and height
-        border-radius: 0 0 $border-radius-md $border-radius-md; // Rounded bottom corners
-
-        p {
-          margin: 0;
-          font-size: $font-size-base-md;
-          font-weight: bold; // Make text bolder for better readability
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Add text shadow for better contrast
-          animation: fadeDown 0.5s ease-out;
-        }
-      }
+    h5 {
+      font-weight: $font-weight-medium;
     }
   }
 
   .slide-controls {
-    position: relative;
-    width: 100%;
     display: flex;
-    justify-content: flex-start;
-    z-index: 2;
-    padding: $spacing-md $spacing-xl;
-    gap: $spacing-md;
+    justify-content: space-between;
 
     .nav-button {
-      background: $card-background; // Solid primary color background
-      color: $text-primary; // Text color that contrasts well with the primary color
-      border: none; // Remove border for simplicity
-      border-radius: 50px; // Small border radius for subtle rounding
-      padding: $spacing-xs;
-      font-size: $font-size-base-sm;
-      cursor: pointer;
-      transition: background-color 0.2s ease; // Slightly reduce transition duration
-      width: 40px; // Reduced button size for a more compact look
-      height: 40px;
+      color: $text-primary; // Dark gray text color
+      background: rgba(255, 255, 255, 0.8); // Light background with slight transparency
+      border: 1px solid $border-color; // Light gray border for better definition
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      line-height: 1;
+      cursor: pointer;
+      transition:
+              background 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
 
       &:hover {
-        background-color: darken($card-background, 10%); // Slight darkening on hover for subtle feedback
+        background: darken($accent-background-color, 5%); // Slightly darker accent background on hover
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Soft shadow on hover for subtle depth
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px lighten($link-color, 40%); // Focus ring in a lightened version of the link color
       }
 
       &:active {
-        background-color: darken($card-background, 15%); // Slightly more darkening on active state for button press effect
+        transform: scale(0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Softer shadow on click for a pressed effect
+      }
+
+      svg {
+        font-size: 1.8rem; // Slightly smaller icon size to suit the light theme
+        color: $primary-color; // Icon color matches primary color for consistency
       }
     }
   }
-}
 
-/* Keyframes for fade-down animation */
-@keyframes fadeDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+  .slideshow-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-lg;
 
-/* Responsive Styles */
-@media (max-width: $breakpoint-sm) {
-  .slideshow-wrapper {
-    height: 400px; // Adjust height for smaller screens
-  }
+    .indicator {
+      width: 16px;
+      height: 16px;
+      margin: 0 $spacing-sm;
+      border-radius: 50%;
+      background: $text-secondary;
+      cursor: pointer;
+      transition:
+              background 0.3s ease,
+              transform 0.3s ease;
 
-  .slide-content {
-    font-size: $font-size-base-sm;
-    padding: $spacing-sm;
-    min-height: 100px;
-  }
+      &:hover {
+        transform: scale(1.2);
+        background: lighten($primary-color, 20%); // Lighter color on hover
+      }
 
-  .nav-button {
-    width: 40px;
-    height: 40px;
-    font-size: $font-size-base-sm;
+      &.active {
+        background: $primary-color;
+        transform: scale(1.4);
+        box-shadow: $shadow-small; // Added shadow for active indicators
+      }
+    }
   }
 }
