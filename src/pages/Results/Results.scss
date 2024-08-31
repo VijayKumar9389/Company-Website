@@ -7,6 +7,7 @@
   gap: $spacing-md; // Increased gap for better spacing between cards
   max-width: $breakpoint-xl;
   margin: $spacing-xl auto;
+  overflow: hidden;
 
   @media screen and (max-width: $breakpoint-lg) {
     display: flex;
@@ -19,7 +20,6 @@
     background: $card-background;
     border-radius: $border-radius-md; // Increased border-radius for a modern, softer look
     box-shadow: $shadow-medium; // Enhanced shadow for more depth
-    transition: transform 0.3s ease, box-shadow 0.3s ease; // Added transitions for interactivity
 
     display: flex;
     flex-direction: column;
@@ -43,13 +43,13 @@
     .skill-icon {
       font-size: 2.5rem; // Larger icon size for emphasis
       color: $primary-color;
+      background: $accent-background-color;
       margin-bottom: $spacing-md; // Adjusted margin for better spacing
-      border-radius: 50px; // Fully rounded corners for icons
-      background: rgba(255, 255, 255, 0.1); /* Slightly more visible background for better emphasis */
+      border-radius: $border-radius-sm; // Fully rounded corners for icons
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: $spacing-md;
+      padding: $spacing-sm;
       transition: background 0.3s ease, transform 0.3s ease; // Added transition for hover effect
 
       @media screen and (max-width: $breakpoint-lg) {

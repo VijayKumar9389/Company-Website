@@ -3,26 +3,83 @@
 .hero-container {
   position: relative;
   overflow: hidden;
-  background-color: $card-background;
+  background: linear-gradient(135deg, $primary-color, $accent-background-color); // Gradient background
   padding: $spacing-xl $spacing-md;
-  height: 80vh; // Increased height for more impact
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: center; // Center content horizontally
-  justify-content: center; // Center content vertically
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  color: $text-primary;
+
+  //Top
+  .custom-shape-divider-top-1725136650 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-top-1725136650 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+  }
+
+  .custom-shape-divider-top-1725136650 .shape-fill {
+    fill: $primary-color;
+    opacity: .25;
+  }
+
+  //Bottom
+  .custom-shape-divider-bottom-1725135656 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-bottom-1725135656 svg {
+    position: relative;
+    display: block;
+    width: calc(169% + 1.3px);
+    height: 219px;
+  }
+
+  .custom-shape-divider-bottom-1725135656 .shape-fill {
+    fill: #f7f9fc;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, $card-background, transparent 60%);
+    opacity: 0.2;
+    transform: rotate(45deg);
+  }
 
   .hero-content {
     display: grid;
-    grid-template-columns: 1fr 2fr; // Adjusted column ratio for balance
-    align-items: center; // Center all items vertically
-    gap: $spacing-lg; // Add space between content sections
-    max-width: 1200px; // Limit max-width for better layout on larger screens
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: $spacing-lg;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    z-index: 1; // Ensure content is above background effects
 
     @media (max-width: $breakpoint-md) {
-      grid-template-columns: 1fr; // Stack content on small screens
+      grid-template-columns: 1fr;
       text-align: center;
     }
 
@@ -30,14 +87,14 @@
       padding: $spacing-md;
       text-align: start;
 
-      .hero-title {
-        color: $primary-color;
-        margin-bottom: $spacing-md;
+
+      @media (max-width: $breakpoint-md) {
+        text-align: center;
       }
 
-      p {
-        color: $text-secondary;
-        margin: 0 auto;
+      .hero-title {
+        color: #fff;
+        text-transform: uppercase;
       }
     }
 
@@ -46,32 +103,11 @@
       justify-content: center;
       align-items: center;
       width: 100%;
+      transform: scale(1.1); // Slightly more pronounced zoom
 
       .hero-image {
         max-width: 100%;
         height: auto;
-      }
-    }
-  }
-
-  .custom-shape-divider-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-    background: $background-color; // Ensure divider blends with the background
-
-    svg {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: $spacing-lg;
-
-      .shape-fill {
-        fill: $card-background; // Match background for a seamless look
       }
     }
   }

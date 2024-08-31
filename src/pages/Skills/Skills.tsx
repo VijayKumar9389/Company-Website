@@ -67,7 +67,7 @@ const Skills: React.FC = () => {
     };
 
     return (
-        <div className="skills">
+        <div className="skills-container">
             <Header
                 heading="Bring Your Digital Solution to Life"
                 desc="We Oversee Every Stage of the Application Development Lifecycle"
@@ -79,7 +79,8 @@ const Skills: React.FC = () => {
                         <div
                             key={index}
                             className={`competency-item ${selectedCompetency.title === competency.title ? 'active' : ''}`}
-                            onMouseEnter={() => handleClick(competency)} // Changed to onClick for better accessibility
+                            onMouseEnter={() => handleClick(competency)}
+                            data-aos-delay={`${index * 100}`} // Stagger effect delay
                         >
                             <competency.icon className="icon" />
                             <span className="title"><h5>{competency.title}</h5></span>
@@ -87,14 +88,14 @@ const Skills: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="competency-details">
+                <div className="competency-details" data-aos="fade-left">
                     <div className="image-container">
                         <img src={selectedCompetency.img} alt={selectedCompetency.title} />
                     </div>
                     <div className="description">
                         <ul>
                             {selectedCompetency.description.map((item, index) => (
-                                <li key={index}>
+                                <li key={index} data-aos="fade-right" data-aos-delay={`${index * 100}`}>
                                     <p>{item}</p>
                                 </li>
                             ))}

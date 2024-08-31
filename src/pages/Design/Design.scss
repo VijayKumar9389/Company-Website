@@ -4,9 +4,6 @@
   max-width: 1200px;
   margin: 0 auto;
   color: $text-primary;
-  border-radius: $border-radius-lg; // Rounded corners for the section
-  background-color: $accent-background-color;
-  padding: $spacing-md; // Consistent padding for the section
 
   .slideshow {
     position: relative;
@@ -67,38 +64,46 @@
 
     .nav-button {
       color: $text-primary; // Dark gray text color
-      background: rgba(255, 255, 255, 0.8); // Light background with slight transparency
+      background: rgba(255, 255, 255, 0.9); // Slightly more opaque background for better readability
       border: 1px solid $border-color; // Light gray border for better definition
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+      width: 60px; // Slightly larger for better touch interaction
+      height: 60px;
+      border-radius: 50%; // Keeps the button circular
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
       transition:
               background 0.3s ease,
-              transform 0.3s ease,
-              box-shadow 0.3s ease;
+              transform 0.2s ease,
+              box-shadow 0.3s ease,
+              color 0.3s ease;
 
       &:hover {
-        background: darken($accent-background-color, 5%); // Slightly darker accent background on hover
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Soft shadow on hover for subtle depth
+        background: darken($primary-color, 10%); // Darkens the primary color for a richer hover effect
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // Stronger shadow for a lift effect
+        transform: translateY(-2px); // Slight lift effect on hover
+
+        svg {
+          color: $card-background; // Keeps the icon color white on hover
+        }
       }
 
       &:focus {
         outline: none;
-        box-shadow: 0 0 0 3px lighten($link-color, 40%); // Focus ring in a lightened version of the link color
+        box-shadow: 0 0 0 3px lighten($primary-color, 40%), 0 4px 12px rgba(0, 0, 0, 0.15); // Focus ring with a lifted shadow
       }
 
       &:active {
-        transform: scale(0.95);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Softer shadow on click for a pressed effect
+        transform: scale(0.95) translateY(1px); // Slight depress effect on click
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Softer shadow on click for a pressed effect
       }
 
       svg {
-        font-size: 1.8rem; // Slightly smaller icon size to suit the light theme
+        font-size: 2rem; // Slightly larger icon size for better visibility
         color: $primary-color; // Icon color matches primary color for consistency
+        transition: color 0.3s ease; // Smooth transition for icon color change
       }
     }
   }
