@@ -55,8 +55,6 @@ const Slideshow: React.FC = () => {
                                 key={index}
                                 className={`indicator ${currentIndex === index ? 'active' : ''}`}
                                 onClick={() => setCurrentIndex(index)}
-                                data-aos="zoom-in" // Zoom effect on indicators
-                                data-aos-delay={`${index * 100}`} // Staggered effect for indicators
                             />
                         ))}
                     </div>
