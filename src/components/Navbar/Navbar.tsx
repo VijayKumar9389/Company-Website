@@ -10,14 +10,38 @@ const Navbar = () => {
         setIsModalOpen(!isModalOpen);
     };
 
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div className="navbar">
             <div className="logo">
-                <h2 onClick={() => window.scrollTo(0, 0)}>VK Studios</h2>
+                <h2 onClick={() => window.scrollTo(0, 0)}>Vijay Kumar</h2>
             </div>
             <div className={`nav-container ${isModalOpen ? 'open' : ''}`}>
-                <ScrollLink to="about-container" className="nav-link" spy={true} smooth={true} offset={-80} duration={500}>Services</ScrollLink>
-                <ScrollLink to="work-container" className="nav-link" spy={true} smooth={true} offset={-80} duration={500}>Portfolio</ScrollLink>
+                <ScrollLink
+                    to="skills-container"
+                    className="nav-link"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    onClick={closeModal}  // Close the navbar when clicked
+                >
+                    Services
+                </ScrollLink>
+                <ScrollLink
+                    to="work-container"
+                    className="nav-link"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    onClick={closeModal}  // Close the navbar when clicked
+                >
+                    Portfolio
+                </ScrollLink>
             </div>
             <button onClick={toggleModal} className="menu-btn">
                 {isModalOpen ? <IoClose /> : <IoMenu />}

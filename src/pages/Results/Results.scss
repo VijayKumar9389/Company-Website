@@ -8,6 +8,7 @@
   max-width: $breakpoint-xl;
   margin: $spacing-xl auto;
   overflow: hidden;
+  padding-bottom: $spacing-md;
 
   @media screen and (max-width: $breakpoint-lg) {
     display: flex;

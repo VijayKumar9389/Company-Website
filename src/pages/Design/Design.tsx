@@ -42,12 +42,9 @@ const Slideshow: React.FC = () => {
                         />
                     ))}
                 </div>
-                <div className="slide-content-wrapper" data-aos="fade-left">
-                    <h5>{project.sections[currentIndex].description}</h5>
-                </div>
                 <div className="slide-controls" data-aos="fade-up">
                     <button className="nav-button prev" onClick={handlePrevSlide}>
-                        <FaArrowLeft />
+                        <FaArrowLeft/>
                     </button>
                     <div className="slideshow-indicators" data-aos="fade-in">
                         {project.sections.map((_, index) => (
@@ -59,10 +56,12 @@ const Slideshow: React.FC = () => {
                         ))}
                     </div>
                     <button className="nav-button next" onClick={handleNextSlide}>
-                        <FaArrowRight />
+                        <FaArrowRight/>
                     </button>
                 </div>
-
+                <div className="slide-content-wrapper" data-aos="fade-left">
+                    <h5>{project.sections[currentIndex].description}</h5>
+                </div>
             </div>
         </div>
     );

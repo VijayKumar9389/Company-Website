@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar/Navbar.tsx";
 import Design from "./pages/Design/Design.tsx";
 import Experience from "./pages/Skills/Skills.tsx";
 import Results from "./pages/Results/Results.tsx";
+import Footer from "./components/Footer/Footer.tsx";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
                 <Work/>
                 {/*<Contact />*/}
             </div>
+            <Footer />
         </div>
     );
 }
