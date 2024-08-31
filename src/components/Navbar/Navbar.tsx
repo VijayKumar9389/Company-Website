@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import { IoMenu } from 'react-icons/io5';
-import { Link as ScrollLink } from 'react-scroll';
+// Navbar.jsx
+import {useEffect, useState} from "react";
+import {IoMenu} from "react-icons/io5";
+import {Link as ScrollLink} from 'react-scroll';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -29,23 +30,21 @@ const Navbar = () => {
     };
 
     return (
-        <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-            <div className="logo" onClick={() => window.scrollTo(0, 0)}>
-                <h2>POKI</h2>
+        <div className={`navbar  ${isScrolled ? 'scrolled' : ''}`}>
+            <div className="logo">
+                <h2 onClick={() => window.scrollTo(0, 0)}>VK Studios</h2>
+            </div>
+            <div className="nav-menu">
+                <ScrollLink to="about-container" className="nav-link" spy={true} smooth={true} offset={-80}
+                            duration={500}>Services</ScrollLink>
+                <ScrollLink to="work-container" className="nav-link" spy={true} smooth={true} offset={-80}
+                            duration={500}>Portfolio</ScrollLink>
             </div>
             <button onClick={toggleModal} className="menu-btn">
-                <IoMenu />
+                <IoMenu/>
             </button>
-            <div className={`nav-menu ${isModalOpen ? 'open' : ''}`}>
-                <ScrollLink to="about-container" className="nav-link" spy={true} smooth={true} offset={-80} duration={500} onClick={toggleModal}>
-                    Services
-                </ScrollLink>
-                <ScrollLink to="work-container" className="nav-link" spy={true} smooth={true} offset={-80} duration={500} onClick={toggleModal}>
-                    Portfolio
-                </ScrollLink>
-            </div>
         </div>
     );
-};
+}
 
 export default Navbar;

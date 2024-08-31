@@ -8,7 +8,6 @@ import 'aos/dist/aos.css';
 import Navbar from "./components/Navbar/Navbar.tsx";
 import Design from "./pages/Design/Design.tsx";
 import Experience from "./pages/Skills/Skills.tsx";
-import Contact from "./pages/Contact/Contact.tsx";
 import Results from "./pages/Results/Results.tsx";
 
 function App() {
