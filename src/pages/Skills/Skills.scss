@@ -6,6 +6,8 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  max-width: $breakpoint-xl;
+  margin: 0 auto;
 
   // Competency section container
   .competency-section {

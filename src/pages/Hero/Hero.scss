@@ -53,7 +53,8 @@
   }
 
   .custom-shape-divider-bottom-1725135656 .shape-fill {
-    fill: #f7f9fc;
+    fill: $primary-color;
+    opacity: .25;
   }
 
   &::before {

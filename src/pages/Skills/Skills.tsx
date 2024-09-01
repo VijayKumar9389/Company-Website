@@ -18,9 +18,10 @@ export const competenciesData: Competency[] = [
     {
         title: "Consulting",
         description: [
-            "In-depth analysis of business needs and goals.",
-            "Comprehensive process evaluations.",
-            "Precise data models representing operations."
+            "Evaluate your operations and business processes to identify inefficiencies.",
+            "Recommend improvements to optimize workflows and enhance overall efficiency.",
+            "Develop a technology roadmap that aligns with your business goals.",
+            "Ensure clear communication and effective management throughout project lifecycles."
         ],
         icon: FaListUl,
         img: svgOne,
@@ -28,9 +29,10 @@ export const competenciesData: Competency[] = [
     {
         title: "Design",
         description: [
-            "User-centric interfaces for optimal UX.",
-            "Adaptable web components for data visualization.",
-            "Manage databases for accurate mapping and navigation."
+            "Create user-friendly interfaces that enhance the user experience (UX).",
+            "Implement modern responsive design techniques for seamless access across all devices.",
+            "Design custom web components that present data clearly and effectively.",
+            "Develop precise data models that accurately reflect your business operations."
         ],
         icon: FaPencilAlt,
         img: svgTwo,
@@ -38,10 +40,10 @@ export const competenciesData: Competency[] = [
     {
         title: "Development",
         description: [
-            "REST APIs for seamless communication.",
-            "Automated data processing with advanced algorithms.",
-            "Robust error-checking mechanisms.",
-            "Scalable, secure cloud-based applications."
+            "Build REST APIs for seamless communication and integration with other systems.",
+            "Implement error-checking and validation mechanisms to ensure system reliability.",
+            "Maintain a clean, robust codebase that allows for easy updates and future feature additions.",
+            "Develop scalable, secure cloud-based applications."
         ],
         icon: FaCode,
         img: svgThree,
@@ -49,10 +51,10 @@ export const competenciesData: Competency[] = [
     {
         title: "Deployment",
         description: [
-            "Scalability aligned with business growth.",
-            "Reliable hosting and deployment solutions.",
-            "Secure storage for images and files.",
-            "Continuous support and monitoring."
+            "Apply cutting-edge security measures in compliance with industry standards.",
+            "Configure cloud environments for reliable hosting.",
+            "Ensure scalable storage for images and files.",
+            "Provide continuous support and monitoring."
         ],
         icon: FaCloudUploadAlt,
         img: svgFour,
@@ -70,7 +72,7 @@ const Skills: React.FC = () => {
         <div className="skills-container">
             <Header
                 heading="Bring Your Digital Solution to Life"
-                desc="We Oversee Every Stage of the Application Development Lifecycle"
+                desc="From Concept to Deployment I Oversee Every Stage of the Application Development Lifecycle"
             />
             <div className="competency-section">
                 <div className="competency-list" data-aos="fade-right">

@@ -46,68 +46,68 @@ export interface WorkData {
 export const workData: WorkData[] = [
     {
         title: 'Outreach Management',
-        desc: 'Streamline stakeholder management, delivery tracking, and inventory for Triton Public Awareness.',
+        desc: 'The OnTract application designed for Triton Public Awareness streamlines stakeholder management, delivery tracking, and inventory control, enhancing operational efficiency and effectiveness.',
         imageUrl: OutReach,
         logo: Triton,
         sections: [
             {
                 title: "Stakeholder Management",
-                desc: "Manage stakeholder interactions and delivery planning with advanced tools for efficiency.",
+                desc: "Optimize stakeholder interactions and delivery planning ",
                 sections: [
                     {
-                        description: "Monitor real-time updates on stakeholder status and project progress.",
+                        description: "Monitor real-time updates on stakeholder status and project progress",
                         imageUrl: StakeholderStats,
                     },
                     {
-                        description: "Filter stakeholders by various criteria to tailor engagement and communication.",
+                        description: "Filter stakeholders by various criteria to to simplify engagement",
                         imageUrl: StakeholderFilter,
                     },
                     {
-                        description: "Visualize stakeholder connections and details to gain deeper insights.",
+                        description: "Visualize stakeholder connections and details to gain deeper insights",
                         imageUrl: StakeholderInfo,
                     },
                     {
-                        description: "Import and organize project data using Excel file uploads for streamlined data management.",
+                        description: "Import and organize project data using Excel file uploads",
                         imageUrl: Upload,
                     }
                 ]
             },
             {
                 title: 'Delivery Management',
-                desc: 'Enhance delivery operations with tools for precise planning, tracking, and optimization.',
+                desc: 'Enhance delivery operations with precise planning, tracking, and optimization',
                 sections: [
                     {
-                        description: 'Assign and manage safety packages with accuracy to ensure correct delivery.',
+                        description: 'Assign and manage safety packages with accuracy to ensure correct delivery',
                         imageUrl: DeliveryPlanning,
                     },
                     {
-                        description: 'Automatically update delivery and stakeholder statuses with set completion dates.',
+                        description: 'Automatically update stakeholder consultation date upon delivery completion',
                         imageUrl: DeliveryStatus,
                     },
                     {
-                        description: 'Plan and optimize routes for field agents to increase delivery efficiency.',
+                        description: 'Plan and optimize routes for field agents to  reducing time on the road',
                         imageUrl: DeliveryRoutes,
                     },
                     {
-                        description: 'Modify delivery details, including package assignments and updates, as needed.',
+                        description: 'Modify delivery details, including package assignments and details, as needed',
                         imageUrl: DeliveryChanges,
                     },
                 ],
             },
             {
                 title: 'Inventory Management',
-                desc: 'Maintain precise inventory records and control with detailed tracking and management features.',
+                desc: 'Maintain precise inventory records and control with detailed tracking and management',
                 sections: [
                     {
-                        description: 'Create and manage custom packages, tracking item quantities for accurate oversight.',
+                        description: 'Create and manage custom packages, tracking item quantities for accurate oversight',
                         imageUrl: InventoryPackage,
                     },
                     {
-                        description: 'Store images and quantities of items to ensure accurate inventory records.',
+                        description: 'Store images and quantities of items to ensure accurate inventory records',
                         imageUrl: InventoryItems,
                     },
                     {
-                        description: 'Track sent items with detailed records of deliveries and package types.',
+                        description: 'Track sent items with detailed records of deliveries and package types',
                         imageUrl: InventoryRecords,
                     },
                     {
@@ -120,7 +120,7 @@ export const workData: WorkData[] = [
     },
     {
         title: 'Inventory Management',
-        desc: 'Efficiently manage rental property inventory with accurate record-keeping and receipt storage for Emerald Executive Housing.',
+        desc: 'The Inventory Tracker application designed for Emerald Executive Housing efficiently manages rental property inventory, ensuring accurate record-keeping and secure receipt storage.',
         imageUrl: InventoryApp,
         logo: Emerald,
         sections: [

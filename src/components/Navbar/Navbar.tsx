@@ -42,6 +42,17 @@ const Navbar = () => {
                 >
                     Portfolio
                 </ScrollLink>
+                <ScrollLink
+                    to="footer"  // The ID of the contact section
+                    className="nav-link"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    onClick={closeModal}  // Close the navbar when clicked
+                >
+                    Contact
+                </ScrollLink>
             </div>
             <button onClick={toggleModal} className="menu-btn">
                 {isModalOpen ? <IoClose /> : <IoMenu />}
