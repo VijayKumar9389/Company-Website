@@ -72,7 +72,7 @@ const Skills: React.FC = () => {
         <div className="skills-container">
             <Header
                 heading="Bring Your Digital Solution to Life"
-                desc="From Concept to Deployment I Oversee Every Stage of the Application Development Lifecycle"
+                desc="From Concept to Deployment, I Oversee Every Stage of the Application Development Lifecycle"
             />
             <div className="competency-section">
                 <div className="competency-list" data-aos="fade-right">
@@ -88,11 +88,11 @@ const Skills: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="competency-details" >
+                <div className="competency-details">
                     <div className="image-container" data-aos="fade-up">
                         <img src={selectedCompetency.img} alt={selectedCompetency.title} />
                     </div>
-                    <div className="description"  data-aos="fade-left">
+                    <div className="description" data-aos="fade-left">
                         <ul>
                             {selectedCompetency.description.map((item, index) => (
                                 <li key={index}>

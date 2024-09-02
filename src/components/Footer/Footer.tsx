@@ -1,5 +1,6 @@
 import { IoLocationOutline, IoCallOutline, IoMailOutline } from 'react-icons/io5';
 import './Footer.scss';
+import resumePDF from '../../assets/resume.pdf';
 
 const Footer = () => {
     return (
@@ -20,7 +21,9 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-actions">
-                    <a href="/resume.pdf" className="action-button" download>Download Resume</a>
+                    <a href={resumePDF} download="VijayKumar_Resume.pdf" className="action-button">
+                        Download Resume
+                    </a>
                     <a href="https://github.com/VijayKumar9389" className="action-button">View My GitHub</a>
                 </div>
             </div>

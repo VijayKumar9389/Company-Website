@@ -41,7 +41,7 @@
 
 
       .competency-item {
-        flex: 1 1 auto; // Allow items to grow and shrink
+        flex: 1 1 100%; // Full width for mobile
         display: flex;
         align-items: center;
         padding: $spacing-sm;
@@ -49,13 +49,19 @@
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.3s ease;
         border-radius: $border-radius-md;
-        width: 100%;
-        max-width: 200px; // Max width for items
+        width: 100%; // Full width on mobile
+
+        @media (min-width: $breakpoint-md) {
+          flex: 1 1 50%; // Two items per row on larger screens
+          width: auto; // Adjust width for larger screens
+          justify-content: flex-start; // Align items to the start for larger screens
+        }
 
         &:hover,
         &.active {
           background-color: $card-background; // Consistent background color
           box-shadow: $shadow-small;
+          transform: scale(1.02); // Slight zoom effect on hover
         }
 
         .icon {
@@ -66,6 +72,7 @@
         .title {
           font-weight: $font-weight-medium;
           font-size: $font-size-base-sm;
+          margin: 0; // Remove default margin for better alignment
         }
       }
     }

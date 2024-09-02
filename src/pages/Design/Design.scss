@@ -75,7 +75,7 @@
 
     .nav-button {
       color: $text-primary; // Dark gray text color
-      background: rgba(255, 255, 255, 0.9); // Slightly more opaque background for better readability
+      background: $card-background; // Slightly more opaque background for better readability
       border: 1px solid $border-color; // Light gray border for better definition
       width: 50px; // Slightly larger for better touch interaction
       height: 50px;
@@ -84,7 +84,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+      box-shadow:  $shadow-small; // Subtle shadow for depth
       transition:
               background 0.3s ease,
               transform 0.2s ease,
@@ -93,22 +93,12 @@
 
       &:hover {
         background: darken($primary-color, 10%); // Darkens the primary color for a richer hover effect
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // Stronger shadow for a lift effect
+        box-shadow: $shadow-medium; // Stronger shadow for a lift effect
         transform: translateY(-2px); // Slight lift effect on hover
 
         svg {
           color: $card-background; // Keeps the icon color white on hover
         }
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px lighten($primary-color, 40%), 0 4px 12px rgba(0, 0, 0, 0.15); // Focus ring with a lifted shadow
-      }
-
-      &:active {
-        transform: scale(0.95) translateY(1px); // Slight depress effect on click
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Softer shadow on click for a pressed effect
       }
 
       svg {

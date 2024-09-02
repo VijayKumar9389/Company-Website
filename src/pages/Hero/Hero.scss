@@ -71,15 +71,14 @@
 
   .hero-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.5fr;
     align-items: center;
     gap: $spacing-lg;
-    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     z-index: 1; // Ensure content is above background effects
 
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       grid-template-columns: 1fr;
       text-align: center;
     }
@@ -89,13 +88,14 @@
       text-align: start;
 
 
-      @media (max-width: $breakpoint-md) {
+      @media (max-width: $breakpoint-lg) {
         text-align: center;
       }
 
       .hero-title {
         color: #fff;
         text-transform: uppercase;
+        font-weight: $font-weight-medium;
       }
     }
 
