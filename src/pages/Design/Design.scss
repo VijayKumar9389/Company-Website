@@ -56,11 +56,10 @@
 
   .slide-content-wrapper {
     text-align: center;
-    color: $text-primary;
-    margin: $spacing-lg;
-    align-items: flex-start;
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-primary;
     min-height: 100px;
 
     h5 {
@@ -71,40 +70,32 @@
   .slide-controls {
     display: flex;
     justify-content: space-between;
-    padding: $spacing-lg 0;
+    align-items: center;
+    margin-top: 1rem;
 
     .nav-button {
-      color: $text-primary; // Dark gray text color
-      background: $card-background; // Slightly more opaque background for better readability
-      border: 1px solid $border-color; // Light gray border for better definition
-      width: 50px; // Slightly larger for better touch interaction
-      height: 50px;
-      border-radius: 50%; // Keeps the button circular
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow:  $shadow-small; // Subtle shadow for depth
-      transition:
-              background 0.3s ease,
-              transform 0.2s ease,
-              box-shadow 0.3s ease,
-              color 0.3s ease;
+      transition: background-color 0.3s;
 
       &:hover {
-        background: darken($primary-color, 10%); // Darkens the primary color for a richer hover effect
-        box-shadow: $shadow-medium; // Stronger shadow for a lift effect
-        transform: translateY(-2px); // Slight lift effect on hover
-
-        svg {
-          color: $card-background; // Keeps the icon color white on hover
-        }
+        background-color: darken($primary-color, 10%);
       }
 
-      svg {
-        font-size: 2rem; // Slightly larger icon size for better visibility
-        color: $primary-color; // Icon color matches primary color for consistency
-        transition: color 0.3s ease; // Smooth transition for icon color change
+      &.prev {
+        margin-right: auto;
+      }
+
+      &.next {
+        margin-left: auto;
       }
     }
   }
@@ -112,29 +103,21 @@
   .slideshow-indicators {
     display: flex;
     justify-content: center;
-    margin-top: $spacing-lg;
+    gap: 0.5rem;
+    margin: 1rem 0;
 
     .indicator {
-      width: 16px;
-      height: 16px;
-      margin: 0 $spacing-sm;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: $text-secondary;
+      background-color: #e0e0e0;
       cursor: pointer;
-      transition:
-              background 0.3s ease,
-              transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.2);
-        background: lighten($primary-color, 20%); // Lighter color on hover
-      }
+      transition: background-color 0.3s;
 
       &.active {
-        background: $primary-color;
-        transform: scale(1.4);
-        box-shadow: $shadow-small; // Added shadow for active indicators
+        background-color: $primary-color;
       }
     }
   }
+
 }

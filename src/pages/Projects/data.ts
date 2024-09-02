@@ -18,7 +18,7 @@ import InventoryApp from "../../assets/Media/inventory.png"
 import OutReach from "../../assets/Media/outreach.png"
 
 import Triton from "../../assets/Triton Logo.png"
-import Emerald from "../../assets/Emerald Logo.jpg"
+import Emerald from "../../assets/Emerald Logo.png"
 
 
 // Define the new WorkSection interface

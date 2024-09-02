@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { Link as ScrollLink } from 'react-scroll';
 import './Navbar.scss';
 
 const Navbar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -14,8 +15,23 @@ const Navbar = () => {
         setIsModalOpen(false);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="navbar">
+        <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="logo">
                 <h2 onClick={() => window.scrollTo(0, 0)}>Vijay Kumar</h2>
             </div>
@@ -27,7 +43,7 @@ const Navbar = () => {
                     smooth={true}
                     offset={-80}
                     duration={500}
-                    onClick={closeModal}  // Close the navbar when clicked
+                    onClick={closeModal}
                 >
                     Services
                 </ScrollLink>
@@ -38,18 +54,18 @@ const Navbar = () => {
                     smooth={true}
                     offset={-80}
                     duration={500}
-                    onClick={closeModal}  // Close the navbar when clicked
+                    onClick={closeModal}
                 >
                     Portfolio
                 </ScrollLink>
                 <ScrollLink
-                    to="footer"  // The ID of the contact section
+                    to="footer"
                     className="nav-link"
                     spy={true}
                     smooth={true}
                     offset={-80}
                     duration={500}
-                    onClick={closeModal}  // Close the navbar when clicked
+                    onClick={closeModal}
                 >
                     Contact
                 </ScrollLink>

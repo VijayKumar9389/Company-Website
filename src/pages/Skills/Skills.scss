@@ -116,25 +116,30 @@
         ul {
           list-style: none;
           padding: 0;
+          margin: 0;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          flex: 1;
+          gap: $spacing-md; // Spacing between list items
 
           li {
-            margin-bottom: $spacing-xs; // Space between list items
             display: flex;
-            align-items: center;
+            align-items: center; // Align bullet and text at the top
             text-align: left;
-            gap: $spacing-xs; // Space between bullet and text
+            gap: $spacing-sm; // Space between bullet and text
+
+            p {
+              margin: 0;
+              line-height: normal; // Improved readability
+            }
 
             &:before {
-              content: "•";
-              color: $primary-color; // Color for bullet points
+              content: "→"; // Unicode arrow character
+              color: $primary-color; // Color for the arrow
               font-weight: $font-weight-bold;
+              font-size: $font-size-base-lg; // Slightly larger arrow for better visibility
+              line-height: 1; // Align arrow vertically with text
               display: inline-block;
-              width: 1rem;
-              margin-right: $spacing-xs; // Space between bullet and text
+              margin-right: $spacing-xs; // Space between arrow and text
             }
           }
         }
