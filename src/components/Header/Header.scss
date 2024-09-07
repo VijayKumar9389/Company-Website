@@ -2,47 +2,18 @@
 
 .header-container {
   position: relative;
-  padding: $spacing-lg $spacing-md;
+  padding: $spacing-lg 0;
   background-color: $background-color; // Adjust to your theme color
   width: 100%;
   margin: 0 auto;
 
   h1 {
     color: $primary-color; // Main heading color
-    font-weight: $font-weight-bold; // Bold for emphasis
-    line-height: 1.2; // Adjust line height for readability
-    transition: color 0.3s ease; // Smooth transition for color changes
-
-    &[data-aos='fade-right'] {
-      opacity: 0;
-      transform: translateX(-30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
   }
 
   p {
-    font-size: 1.25rem; // Medium font size for description
     color: $text-secondary; // Secondary text color
     margin: 0;
-    line-height: 1.6; // Improved line height for readability
-    transition: color 0.3s ease; // Smooth transition for color changes
-
-    &[data-aos='fade-left'] {
-      opacity: 0;
-      transform: translateX(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
   }
 
-  @media (max-width: $breakpoint-md) {
-    padding: $spacing-md $spacing-sm; // Adjust padding on smaller screens
-
-    h1 {
-      font-size: 2.5rem; // Adjust font size for smaller screens
-    }
-
-    p {
-      font-size: 1rem; // Adjust font size for smaller screens
-    }
-  }
 }

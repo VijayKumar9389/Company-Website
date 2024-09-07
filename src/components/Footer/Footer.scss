@@ -76,7 +76,7 @@
       border: none;
       padding: $spacing-sm $spacing-md;
       font-size: $font-size-base-sm;
-      border-radius: $border-radius-md; // Updated to medium border-radius for better touch target
+      border-radius: $border-radius-sm; // Updated to medium border-radius for better touch target
       cursor: pointer;
       transition: background-color 0.3s ease;
       text-decoration: none; // Removes underline

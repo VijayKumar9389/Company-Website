@@ -14,6 +14,11 @@ import Losses from "../../assets/screenshoots/Losses.png";
 import Upload from "../../assets/screenshoots/Upload.png";
 import Validation from "../../assets/screenshoots/Validation.png";
 
+import Rentals from "../../assets/screenshoots/Rentals.png";
+import Copywrite from "../../assets/screenshoots/Copywrite.png";
+import Questions from "../../assets/screenshoots/Questions.png";
+import Branding from "../../assets/screenshoots/Branding.png";
+
 import InventoryApp from "../../assets/Media/inventory.png"
 import OutReach from "../../assets/Media/outreach.png"
 
@@ -143,6 +148,28 @@ export const workData: WorkData[] = [
                     {
                         description: 'Implement robust user management and admin accounts to protect sensitive features.',
                         imageUrl: Users,
+                    },
+                ],
+            },
+            {
+                title: 'Website & Digital Marketing',
+                desc: 'Implementing cutting-edge digital marketing strategies to enhance online visibility and customer engagement (In Progress).',
+                sections: [
+                    {
+                        description: 'Manage rental listings with compelling copywriting, interactive images, and integrated maps.',
+                        imageUrl: Rentals,
+                    },
+                    {
+                        description: 'Promote services through mobile-responsive, interactive designs aligned with your company’s branding.',
+                        imageUrl: Copywrite,
+                    },
+                    {
+                        description: 'Boost engagement by designing custom forms for interaction with your personal app.',
+                        imageUrl: Branding,
+                    },
+                    {
+                        description: 'Streamline operations by centralizing inquiries through a personalized app, enhancing efficiency.',
+                        imageUrl: Questions,
                     },
                 ],
             }
