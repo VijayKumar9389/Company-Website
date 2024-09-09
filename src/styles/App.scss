@@ -3,26 +3,6 @@
 .app {
   background-color: $background-color;
 
-  .custom-shape-divider-top-1725311894 {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-
-  .custom-shape-divider-top-1725311894 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 150px;
-  }
-
-  .custom-shape-divider-top-1725311894 .shape-fill {
-    fill: $primary-color;
-  }
-
   .app-wrapper {
     padding: $spacing-md; /* Base padding for smaller screens */
     display: flex;

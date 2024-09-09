@@ -29,8 +29,7 @@ const Slideshow: React.FC = () => {
                 heading="Unlock the Potential of Cloud Applications"
                 desc="Engineered for secure communication, optimized business operations, enhanced efficiency, and guaranteed data accuracy."
             />
-            <div className="slideshow-wrapper" data-aos="fade-up">
-
+            <div className="slideshow-wrapper" data-aos="fade-in">
                 <div className="slideshow">
                     {project.sections.map((section: WorkSectionData, index: number) => (
                         <Slide
@@ -42,11 +41,14 @@ const Slideshow: React.FC = () => {
                         />
                     ))}
                 </div>
-                <div className="slide-controls" data-aos="fade-up">
-                    <button className="nav-button prev" onClick={handlePrevSlide}>
+                <div className="slide-content-wrapper">
+                    <h5>{project.sections[currentIndex].description}</h5>
+                </div>
+                <div className="slide-controls" >
+                    <button className="nav-button prev" onClick={handlePrevSlide} >
                         <FaArrowLeft/>
                     </button>
-                    <div className="slideshow-indicators" data-aos="fade-in">
+                    <div className="slideshow-indicators">
                         {project.sections.map((_, index) => (
                             <div
                                 key={index}
@@ -55,12 +57,9 @@ const Slideshow: React.FC = () => {
                             />
                         ))}
                     </div>
-                    <button className="nav-button next" onClick={handleNextSlide}>
+                    <button className="nav-button next" onClick={handleNextSlide} >
                         <FaArrowRight/>
                     </button>
-                </div>
-                <div className="slide-content-wrapper" data-aos="fade-left">
-                    <h5>{project.sections[currentIndex].description}</h5>
                 </div>
             </div>
         </div>

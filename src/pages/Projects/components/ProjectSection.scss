@@ -143,12 +143,12 @@
         height: 0; // Initial height
         overflow: hidden;
         transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
-        background-color: $card-background;
         padding: 0; // No padding initially
 
         &.open {
           height: auto; // Auto height to fit content
           padding: $spacing-md $spacing-lg;
+          border: 1px solid $border-color;
         }
 
         .details-wrapper {

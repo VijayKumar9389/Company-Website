@@ -125,50 +125,50 @@ export const workData: WorkData[] = [
     },
     {
         title: 'Inventory Management',
-        desc: 'The Inventory Tracker application designed for Emerald Executive Housing efficiently manages rental property inventory, ensuring accurate record-keeping and secure receipt storage.',
+        desc: 'The Inventory Tracker application, created for Emerald Executive Housing, streamlines rental property inventory management with precise record-keeping and secure receipt storage.',
         imageUrl: InventoryApp,
         logo: Emerald,
         sections: [
             {
                 title: 'Inventory Tracker',
-                desc: 'Oversee rental property inventory with a focus on detailed record-keeping and accurate management.',
+                desc: 'Effectively manage rental property inventory with detailed oversight and accurate record keeping.',
                 sections: [
                     {
-                        description: 'Maintain up-to-date records of items and receipts for effective inventory management.',
+                        description: 'Keep records up-to-date for seamless inventory tracking and efficient management.',
                         imageUrl: Inventory,
                     },
                     {
-                        description: 'Identify and report missing items to improve inventory control and oversight across locations.',
+                        description: 'Easily identify and report missing items to improve inventory control and reduce losses across properties.',
                         imageUrl: Losses,
                     },
                     {
-                        description: 'Validate inventory data rigorously to prevent discrepancies and ensure accuracy.',
+                        description: 'Ensure data accuracy with rigorous validation processes, minimizing discrepancies.',
                         imageUrl: Validation,
                     },
                     {
-                        description: 'Implement robust user management and admin accounts to protect sensitive features.',
+                        description: 'Enhance security by implementing user management and admin controls for sensitive operations.',
                         imageUrl: Users,
                     },
                 ],
             },
             {
                 title: 'Website & Digital Marketing',
-                desc: 'Implementing cutting-edge digital marketing strategies to enhance online visibility and customer engagement (In Progress).',
+                desc: 'Innovative digital marketing strategies to boost online presence and drive customer engagement (In Progress).',
                 sections: [
                     {
-                        description: 'Manage rental listings with compelling copywriting, interactive images, and integrated maps.',
+                        description: 'Manage rental listings with engaging copywriting, interactive images, and integrated location maps.',
                         imageUrl: Rentals,
                     },
                     {
-                        description: 'Promote services through mobile-responsive, interactive designs aligned with your company’s branding.',
+                        description: 'Enhance brand visibility with mobile-responsive, interactive designs tailored to your business.',
                         imageUrl: Copywrite,
                     },
                     {
-                        description: 'Boost engagement by designing custom forms for interaction with your personal app.',
+                        description: 'Increase customer engagement by designing custom forms for personalized interactions within your app.',
                         imageUrl: Branding,
                     },
                     {
-                        description: 'Streamline operations by centralizing inquiries through a personalized app, enhancing efficiency.',
+                        description: 'Improve efficiency by centralizing customer inquiries within your app for seamless communication.',
                         imageUrl: Questions,
                     },
                 ],
