@@ -64,12 +64,10 @@
       padding: $spacing-lg;
 
       .hero-title {
-        font-size: 3rem; // Modern large text
-        font-weight: bold;
+        font-weight: $font-weight-medium;
         text-transform: uppercase;
         color: white;
         margin-bottom: $spacing-md;
-        letter-spacing: 1.5px; // Slightly increase letter spacing
         text-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
         animation: fadeIn 1s ease-out;
 
