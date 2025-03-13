@@ -1,12 +1,16 @@
 // Colors
-$primary-color: #0033cc; // Deep Blue (unchanged)
-$background-color: #f7f9fc; // Light background
-$accent-background-color: #e0e6f0; // Soft, muted blue-gray
+$primary-color: #1a1a1a; // Deep Blue (unchanged)
+$background-color: #f3f4f5; // Light background
+$accent-background-color: #e5e7eb; // Soft, muted blue-gray
 $card-background: #ffffff; // White or very light gray for cards
 $text-primary: #333333; // Dark gray for primary text
 $text-secondary: #666666; // Medium gray for secondary text
 $border-color: #dddddd; // Light gray for borders
 $link-color: #007bff; // Bright blue for links
+
+//Text Colors for Dark Mode
+$text-primary-dark: #f9f9f9;
+$text-secondary-dark: #f2f2f2;
 
 
 // Spacing with rem units

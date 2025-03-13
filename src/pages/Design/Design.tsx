@@ -42,7 +42,7 @@ const Slideshow: React.FC = () => {
                     ))}
                 </div>
                 <div className="slide-content-wrapper">
-                    <h5>{project.sections[currentIndex].description}</h5>
+                    <p>{project.sections[currentIndex].description}</p>
                 </div>
                 <div className="slide-controls" >
                     <button className="nav-button prev" onClick={handlePrevSlide} >

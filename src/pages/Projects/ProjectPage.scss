@@ -1,0 +1,81 @@
+@import "../../styles/variables";
+
+.app-page {
+  margin: 0 auto;
+}
+
+.app-body {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-xl $spacing-lg;
+  gap: 3rem; // Consistent spacing between sections
+  margin: 0 auto;
+  max-width: $breakpoint-xxl;
+
+}
+
+.app-section {
+  h2 {
+    color: $text-primary;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $text-secondary;
+    line-height: 1.6;
+  }
+}
+
+.app-results {
+  margin-top: $spacing-xl; // Increased margin
+}
+
+
+.app-details {
+  .detail-section {
+    margin-bottom: $spacing-xl; // Increased spacing
+
+    h3 {
+      margin-bottom: $spacing-md;
+      color: $text-primary;
+      text-align: left;
+      letter-spacing: 0.5px;
+    }
+
+    .detail-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $spacing-lg; // Increased gap for better visual separation
+      justify-items: stretch;
+
+      .detail-card {
+        display: flex;
+        flex-direction: column;
+        background-color: $accent-background-color;
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-small; // Use the smaller shadow
+        overflow: hidden;
+        padding: $spacing-md; // Increased padding
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        .detail-image {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: $border-radius-sm $border-radius-sm 0 0;
+          margin-bottom: $spacing-md; // Increased margin
+          object-fit: cover;
+        }
+
+        .detail-desc {
+          color: $text-secondary;
+          line-height: $line-height-base;
+          font-weight: $font-weight-regular;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+

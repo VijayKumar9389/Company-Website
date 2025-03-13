@@ -10,7 +10,7 @@ const Skill = ({ title, description, icon: Icon, delay }: { title: string; descr
                 <Icon />
             </div>
             <div className="skill-content">
-                <h4 className="skill-title">{title}</h4>
+                <h5 className="skill-title">{title}</h5>
                 <p className="skill-description">{description}</p>
             </div>
         </div>

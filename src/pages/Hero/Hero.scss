@@ -1,52 +1,56 @@
 @import '../../styles/variables';
 
-.hero-container {
+.hero {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  min-height: fit-content;
+  justify-content: space-between;
   position: relative;
-  background: linear-gradient(135deg, $primary-color 0%, darken($accent-background-color, 10%) 100%);
+  width: 100%;
+  padding: $spacing-xl $spacing-lg;
+  color: $text-primary;
+  background: linear-gradient(to top, $background-color, $primary-color);
+  text-align: start;
   overflow: hidden;
-  padding: $spacing-md;
+  padding-top: 64px;
 
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .custom-shape-divider-bottom-1741897480 {
+    position: relative;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    padding: $spacing-lg;
-    gap: $spacing-lg;
-    animation: fadeIn 1s ease-out;
-
-    @media (min-width: $breakpoint-md) {
-      flex-direction: row;
-      justify-content: space-between;
-    }
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
   }
 
-  .hero-text {
+  .custom-shape-divider-bottom-1741897480 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+  }
+
+  .custom-shape-divider-bottom-1741897480 .shape-fill {
+    fill: #FFFFFF;
+  }
+
+  .hero-content {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    animation: slideIn 1.2s ease-out forwards;
-    color: $card-background;
+    max-width: 650px;
+    animation: fadeIn 1s ease-out;
 
     .hero-title {
-      font-weight: $font-weight-medium;
       margin-bottom: $spacing-md;
-      opacity: 0;
-      animation: fadeInUp 0.6s ease-out forwards;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $text-primary-dark;
     }
 
     .hero-subtitle {
+      color: $text-secondary-dark;
+      line-height: 1.8;
       margin-bottom: $spacing-lg;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease-out forwards;
-      animation-delay: 0.2s;
     }
   }
 
@@ -55,25 +59,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    animation: slideInImage 1.4s ease-out forwards;
-
-    @media (min-width: $breakpoint-md) {
-      justify-content: flex-end;
-    }
+    margin-top: $spacing-lg;
 
     .hero-image {
-      max-width: 100%;
+      width: 100%;
+      max-width: $breakpoint-xl;
       height: auto;
-      opacity: 0;
-      animation: fadeIn 1.5s ease-out forwards;
-      animation-delay: 0.5s;
+      object-fit: cover;
+      border-radius: $border-radius-lg;
+      transition: filter 0.3s ease-in-out;
     }
   }
 }
 
-/* Text and Image Animations */
-@keyframes fadeInUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -84,22 +83,24 @@
   }
 }
 
-@keyframes slideInImage {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+/* Responsive Design */
+@media (max-width: $breakpoint-lg) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: $spacing-lg;
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+    .hero-content {
+      max-width: 90%;
+    }
+
+    .hero-image-wrapper {
+      width: 100%;
+      margin-top: $spacing-md;
+
+      .hero-image {
+        object-fit: contain;
+      }
+    }
   }
 }

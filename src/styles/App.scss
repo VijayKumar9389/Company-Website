@@ -2,14 +2,34 @@
 
 .app {
   background-color: $background-color;
+  position: relative;
+
+  .custom-shape-divider-top-1741825501 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+  .custom-shape-divider-top-1741825501 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 27px;
+  }
+
+  .custom-shape-divider-top-1741825501 .shape-fill {
+    fill: #1A1A1A;
+  }
 
   .app-wrapper {
     padding: $spacing-md; /* Base padding for smaller screens */
     display: flex;
     flex-direction: column;
     gap: 4rem; /* Base gap for smaller screens */
-
-
+    overflow: hidden;
 
     // Media Query for small devices (up to 600px)
     @media (min-width: $breakpoint-xs) {

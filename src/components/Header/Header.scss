@@ -1,21 +1,47 @@
-@import '../../styles/variables'; // Import your variables
+@import '../../styles/variables';
 
 .header-container {
   position: relative;
-  padding: $spacing-lg 0;
-  background-color: $background-color; // Adjust to your theme color
   width: 100%;
+  max-width: $breakpoint-xxl;
   margin: 0 auto;
+  padding: $spacing-xl 0;
+  background-color: $background-color;
   text-align: center;
 
-  h1 {
-    color: $text-primary; // Main heading color
+  h2 {
+    color: $text-primary;
     font-weight: $font-weight-medium;
+    letter-spacing: 0.5px;
   }
 
   p {
-    color: $text-primary; // Secondary text color
-    margin: 0;
+    color: $text-secondary;
+    max-width: 70%;
+    margin: 0 auto $spacing-lg;
+    line-height: 1.6;
+    opacity: 0.9;
   }
 
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-lg;
+    text-align: left;
+
+    p {
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+  }
+}
+
+// Dark Mode Styling
+.dark-mode {
+  background-color: $primary-color; // Dark background
+  h2 {
+    color: $text-primary-dark;
+  }
+
+  p {
+    color: $text-secondary-dark;
+  }
 }

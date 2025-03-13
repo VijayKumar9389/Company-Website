@@ -1,0 +1,55 @@
+@import "../../../../styles/variables";
+
+.tech-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $background-color;
+    overflow: hidden;
+    padding: $spacing-lg;
+}
+
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    display: flex;
+    gap: $spacing-lg;
+    width: max-content;
+    animation: marquee-scroll 15s linear infinite;
+}
+
+.services-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    padding: $spacing-md;
+}
+
+.services-icon {
+    font-size: 4rem;
+    color: $link-color;
+}
+
+.services-h2 {
+    font-size: $font-size-base-md;
+    margin-top: $spacing-sm;
+    color: $text-primary;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}

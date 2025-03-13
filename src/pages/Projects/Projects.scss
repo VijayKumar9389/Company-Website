@@ -1,11 +1,62 @@
 @import "../../styles/variables";
 
-// Container for the Work section
-.work-container {
+.projects-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: $breakpoint-xxl;
   margin: 0 auto;
-  overflow: hidden;
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-small; // Lighter shadow by default
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid transparent; // Invisible by default
+
+    &:hover {
+      background: $accent-background-color;
+      box-shadow: $shadow-large; // Stronger shadow for depth
+      border-color: $primary-color; // Adds a colored border on hover
+    }
+
+    .image-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: $border-radius-md $border-radius-md 0 0;
+
+      .project-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    .info-container {
+      padding: 1.5rem;
+      text-align: center;
+
+      .project-title {
+        font-weight: normal;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-description {
+        color: #666;
+        margin-bottom: 1rem;
+      }
+    }
+  }
 }

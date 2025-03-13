@@ -1,22 +1,15 @@
 @import '../../styles/variables';
 
 .navbar {
-  position: sticky;
   width: 100%;
-  top: 0;
-  left: 0;
   padding: $spacing-md $spacing-lg;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
-  background: $background-color;
-
-  &.scrolled {
-    background: $card-background; // Change background color on scroll
-    box-shadow: $shadow-medium;
-  }
+  background: $primary-color;
+  color: white;
 
   .logo h2 {
     cursor: pointer;

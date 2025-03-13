@@ -1,0 +1,89 @@
+@import "../../styles/variables";
+
+/* QA Section Styles */
+.qa-section {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $breakpoint-xxl;
+}
+
+.qa-container {
+  margin: 0 auto;
+  max-width: $breakpoint-xxl;
+
+  .qa-item {
+    overflow: hidden;
+    border-bottom: 1px solid $border-color;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus-within {
+      outline: 2px solid $border-color; // Improved focus state
+    }
+
+    .qa-question {
+      padding: $spacing-md $spacing-lg;
+      font-weight: $font-weight-bold;
+      color: $text-primary;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: $spacing-md;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-background-color, 5%);
+      }
+
+      &.active {
+        background-color: darken($accent-background-color, 5%);
+
+        .icon {
+          transform: rotate(180deg); // Rotate icon when active
+        }
+      }
+
+      .icon {
+        font-size: 1rem;
+        color: $text-primary;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .qa-answer {
+      padding: 0 $spacing-lg;
+      color: $text-secondary;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      font-style: italic;
+      transition: max-height 0.4s ease, opacity 0.3s ease-in-out, padding 0.3s ease;
+
+      ul li {
+        list-style: none;
+        margin-bottom: $spacing-xs;
+
+        &:before {
+          content: "→";
+          color: $primary-color;
+          font-weight: $font-weight-bold;
+          display: inline-block;
+          margin-right: $spacing-xs;
+        }
+      }
+
+      &.active {
+        max-height: 500px; // Prevents sudden jumps
+        opacity: 1;
+        visibility: visible;
+        padding: $spacing-md $spacing-lg;
+        background-color: $background-color;
+      }
+    }
+  }
+
+  .qa-item:last-child {
+    border-bottom: none; // Remove border from the last item
+  }
+}

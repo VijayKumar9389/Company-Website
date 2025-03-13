@@ -1,44 +1,46 @@
-import { AiOutlineDatabase, AiOutlineSync } from 'react-icons/ai';
-import { RiBarChartLine } from 'react-icons/ri';
-import { FaUsers } from 'react-icons/fa';
-import { IoMdFiling } from 'react-icons/io';
+import { FaHandshake, FaChartLine, FaUserCheck, FaUsers } from 'react-icons/fa6';
+import { MdOutlineSupportAgent, MdOutlineStorage, MdOutlineSync } from 'react-icons/md';
 import { BiErrorCircle } from 'react-icons/bi';
-import {GiHealthNormal} from "react-icons/gi";
 
 export const skillsData = [
     {
+        title: "Easy Onboarding",
+        description: "Simplify complex processes with an intuitive interface that seamlessly guides users through the system.",
+        icon: FaUserCheck, // Clear onboarding experience
+    },
+    {
         title: 'Enhanced Collaboration',
-        description: 'Facilitate real-time collaboration on a unified platform, offering a consistent user experience across all devices to boost team coordination.',
-        icon: AiOutlineDatabase, // Database icon for data  v   management
+        description: 'Facilitate real-time teamwork across all devices with a unified platform that streamlines coordination.',
+        icon: FaHandshake, // Represents collaboration and teamwork
     },
     {
         title: 'Increased Productivity',
-        description: 'Leverage tailored workflows designed to streamline your business operations and enhance process efficiency.',
-        icon: AiOutlineSync, // Sync icon for efficiency
-    },
-    {
-        title: 'Enhanced Decision-Making',
-        description: 'Empower strategic decision-making with robust data visualization and real-time analytics.',
-        icon: RiBarChartLine, // Bar chart icon for data visualization
+        description: 'Optimize operations with automated workflows that improve task management and overall efficiency.',
+        icon: MdOutlineSync, // Represents process automation and efficiency
     },
     {
         title: 'Reliable Storage',
-        description: 'Ensure reliable and accessible record-keeping with secure, cloud-based storage for all your data, images, and files.',
-        icon: IoMdFiling, // Filing icon for record keeping
+        description: 'Securely store all your data, images, and files with cloud-based record-keeping and accessibility.',
+        icon: MdOutlineStorage, // Modern storage & security representation
     },
     {
         title: 'Reduced Errors',
-        description: 'Minimize errors through built-in error checking, input validation, and safeguards against accidental data deletions.',
-        icon: BiErrorCircle, // Error circle icon for error reduction
+        description: 'Prevent data inaccuracies with built-in validation, error checking, and safeguards against accidental deletions.',
+        icon: BiErrorCircle, // Represents error reduction and validation
+    },
+    {
+        title: 'Enhanced Decision-Making',
+        description: 'Transform raw data into meaningful insights with visual analytics, reports, and trend forecasting.',
+        icon: FaChartLine, // Represents data visualization and reporting
     },
     {
         title: 'High User Adoption',
-        description: 'Promote high user adoption by continuously improving the system based on user feedback and needs.',
-        icon: FaUsers, // Users icon for user adoption
+        description: 'Encourage widespread adoption with a continuously evolving system tailored to user needs and feedback.',
+        icon: FaUsers, // Represents user growth and engagement
     },
     {
         title: 'Dedicated Support',
-        description: 'Access dedicated support for ongoing monitoring and troubleshooting to address any issues promptly.',
-        icon: GiHealthNormal, // Users icon for support
+        description: 'Access expert support for troubleshooting, updates, and ongoing system improvements.',
+        icon: MdOutlineSupportAgent, // Represents dedicated assistance
     },
 ];

@@ -1,0 +1,153 @@
+@import '../../styles/variables';
+
+.experience-container {
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+  background-color: $primary-color;
+
+  .custom-shape-divider-top-1741825181 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-top-1741825181 svg {
+    position: relative;
+    display: block;
+    width: calc(299% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+  }
+
+  .custom-shape-divider-top-1741825181 .shape-fill {
+    fill: #F3F4F5;
+  }
+
+  .custom-shape-divider-bottom-1741824976 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+
+  .custom-shape-divider-bottom-1741824976 svg {
+    position: relative;
+    display: block;
+    width: calc(200% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+  }
+
+  .custom-shape-divider-bottom-1741824976 .shape-fill {
+    fill: #F3F4F5;
+  }
+}
+
+.experience-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative; /* Ensure it's positioned relative to its parent */
+  max-width: $breakpoint-xxl;
+  margin:  auto;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    left: 50%;
+    top: 0; /* Adjust the top */
+    bottom: 0; /* Set bottom to 0 to constrain the line */
+    height: auto; /* Let height adjust based on content */
+    background-color: #fff;
+  }
+}
+
+.experience-item {
+  width: 100%;
+  margin-bottom: 40px;
+
+  &:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+  }
+
+  &:nth-child(even) {
+    padding-left: calc(50% + 30px);
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    border: 4px solid #fff;
+    position: absolute;
+    left: calc(50% - 7px);
+  }
+
+  .section-number {
+    font-weight: normal;
+    color: $text-primary-dark;
+    margin-top: -4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .title {
+    color: $text-secondary-dark;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+  }
+
+  .details {
+    color: $text-secondary-dark;
+    line-height: 1.6;
+    opacity: 0.9;
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        margin-bottom: 10px;
+        position: relative;
+
+      }
+    }
+  }
+
+}
+
+// responsive
+@media (max-width: 768px) {
+  .experience-wrapper {
+    &::before {
+      left: 7px;
+    }
+  }
+  .experience-item {
+    &:nth-child(odd) {
+      padding-right: 0;
+      text-align: left;
+    }
+
+    &:nth-child(odd),
+    &:nth-child(even) {
+      padding-left: 37px;
+    }
+
+    .timeline-dot {
+      left: 0;
+    }
+
+  }
+}
+

@@ -1,0 +1,97 @@
+@import "../../../../styles/variables";
+
+.application-container {
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) 2fr;
+  gap: 2rem;
+  margin-bottom: 5rem;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.application-header {
+  position: sticky;
+  top: $spacing-lg;
+  align-self: start;
+  max-width: 600px;
+
+  @media (max-width: $breakpoint-md) {
+    position: relative;
+    top: auto;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.section-title {
+  font-weight: normal;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
+}
+
+.section-description {
+  opacity: 0.85;
+  max-width: 600px;
+
+  @media (max-width: $breakpoint-md) {
+    max-width: 100%;
+  }
+}
+
+.work-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding-right: $spacing-md;
+
+  @media (max-width: $breakpoint-md) {
+    max-height: unset;
+    padding-right: 0;
+  }
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: $spacing-lg;
+
+
+  &[data-aos="fade-up"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.work-description {
+  color: $text-primary;
+  text-align: left;
+  width: 100%;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: $border-radius-md;
+}
+
+.work-image {
+  width: 100%;
+  max-height: 600px;
+  border-radius: $border-radius-md;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: $breakpoint-md) {
+    max-height: 400px;
+  }
+}

@@ -1,81 +1,63 @@
-import { useState, useEffect } from "react";
-import { IoMenu, IoClose } from "react-icons/io5";
-import { Link as ScrollLink } from 'react-scroll';
-import './Navbar.scss';
+import { useState, useEffect, useCallback } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { useNavigate } from "react-router-dom"; // For navigation
+import "./Navbar.scss";
 
 const Navbar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate(); // Handles navigation
 
-    const toggleModal = () => {
-        setIsModalOpen(!isModalOpen);
-    };
+    const toggleModal = () => setIsModalOpen((prev) => !prev);
+    const closeModal = () => setIsModalOpen(false);
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+    const handleScroll = useCallback(() => {
+        requestAnimationFrame(() => {
+            setScrolled(window.scrollY > 50);
+        });
     }, []);
 
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [handleScroll]);
+
     return (
-        <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-            <div className="logo">
-                <h2 onClick={() => window.scrollTo(0, 0)}>Vijay Kumar</h2>
+        <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+            {/* Logo Section */}
+            <div className="logo" onClick={() => navigate("/")}>
+               <p>
+                   Vijay Kumar
+               </p>
             </div>
-            <div className={`nav-container ${isModalOpen ? 'open' : ''}`}>
-                <ScrollLink
-                    to="skills-container"
-                    className="nav-link"
-                    spy={true}
-                    smooth={true}
-                    offset={-80}
-                    duration={500}
-                    onClick={closeModal}
-                >
-                    Services
-                </ScrollLink>
-                <ScrollLink
-                    to="work-container"
-                    className="nav-link"
-                    spy={true}
-                    smooth={true}
-                    offset={-80}
-                    duration={500}
-                    onClick={closeModal}
-                >
-                    Portfolio
-                </ScrollLink>
-                <ScrollLink
-                    to="footer"
-                    className="nav-link"
-                    spy={true}
-                    smooth={true}
-                    offset={-80}
-                    duration={500}
-                    onClick={closeModal}
-                >
-                    Contact
-                </ScrollLink>
+
+            {/* Navigation Links */}
+            <div className={`nav-container ${isModalOpen ? "open" : ""}`}>
+                {["Services", "Portfolio", "Contact"].map((section, index) => (
+                    <ScrollLink
+                        key={index}
+                        to={section.toLowerCase() + "-container"}
+                        className="nav-link"
+                        spy
+                        smooth
+                        offset={-80}
+                        duration={500}
+                        onClick={closeModal}
+                    >
+                        {section}
+                    </ScrollLink>
+                ))}
             </div>
-            <button onClick={toggleModal} className="menu-btn">
-                {isModalOpen ? <IoClose /> : <IoMenu />}
-            </button>
-            <div className={`overlay ${isModalOpen ? 'show' : ''}`} onClick={toggleModal}></div>
-        </div>
+
+            {/*/!* Mobile Menu Button *!/*/}
+            {/*<button onClick={toggleModal} className="menu-btn" aria-label="Toggle menu">*/}
+            {/*    {isModalOpen ? <IoClose /> : <IoMenu />}*/}
+            {/*</button>*/}
+
+            {/* Overlay for Mobile Menu */}
+            {isModalOpen && <div className="overlay show" onClick={toggleModal}></div>}
+        </nav>
     );
-}
+};
 
 export default Navbar;
