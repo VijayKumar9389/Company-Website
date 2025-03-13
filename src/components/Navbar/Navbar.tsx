@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { Link as ScrollLink } from "react-scroll";
 import { useNavigate } from "react-router-dom"; // For navigation
 import "./Navbar.scss";
 
@@ -9,7 +8,7 @@ const Navbar = () => {
     const navigate = useNavigate(); // Handles navigation
 
     const toggleModal = () => setIsModalOpen((prev) => !prev);
-    const closeModal = () => setIsModalOpen(false);
+    // const closeModal = () => setIsModalOpen(false);
 
     const handleScroll = useCallback(() => {
         requestAnimationFrame(() => {
@@ -31,23 +30,22 @@ const Navbar = () => {
                </p>
             </div>
 
-            {/* Navigation Links */}
-            <div className={`nav-container ${isModalOpen ? "open" : ""}`}>
-                {["Services", "Portfolio", "Contact"].map((section, index) => (
-                    <ScrollLink
-                        key={index}
-                        to={section.toLowerCase() + "-container"}
-                        className="nav-link"
-                        spy
-                        smooth
-                        offset={-80}
-                        duration={500}
-                        onClick={closeModal}
-                    >
-                        {section}
-                    </ScrollLink>
-                ))}
-            </div>
+            {/*/!* Navigation Links *!/*/}
+            {/*<div className={`nav-container ${isModalOpen ? "open" : ""}`}>*/}
+            {/*    {["Services", "Portfolio", "Contact"].map((section, index) => (*/}
+            {/*        <ScrollLink*/}
+            {/*            to={section.toLowerCase() + "-container"}*/}
+            {/*            className="nav-link"*/}
+            {/*            spy*/}
+            {/*            smooth*/}
+            {/*            offset={-80}*/}
+            {/*            duration={500}*/}
+            {/*            onClick={closeModal}*/}
+            {/*        >*/}
+            {/*            {section}*/}
+            {/*        </ScrollLink>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
 
             {/*/!* Mobile Menu Button *!/*/}
             {/*<button onClick={toggleModal} className="menu-btn" aria-label="Toggle menu">*/}
