@@ -22,22 +22,24 @@ const EmeraldInventoryPage: React.FC = () => {
             <div className="app-body">
                 <section className="app-section">
                     <h2>The Challenge</h2>
-                    <p>{Emerald.desc}</p>
+                    <p>
+                        Emerald Executive Housing struggled to efficiently manage rental property inventory across multiple locations. Tracking missing or consumed items, monitoring costs, and maintaining accurate records were time-consuming and prone to errors. Additionally, they needed a strong online presence to showcase available properties and attract potential tenants.
+                    </p>
                 </section>
 
                 <section className="app-section">
                     <h2>Solution</h2>
                     <p>
-                        We developed a robust application leveraging responsive design, data
-                        organization, and streamlined workflows to address challenges outlined
-                        in <strong>{Emerald.title}</strong>.
+                        I designed a robust Inventory Management System integrated with a responsive website to address these challenges. The system allows property managers to track inventory in real time by adding items to specific locations, logging costs, and securely storing receipts for streamlined financial tracking.
+
+                        To enhance customer engagement, I developed a website that advertises available properties and features an inquiry form, making it easier for potential tenants to connect with Emerald Executive Housing. All inquiries are automatically organized within the inventory system, ensuring efficient communication and response management.
                     </p>
                 </section>
 
                 <section className="app-features">
                     <AppFeatures
-                        title="Key Features"
-                        description="Explore the features that make this application efficient and user-friendly."
+                        title={Emerald.title}
+                        description={Emerald.desc}
                         sections={Emerald.sections.flatMap(section => section.sections)}
                     />
                 </section>
@@ -45,7 +47,7 @@ const EmeraldInventoryPage: React.FC = () => {
                 <section className="app-section">
                     <h2>Results</h2>
                     <p>
-                        The deployment of <strong>{Emerald.title}</strong> improved inventory tracking, accounted for losses across locations, stored receipts for record-keeping, and provided a platform to engage with customers.
+                        The Inventory Management System provided better oversight of stored items, reduced financial tracking errors, and centralized receipt management. Once launched, the website will enhance Emerald’s online visibility and streamline tenant inquiries, improving communication, response efficiency, and overall customer experience.
                     </p>
                 </section>
 

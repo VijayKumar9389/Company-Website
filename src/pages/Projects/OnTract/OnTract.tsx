@@ -25,15 +25,13 @@ const OnTractPage: React.FC = () => {
             <div className="app-body">
                 <section className="app-section">
                     <h2>The Challenge</h2>
-                    <p>{Ontract.desc}</p>
+                    <p>Triton Public Awareness relied on Excel files for stakeholder data management, requiring manual updates, separate files for different team members, and time-consuming compilation of master records. This led to inconsistencies, inefficiencies, and difficulty in tracking deliveries. Additionally, Excel was used for visualizing deliveries, further complicating an already cumbersome process.</p>
                 </section>
 
                 <section className="app-section">
                     <h2>Solution</h2>
                     <p>
-                        We developed a robust application that leverages responsive design,
-                        data organization, and streamlined workflows to address the core
-                        challenges outlined in {Ontract.title}.
+                        I designed OnTract, a centralized system that automates data processing, streamlines workflows, and enhances operational efficiency. The platform enables real-time stakeholder management, delivery tracking, and inventory oversight, providing a seamless and scalable solution for Triton’s outreach program.
                     </p>
                 </section>
 
@@ -53,8 +51,7 @@ const OnTractPage: React.FC = () => {
                 <section className="app-section">
                     <h2>Results</h2>
                     <p>
-                        The implementation of {Ontract.title} significantly improved operational
-                        efficiency, reduced errors, and enhanced stakeholder collaboration.
+                        OnTract has eliminated manual processes, reduced errors, and improved collaboration by consolidating all data in one place. Triton now benefits from more efficient stakeholder management and enhanced coordination with real-time tracking of deliveries, packages, and project progress.
                     </p>
                 </section>
 

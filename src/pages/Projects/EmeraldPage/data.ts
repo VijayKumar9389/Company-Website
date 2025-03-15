@@ -4,6 +4,7 @@ import Losses from "../../../assets/screenshoots/Losses.png";
 import Inventory from "../../../assets/screenshoots/Inventory.png";
 import Rentals from "../../../assets/screenshoots/Rentals.png";
 import Questions from "../../../assets/screenshoots/Questions.png";
+import Writing from "../../../assets/screenshoots/Copywrite.png";
 
 // Define the structure for each section within a project
 export interface WorkSection {
@@ -30,32 +31,36 @@ export interface WorkData {
 
 export const Emerald: WorkData = {
     title: 'Inventory Management & Digital Marketing',
-    desc: 'The Inventory Tracker, developed for Emerald Executive Housing, modernizes rental property inventory management while integrating digital marketing strategies to enhance online presence and customer engagement. (In Progress)',
+    desc: 'Bringing efficiency to inventory management while driving online engagement and visibility.',
     imageUrl: InventoryApp,
     logo: EmeraldLogo,
     link: '/emerald',
     sections: [
         {
             title: 'Inventory App & Website',
-            desc: 'Streamlining inventory tracking and enhancing digital branding.',
+            desc: 'Bringing efficiency to inventory management while driving online engagement and visibility.',
             sections: [
                 {
-                    description: 'Effortlessly manage rental property inventory with receipt storage for accurate record-keeping.',
+                    description: 'Manage rental property inventory with ease, including receipt storage for accurate record-keeping and quick access.',
                     imageUrl: Losses,
                 },
                 {
-                    description: 'Identify missing items, track total costs, and resolve discrepancies across multiple rental locations.',
+                    description: 'Track missing items, monitor total costs, and resolve discrepancies across multiple rental locations for accurate inventory management.',
                     imageUrl: Inventory,
                 },
                 {
-                    description: 'Improve online visibility with an interactive website designed to engage potential tenants effectively.',
+                    description: 'Design an engaging website that showcases rental properties and attracts potential tenants.',
                     imageUrl: Rentals,
                 },
                 {
-                    description: 'Enhance customer interaction by centralizing inquiries through integrated contact forms within the app.',
+                    description: 'Create impactful content and design elements to establish a strong and cohesive brand identity.',
+                    imageUrl: Writing,
+                },
+                {
+                    description: 'Integrated a customer inquiry tracking feature into the inventory app, allowing easy management of tenant questions.',
                     imageUrl: Questions,
                 },
             ],
         },
     ],
-}
+};

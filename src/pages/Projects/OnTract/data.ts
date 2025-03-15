@@ -36,61 +36,61 @@ export interface WorkData {
 
 export const Ontract: WorkData = {
     title: 'Outreach Management',
-    desc: 'OnTract, developed for Triton Public Awareness, streamlines stakeholder engagement, delivery logistics, and inventory tracking. The platform offers an intuitive interface to update stakeholder contacts, manage safety package distribution, and coordinate deliveries with real-time tracking.',
+    desc: 'OnTract, developed for Triton Public Awareness, streamlines stakeholder engagement, delivery logistics, and inventory tracking. The platform features an intuitive interface for managing stakeholder contacts, coordinating safety package distribution, and enabling real-time tracking of deliveries.',
     imageUrl: OutReach,
     logo: Triton,
     link: '/ontract',
     sections: [
         {
             title: 'Stakeholder Management',
-            desc: 'Efficiently organize and manage stakeholder interactions.',
+            desc: 'Efficiently organize and manage stakeholder interactions with ease.',
             sections: [
                 {
-                    description: 'Filter stakeholders based on multiple criteria to enhance engagement and outreach efficiency.',
+                    description: 'Filter stakeholders based on various criteria to enhance outreach efforts and engagement efficiency.',
                     imageUrl: StakeholderFilter,
                 },
                 {
-                    description: 'Gain insights by visualizing stakeholder relationships and detailed contact information.',
+                    description: 'Visualize stakeholder relationships and access detailed contact information for better insights.',
                     imageUrl: StakeholderInfo,
                 },
                 {
-                    description: 'Seamlessly upload and normalize project data from Excel, ensuring structured database storage.',
+                    description: 'Easily upload and normalize project data from Excel, ensuring organized and consistent database storage.',
                     imageUrl: Upload,
                 },
             ],
         },
         {
             title: 'Delivery Management',
-            desc: 'Optimize package distribution and tracking for seamless deliveries.',
+            desc: 'Optimize delivery processes with comprehensive tracking and coordination features.',
             sections: [
                 {
-                    description: 'Assign and modify safety packages, manage delivery details, and adjust logistics to ensure timely distribution.',
+                    description: 'Manage safety packages, adjust logistics, and modify delivery details to ensure timely and accurate distribution.',
                     imageUrl: DeliveryPlanning,
                 },
                 {
-                    description: 'Automatically update stakeholder and delivery statuses upon completion for streamlined tracking.',
+                    description: 'Automatically update the status of stakeholders and deliveries upon completion, simplifying tracking and reporting.',
                     imageUrl: DeliveryStatus,
                 },
                 {
-                    description: 'Optimize delivery routes for field agents, reducing travel time and improving efficiency.',
+                    description: 'Optimize delivery routes for field agents, reducing travel time and enhancing overall efficiency.',
                     imageUrl: DeliveryRoutes,
                 },
             ],
         },
         {
             title: 'Inventory Management',
-            desc: 'Maintain precise inventory control and package tracking.',
+            desc: 'Maintain full control over inventory and ensure accurate package tracking and distribution at all times.',
             sections: [
                 {
-                    description: 'Create and customize packages while maintaining real-time inventory counts.',
+                    description: 'Create and customize packages while tracking real-time inventory counts for better accuracy.',
                     imageUrl: InventoryPackage,
                 },
                 {
-                    description: 'Store item images and quantities for accurate record-keeping and quick reference.',
+                    description: 'Store item images and quantities for precise record-keeping and easy reference.',
                     imageUrl: InventoryItems,
                 },
                 {
-                    description: 'Track delivered items, pending shipments, and package details for enhanced inventory management.',
+                    description: 'Track delivered items, pending deliveries, and package details, ensuring optimal inventory management and oversight.',
                     imageUrl: InventoryRecords,
                 },
             ],
