@@ -18,6 +18,7 @@
   .project-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background: #fff;
     border-radius: $border-radius-md;
     box-shadow: $shadow-small; // Lighter shadow by default

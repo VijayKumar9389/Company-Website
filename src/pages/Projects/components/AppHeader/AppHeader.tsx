@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./AppHeader.scss";
 
 interface AppHeaderProps {
@@ -8,17 +8,6 @@ interface AppHeaderProps {
 }
 
 const AppHeader: React.FC<AppHeaderProps> = ({ title, logo, imageUrl }) => {
-    const [offsetY, setOffsetY] = useState(0);
-
-    const handleScroll = () => {
-        setOffsetY(window.scrollY * 0.5); // Adjust speed (0.5 = slower movement)
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
     return (
         <header className="app-header">
             <div className="app-brand">
@@ -30,7 +19,6 @@ const AppHeader: React.FC<AppHeaderProps> = ({ title, logo, imageUrl }) => {
                     src={imageUrl}
                     alt={`${title} banner`}
                     className="parallax-img"
-                    style={{ transform: `translateY(${offsetY}px)` }}
                 />
             </div>
         </header>

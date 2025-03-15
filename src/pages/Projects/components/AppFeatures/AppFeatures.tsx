@@ -20,7 +20,6 @@ const AppFeatures: React.FC<AppFeaturesProps> = ({ title, description, sections 
             <div className="work-wrapper">
                 {sections.map((section, index) => (
                     <div key={index} className="work-item" data-aos="fade-up">
-                        <p className="work-description">{section.description}</p>
                         <div className="image-container">
                             <img
                                 src={section.imageUrl}
@@ -28,6 +27,7 @@ const AppFeatures: React.FC<AppFeaturesProps> = ({ title, description, sections 
                                 className="work-image"
                             />
                         </div>
+                        <p className="work-description">{section.description}</p>
                     </div>
                 ))}
             </div>

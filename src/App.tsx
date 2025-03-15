@@ -31,7 +31,6 @@ function App() {
                 <Route path="/" element={
                     <>
                         <Hero/>
-
                         <div className="app-wrapper">
                             <Design/>
                             <Results/>

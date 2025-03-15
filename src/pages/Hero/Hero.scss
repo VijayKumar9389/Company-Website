@@ -7,14 +7,14 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
-  padding: $spacing-xl $spacing-lg;
   color: $text-primary;
-  background: linear-gradient(to top, $background-color, $primary-color);
   text-align: start;
   overflow: hidden;
-  padding-top: 64px;
+  background: linear-gradient(135deg, lighten($primary-color, 10%), darken($primary-color, 10%));
+  padding: $spacing-md $spacing-lg;
 
-  .custom-shape-divider-bottom-1741897480 {
+
+  .custom-shape-divider-bottom-1742053628 {
     position: relative;
     bottom: 0;
     left: 0;
@@ -24,15 +24,15 @@
     transform: rotate(180deg);
   }
 
-  .custom-shape-divider-bottom-1741897480 svg {
+  .custom-shape-divider-bottom-1742053628 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
     height: 150px;
   }
 
-  .custom-shape-divider-bottom-1741897480 .shape-fill {
-    fill: #FFFFFF;
+  .custom-shape-divider-bottom-1742053628 .shape-fill {
+    fill: #F3F4F5;
   }
 
   .hero-content {
