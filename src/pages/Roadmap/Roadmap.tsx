@@ -42,8 +42,8 @@ const Experience: React.FC = () => {
             </div>
 
             <Header
-                heading="Explore Our Innovative Solutions"
-                desc="From concept to deployment and beyond, I handle every phase of custom web application development, ensuring a perfect fit for your unique business needs.."
+                heading="Transforming Ideas into Scalable Digital Solutions"
+                desc="I guide businesses through every stage of digital transformation—from strategic planning and intuitive design to robust development, seamless deployment, and long-term support."
                 darkMode={true}
             />
             <div className="experience-wrapper">

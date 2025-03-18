@@ -18,8 +18,8 @@ export interface WorkData {
 
 export const workData: WorkData[] = [
     {
-        title: 'Effortless Data Management with a Sleek, Responsive Interface',
-        desc: 'Our cloud-based web applications provide seamless access to your data from any device with an internet connection. Designed for efficiency and scalability, our solutions streamline operations, automate tasks, and deliver intuitive data visualization—all in one platform.',
+        title: 'Designed for Efficiency, Built for Growth',
+        desc: 'cloud-based platform empowers businesses with secure data management, advanced automation, and seamless collaboration. From effortless data access to intelligent decision-making, we help you enhance workflows, improve accuracy, and drive productivity',
         sections: [
             {
                 description: 'Secure your system with a robust login authentication process, ensuring only authorized personnel can access confidential information.',
